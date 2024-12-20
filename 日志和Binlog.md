@@ -29,6 +29,10 @@ mysqlbinlog --start-position=11123 --stop-p0sition=122224  --database=kaoshi库�
 2. **通过MySQL命令行**： 可以登录到MySQL服务器，然后使用`SHOW BINLOG EVENTS`语句来查看Binlog事件。例如：
 
  ```
+是否开启
+SHOW VARIABLES LIKE 'log_bin';
+
+SHOW BINARY LOGS;
 查看所有binlog的记录:
 
 SHOW MASTERR STATUS;
