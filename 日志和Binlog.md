@@ -35,8 +35,8 @@ SHOW VARIABLES LIKE 'log_bin';
 SHOW BINARY LOGS;
 查看所有binlog的记录:
 
-SHOW MASTERR STATUS;
-SHOW MASTERR logs;
+SHOW MASTER STATUS;
+SHOW MASTER logs;
 show binary logs;
 
 查看历史操作：
