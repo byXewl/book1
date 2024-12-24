@@ -192,6 +192,7 @@ print(poc)
 ## **SpEL表达式注入防御**
 使用 SimpleEvaluationContext
 防御：使用时做白名单，只有需要的字符串才能当作代码执行。
+在使用 SpEL 时，如果表达式是从用户输入，设置只允许一个预定义的白名单中的字符串作为 SpEL 表达式进行修复防御。对于第三方库和框架，升级到安全版本进行修复，或使用WAF进行防御。
 ```java
 SpelExpressionParser parser = new SpelExpressionParser();
 SimpleEvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding().build();
