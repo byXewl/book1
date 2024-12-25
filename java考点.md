@@ -11,5 +11,6 @@ CTF中常见Web源码泄露总结(参考：https\://www\.cnblogs.com/xishaonian/
 4. 网站备份压缩文件
 5. SVN导致文件泄露
 6. WEB-INF/web.xml泄露。泄露servlet路径：WEB-INF/classes/com/ctfshow/servlet/GetFlag.class
+![](.topwrite/assets/image_1735131274810.png)
 7. CVS泄漏
 
