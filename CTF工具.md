@@ -31,7 +31,11 @@ GZ:CTF比赛平台搭建：
 制作题目镜像：
 <https://blog.csdn.net/qq_39673370/article/details/140711518>
 
-类似的平台CTFD。
+类似的平台CTFD
+
+
+内网靶场环境搭建：Vulfocus
+练习：vulnhub
 
 ^
 ## **web方向大纲**
