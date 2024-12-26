@@ -18,6 +18,10 @@ true == 1
 
 '1%2b2' == 1
 '1+2' == 1
+
+?num=1+2
+$a=$_GET['num'] ==1
+intval(a) == 3 
 intval(1+2) == 3
 intval("1+2") == 1
 intval(" '1000' ") == 0
