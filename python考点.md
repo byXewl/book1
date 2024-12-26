@@ -69,6 +69,9 @@ print(payload)
 ## **subprocess运行外部命令**
 使用了 Python 的 `subprocess` 模块来运行外部命令：
 ```
+cmd: str = request.form.get('cmd')
+param: str = request.form.get('param')
+
 tVar = subprocess.run([cmd[:3], param, __file__], cwd=os.getcwd(), timeout=5)
 ```
 1. `subprocess.run`: 这是 `subprocess` 模块中的一个函数，用于运行外部命令。
