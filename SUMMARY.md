@@ -64,6 +64,7 @@
             * [java审计RCE](java审计RCE.md)
         * [敏感文件下载](敏感文件下载.md)
             * [Web源码泄露](Web源码泄露.md)
+        * [nodejs安全](nodejs安全.md)
     * [MISC杂项](MISC杂项.md)
         * [隐写](隐写.md)
             * [常见文件头文件尾](常见文件头文件尾.md)
