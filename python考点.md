@@ -1,8 +1,11 @@
+## **python沙箱逃逸执行危险函数**
+<https://blog.csdn.net/Jayjay___/article/details/132436072>
+
+
 ## **十六进制编码**
 十六进制编码在Python字符串中是合法的，因为它是Python语言规范的一部分。当Python解释器读取到这样的编码时，它会将十六进制数转换成对应的字符。
 
-## **python沙箱逃逸执行危险函数**
-<https://blog.csdn.net/Jayjay___/article/details/132436072>
+
 
 ## **eval()函数读文件**
 ```
