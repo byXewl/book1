@@ -65,7 +65,8 @@ __construct()    实例对象时调用。
 
 __destruct()    对象被显式销毁是执行，反序列化后，程序结束前执行。
 __sleep()    对象被序列化时调用
-__tostring()    echo $对象 时调用
+__tostring()    echo $对象 时调用。或者preg_match()中
+
 
 
 魔术方法：
