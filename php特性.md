@@ -223,6 +223,7 @@ if(! is_file($file)){
 ## **$_SERVER['QUERY_STRING'];**
 对于GET传参：?a=b&c=d
 $_SERVER['QUERY_STRING']; //  a=b&c=d 获取的是服务端还没url解码之前的字符串
+可以url编码绕过
 ```
 $ctf_show = md5($flag);
 $url = $_SERVER['QUERY_STRING'];
