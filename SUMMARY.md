@@ -55,6 +55,7 @@
                 * [tornado模板注入](tornado模板注入.md)
             * [flask开启debug接管控制台](flask开启debug接管控制台.md)
             * [python反编译](python反编译.md)
+            * [原型链污染](原型链污染.md)
         * [sql注入考点](sql注入考点.md)
             * [布尔盲注脚本题](布尔盲注脚本题.md)
         * [java考点](java考点.md)
