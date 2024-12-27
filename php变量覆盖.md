@@ -15,8 +15,11 @@ $$，extract()函数，parse_str()函数，import_request_variables()使用不�
 如果传参_SESSION[flag]=123。
 那么覆盖只有$_SEESION[flag]=123。
 
-
-
+^
+```
+extract($vars);  配合include $__template_path__;
+若$vars传参可控，则可实现任意文件读取。
+```
 
 ^
 ## **变量覆盖引出$GLOBALS数组**
