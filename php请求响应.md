@@ -28,6 +28,13 @@ filter_input()用于从外部变量（如$_GET、$_POST、$_COOKIE、$_SERVER、
 $_GET,$_POST,$_REQUEST,$_FILES,$_SERVER
 
 
+
+存在waf1($_REQUEST)；，而 $_REQUEST 有一个特性，当GET和POST有相同的变量时，匹配POST的变量，
+那么就可以同时传参GET和POST即可绕过，也就是POST传参满足waf1即可。
+
+
+
+
 文件上传
 $file = $_FILES['fileInput'];//<input>的name=fileInput
 $fileName = $file['name'];  //文件名
