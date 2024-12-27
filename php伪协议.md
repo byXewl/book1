@@ -112,7 +112,7 @@ zip://D:\\phpinfo.jpg%23phpinfo.txt
 
 ## **pearcmd.php文件包含**
 已知文件包含：include $_GET['c'].".php";
-裸文件包含, 没有上传点, 可供尝试的只有包含pearcmd.php文件，直接写木马。
+裸文件包含, 没有上传点，使用php-fpm的方式运行可尝试包含pearcmd.php文件，直接写木马。
 包含pearcmd.php用?c=pearcmd
 同时写木马到目录下的test.php
 ```
