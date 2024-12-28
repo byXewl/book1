@@ -80,6 +80,7 @@ zip --symlinks linkto.zip linkto
 ```
 同时创建一个名为linkto的目录，目录里放一个php木马，再返回上一级压缩目录为linkto1.zip
 ```
+mkdir linkto
 cd ../
 zip -r linkto1.zip ./*
 ```
