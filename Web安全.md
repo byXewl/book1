@@ -8,6 +8,7 @@ F12查看网络请求情况。
 
 目录测试，如flag.php，robots.txt，www.zip
 探针/tz.php，/backup.sql，index.phps源码文件
+御剑扫描获得phpmyadmin root 密码空 进入
 ```
 D:\mypython\python311\python.exe  dirsearch.py -u "http://16b5eb0b-ac30-452a-808a-0e9214102abd.node3.buuoj.cn/" -s 1 --exclude-status=429,403 -t 1
 ```
