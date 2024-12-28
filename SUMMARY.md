@@ -62,6 +62,7 @@
         * [java考点](java考点.md)
             * [javaSSTI](javaSSTI.md)
                 * [java表达式注入](java表达式注入.md)
+                * [nacos中SPEL表达式注入](nacos中SPEL表达式注入.md)
                 * [java服务端模板注入](java服务端模板注入.md)
             * [java审计RCE](java审计RCE.md)
         * [敏感文件下载](敏感文件下载.md)
