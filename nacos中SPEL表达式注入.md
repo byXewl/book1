@@ -4,6 +4,7 @@ Spring Cloud Gateway曾出现CVE-2022-22947漏洞，该漏洞允许攻击者通�
 利用nacos漏洞进入后台后，发现gateway配置文档，修改发布，进行spel注入命令执行。下面是json格式。
 这里是给了个的jar，反编译查看到了基础的配置，根据配置添加nacos中配置文档，并发布。
 ![](.topwrite/assets/image_1735374395624.png)
+![](.topwrite/assets/image_1735375328478.png)
 ```
 {
     "spring": {
