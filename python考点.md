@@ -5,6 +5,14 @@
 ## **十六进制编码**
 十六进制编码在Python字符串中是合法的，因为它是Python语言规范的一部分。当Python解释器读取到这样的编码时，它会将十六进制数转换成对应的字符。
 
+## **八进制编码**
+有时也用八进制编码绕过
+```
+user = request.cookies.get("user")
+    if user.lower() == 'adm;n':
+
+Cookie: user="adm\x73n";
+```
 
 ^
 ## **eval()函数利用**
