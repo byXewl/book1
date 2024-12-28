@@ -1,4 +1,4 @@
-利用nacos漏洞进入后台后，发现gateway配置文档，修改发布，进行spel注入命令执行。
+利用nacos漏洞进入后台后，发现gateway配置文档，修改发布，进行spel注入命令执行。下面是json格式。
 ```
 {
     "spring": {
