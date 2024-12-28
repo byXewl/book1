@@ -11,7 +11,7 @@
 user = request.cookies.get("user")
     if user.lower() == 'adm;n':
 
-Cookie: user="adm\x73n";
+Cookie: user="adm\073n";
 ```
 
 ^
