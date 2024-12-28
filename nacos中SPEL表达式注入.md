@@ -2,7 +2,7 @@ Spring Cloud Gateway曾出现CVE-2022-22947漏洞，该漏洞允许攻击者通�
 参考文章：<https://xz.aliyun.com/t/11493?time__1311=Cq0xRDnD070Q%3DGNPeeuAxfE1x9AB%3DDg7WoD>
 
 利用nacos漏洞进入后台后，发现gateway配置文档，修改发布，进行spel注入命令执行。下面是yaml和json格式。
-这里是给了个的jar，反编译查看到了基础的配置，根据配置添加nacos中配置文档，并发布。
+这里是给了个网关的jar，反编译查看到了基础的配置，根据配置添加nacos中配置文档，并发布。
 ![](.topwrite/assets/image_1735374395624.png)
 ![](.topwrite/assets/image_1735375328478.png)
 ![](.topwrite/assets/image_1735375352614.png)
@@ -53,7 +53,7 @@ spring:
 ```
 predicates是路由匹配规则，uri是转发的地址，这里是backendservice服务名
 
-此时访问/echo/11触发，查看响应头有命令回显结果。
+此时访问网关的ip:18888/echo/11触发，查看响应头有命令回显结果。
 
 
 
