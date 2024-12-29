@@ -687,6 +687,7 @@
                 * [sqlserver写shell](sqlserver写shell.md)
             * [mongodb注入](mongdb注入.md)
             * [access注入](access注入.md)
+            * [sqlite注入](sqlite注入.md)
         * [sqlmap](sqlmap.md)
         * [防范SQL注入](防范SQL注入.md)
         * [sql注入考点](sql注入考点.md)
