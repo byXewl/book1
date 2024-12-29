@@ -57,6 +57,7 @@
             * [python反编译](python反编译.md)
             * [原型链污染](原型链污染.md)
             * [python文件上传](python文件上传.md)
+            * [python内存读取SECRET_KEY](python内存读取SECRET_KEY.md)
         * [sql注入考点](sql注入考点.md)
             * [布尔盲注脚本题](布尔盲注脚本题.md)
         * [java考点](java考点.md)
