@@ -1,9 +1,9 @@
 ## **preg_replace函数代码执行**
-preg_replace接收三个参数，$a是正则表达式为/e时。
+preg_replace接收三个参数，$pat是正则表达式为/e时。
 第二个参数是代码，第三个参数被匹配，则第二个参数会代码执行。
-第三个参数$c如果${}包裹里面会被代码执行
+第三个参数$sub如果${}包裹里面会被代码执行
 ```
-preg_replace($a,$b,$c);
+preg_replace($pat,$rep,$sub);
 
 ?pat=/abc/e&rep=system('ls')&sub=abc
 ```
