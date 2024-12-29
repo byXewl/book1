@@ -121,6 +121,7 @@ $stmt->execute();
 ```
 copy
 file_get_contents()
+file_put_contents()
 highlight_file()
 fopen()
 read file()
