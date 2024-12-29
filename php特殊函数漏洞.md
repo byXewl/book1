@@ -1,4 +1,10 @@
 ## **preg_replace函数代码执行**
+preg_replace接收三个参数，$a是正则表达式为/e时，第三个参数$c如果${}包裹里面会被代码执行
+```
+preg_replace($a,$b,$c);
+```
+
+
 正则替换函数
 ```
 function getFlag(){
