@@ -359,3 +359,8 @@ echo $flag;
 如：?1=session_start
 ```
 
+
+
+^
+## **strstr函数**
+strstr可以用于字符匹配，但是可以被大小写绕过
