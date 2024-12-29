@@ -15,6 +15,7 @@ Django获取字符参数，如果传入的值是%80以上，则会报错，爆�
 实现curl传文件
 而django正好不能处理这个文件中的字符，就会报错回显这个文件的内容
 实现文件读取
+?url=@/opt/api/api/settings.py
 ?url=@/opt/api/database.sqlite3
 ```
 
