@@ -78,3 +78,12 @@ Son类继承了Father类的`last_name`属性，最后输出的是`Name: Melania 
 
 JavaScript的这个查找的机制，被运用在面向对象的继承中，被称作prototype继承链。
 
+以上就是最基础的JavaScript面向对象编程，我们并不深入研究更细节的内容，只要牢记以下几点即可：
+
+1. 每个构造函数(constructor)都有一个原型对象(prototype)
+2. 对象的`__proto__`属性，指向类的原型对象`prototype`
+3. JavaScript使用prototype链实现继承机制
+
+
+
+
