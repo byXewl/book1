@@ -99,6 +99,25 @@ parameterLimit选项用于指定query string 或者requestpayload的最大数量
 因此1000以后的参数将失效。
 
 
+^
+#### **请求头解析特性**
+
+
+#### 第一种
+```
+{"headers": ["xx:xx\nadmin: true"]}
+```
+我们可以看到`admin`和`true`字符串都在第一个冒号后面，因此可以绕过PHP代码的检测，而在NodeJS解析时，会解析得到`admin`的字段为true.
+
+#### 第二种
+```
+{"headers": ["admin: x", " true: y"]}
+```
+由于`admin`和`ture`出现在数组的两个元素中，因此可以绕过PHP文件的判断。在正常解析过程中，在键名中是不允许存在空格的，但NodeJS在遇到这类情况时是宽容的，会将其解析成
+```
+{"admin": "x true y"}
+```
+
 
 
 
