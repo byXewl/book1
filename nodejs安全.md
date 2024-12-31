@@ -68,11 +68,14 @@ eval(require("child_process").execSync('ls'))
 类似于merge函数用于合并两个或多个对象的属性，将一个或多个源对象的属性复制到目标对象上。
 可能造成原型链污染。
 ```
+ var secert = {};
+ let user = {};
  utils.copy(user,req.body);  //这里的copy类似merge函数
   if(secert.ctfshow==='36dboy'){
     res.end(flag);
   }
 ```
+已知secert是对象类型，secert必然继承object
 于是POST传递请求体
 ```
 {"__proto__":{"ctfshow":"36dboy"}}
