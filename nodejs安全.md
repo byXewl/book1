@@ -75,7 +75,13 @@ eval(require("child_process").execSync('ls'))
     res.end(flag);
   }
 ```
-已知secert是对象类型，secert必然继承object
+已知secert是对象类型，secert会继承类Object。
+```
+如果在secert继承到Object中的一个类有ctfshow属性值为36dboy，
+那么secert.ctfshow值也为36dboy。
+
+又每一个对象都有__proto__属性，结合copy函数，最终回溯到Object类，定义了一个ctfshow值为36dboy
+```
 于是POST传递请求体
 ```
 {"__proto__":{"ctfshow":"36dboy"}}
