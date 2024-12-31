@@ -68,9 +68,8 @@ eval(require("child_process").execSync('ls'))
 类似于merge函数用于合并两个或多个对象的属性，将一个或多个源对象的属性复制到目标对象上。
 可能造成原型链污染。
 ```
-
-
-
-
-
+ utils.copy(user,req.body);
+  if(secert.ctfshow==='36dboy'){
+    res.end(flag);
+  }
 ```
