@@ -9,7 +9,7 @@ Character.toLowerCase()函数，字符İ会转变为i，字符K会转变为k
  if(a && b && a.length===b.length && a!==b && md5(a+flag)===md5(b+flag)){
   	res.end(flag);
 
-?a[x]=1&b[x]=2
+?a[x]=1&b[x]=2或者a[:]=1&b[:]=1
 ?a[x]=1&b[x]=2 相当于是说，a和b都是引用数据类型（对象类型），
 a={'x':'1'}
 b={'x':'2'}
