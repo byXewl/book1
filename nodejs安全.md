@@ -91,10 +91,14 @@ function copy(object1, object2){
         }
     }
   }
+
+第一次循环，key 是 __proto__，因为每一个对象都有 __proto__ 属性，所以判断为TRUE，然后递归Q 调用copy函数。这次传参，object1 是object1['__proto__']，就是 object{....}，回溯到了Object类了
+object2是object2['__proto__']， 就是{ ctfshow: "36dboy" }。此时 key为 ctfshow。因为Object没有ctfshow这个变量，所以经过判断为FALSE，进入else，执行 object1['ctfshow'」=object2［'ctfshow'］。
+将Object类的ctfshow的值改为了 36dboy，那么所有继承object类的类都会有属性ctfshow=36dboy，
+也就是所有类，因为所有类都是object的子类。
 ```
 于是POST传递请求体
 ```
-
 {"__proto__":{"ctfshow":"36dboy"}}
 ```
 
