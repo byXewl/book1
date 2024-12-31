@@ -96,6 +96,8 @@ express提供了许多选项来配置参数解析。其中之一是parameterLimi
 parameterLimit选项用于指定query string 或者requestpayload的最大数量。默认情况下，它的值是1000。
 如果你的应用程序需要解析大量的查询字符串或者请求负载，你可能需要增加这个限制。例如，如果你的应用程序需要处理非常长的查询字符串，你可以将parameterLimit设置为一个更高的值。
 
+因此1000以后的参数将失效。
+
 
 
 
