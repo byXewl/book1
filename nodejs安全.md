@@ -104,6 +104,9 @@ object2是object2['__proto__']， 就是{ ctfshow: "36dboy" }。此时 key为 ct
 
 
 
+
+
+
 ^
 ## **原型链污染组合**
 **ejs模板漏洞导致rce**
@@ -136,4 +139,22 @@ function copy(object1, object2){
  copy(user,body);
  console.log(Function(query)(query));
 //输出 123
+```
+
+^
+**继承的继承场景**
+```
+  var user = new function(){
+    this.userinfo = new function(){
+    this.isVIP = false;
+    this.isAdmin = false;
+    this.isAuthor = false;     
+    };
+  }
+  utils.copy(user.userinfo,req.body);
+  if(user.userinfo.isAdmin){
+   res.end(flag);
+  }else{
+   return res.json({ret_code: 2, ret_msg: '登录失败'});  
+  }
 ```
