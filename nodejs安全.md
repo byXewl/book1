@@ -137,6 +137,14 @@ print(json1)
 ## **原型链污染**
 类似于merge函数用于合并两个或多个对象的属性，将一个或多个源对象的属性复制到目标对象上。
 可能造成原型链污染。
+常见payload
+```
+{
+    "username":"1",
+    "password":"1",
+     "__proto__":{"isAdmin":true}
+}
+```
 ```
  var secert = {};
  let user = {};
