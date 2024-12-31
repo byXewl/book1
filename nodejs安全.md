@@ -80,7 +80,7 @@ eval(require("child_process").execSync('ls'))
 如果在secert继承到Object中的一个类的prototype有ctfshow属性值为36dboy，
 那么secert.ctfshow值也存在为36dboy。
 
-又每一个对象都有__proto__属性，通过__proto__可以修改父类的prototype，结合copy函数，最终回溯到Object类prototype，定义了一个ctfshow值为36dboy
+又每一个对象都有__proto__属性，通过secert.__proto__可以修改父类的Object.prototype，结合copy函数和json最终修改Object类prototype，定义了一个ctfshow值为36dboy
 ```
 于是POST传递请求体
 ```
