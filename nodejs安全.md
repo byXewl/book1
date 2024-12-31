@@ -75,7 +75,7 @@ eval(require("child_process").execSync('ls'))
     res.end(flag);
   }
 ```
-已知secert是对象类型，secert会继承类Object。
+已知secert是对象类型，secert的原型类就是Object。
 ```
 如果在secert继承到Object中的一个类有ctfshow属性值为36dboy，
 那么secert.ctfshow值也为36dboy。
