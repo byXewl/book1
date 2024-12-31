@@ -123,4 +123,70 @@ console.log(zoo.bar)
 那么，在一个应用中，如果攻击者控制并修改了一个对象的原型，那么将可以影响所有和这个对象来自同一个类、父祖类的对象。这种攻击方式就是**原型链污染**。
 
 
+^
+## **原型链污染触发**
+
+
+在实际应用中，哪些情况下可能存在原型链能被攻击者修改的情况呢？
+
+我们思考一下，哪些情况下我们可以设置`__proto__`的值呢？其实找找能够控制数组（对象）的“键名”的操作即可：
+
+* 对象merge
+* 对象clone（其实内核就是将待操作的对象merge到一个空对象中）
+
+以对象merge为例，我们想象一个简单的merge函数：
+
+```
+function merge(target, source) {
+    for (let key in source) {
+        if (key in source && key in target) {
+            merge(target[key], source[key])
+        } else {
+            target[key] = source[key]
+        }
+    }
+}
+```
+
+在合并的过程中，存在赋值的操作`target[key] = source[key]`，那么，这个key如果是`__proto__`，是不是就可以原型链污染呢？
+
+我们用如下代码实验一下：
+
+```
+let o1 = {}
+let o2 = {a: 1, "__proto__": {b: 2}}
+merge(o1, o2)
+console.log(o1.a, o1.b)
+
+o3 = {}
+console.log(o3.b)
+```
+
+结果是，合并虽然成功了，但原型链没有被污染：
+
+这是因为，我们用JavaScript创建o2的过程（`let o2 = {a: 1, "__proto__": {b: 2}}`）中，`__proto__`已经代表o2的原型了，此时遍历o2的所有键名，你拿到的是`[a, b]`，`__proto__`并不是一个key，自然也不会修改Object的原型。
+
+那么，如何让`__proto__`被认为是一个键名呢？
+
+我们将代码改成如下：
+
+```
+let o1 = {}
+let o2 = JSON.parse('{"a": 1, "__proto__": {"b": 2}}')
+merge(o1, o2)
+console.log(o1.a, o1.b)
+
+o3 = {}
+console.log(o3.b)
+```
+
+可见，新建的o3对象，也存在b属性，说明Object已经被污染：
+
+
+这是因为，JSON解析的情况下，`__proto__`会被认为是一个真正的“键名”，而不代表“原型”，所以在遍历o2的时候会存在这个键。
+
+merge操作是最常见可能控制键名的操作，也最能被原型链攻击，很多常见的库都存在这个问题。
+
+
+
 
