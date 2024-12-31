@@ -4,6 +4,16 @@ Character.toUpperCase()函数，字符ı会转变为I，字符ſ会变为S
 Character.toLowerCase()函数，字符İ会转变为i，字符K会转变为k
 ```
 
+绕过md5
+```
+ if(a && b && a.length===b.length && a!==b && md5(a+flag)===md5(b+flag)){
+  	res.end(flag);
+
+?a[x]=1&b[x]=2
+?a[x]=1&b[x]=2 相当于是说，a和b都是引用数据类型（对象类型），
+那么在 a+flag和 b+flag 时，他们的结果就会都是［objectObject]flag{xxx}，那么md5值自然就是一样的了。
+```
+
 
 ## **eval命令执行**
 
