@@ -97,7 +97,18 @@ parameterLimit选项用于指定query string 或者requestpayload的最大数量
 如果你的应用程序需要解析大量的查询字符串或者请求负载，你可能需要增加这个限制。例如，如果你的应用程序需要处理非常长的查询字符串，你可以将parameterLimit设置为一个更高的值。
 
 因此1000以后的参数将失效。
+```
+import json
 
+datas = {"headers": ["xx:xx\nadmin: true"],        
+    "params": {"admin": "true"}}
+
+for i in range(1020):
+    datas["params"]["x" + str(i)] = i
+
+json1 = json.dumps(datas)
+print(json1)
+```
 
 ^
 #### **请求头解析特性**
