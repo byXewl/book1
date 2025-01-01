@@ -176,5 +176,12 @@ make
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJzs6Zgv0Lp_eA4Secn8sUEVgIA
 ```
-\#使用https\://jwt.io/，进行加密
+#使用https\://jwt.io/，进行加密
+
+
+^
+JWT_GUI离线必备：
+<https://github.com/Aiyflowers/JWT_GUI/releases/tag/replace_brute_error>
+
+
 
