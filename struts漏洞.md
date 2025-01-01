@@ -34,5 +34,8 @@ struts.xml是struts2的核心配置文件，在开发过程中利用率最高。
 同样根据映射下载
 ```
 ?fileName=../../WEB-INF/classes/com/cuitctf/action/UserLoginAction.class
+
+类中引用类，同样下载
+../../WEB-INF/classes/com/cuitctf/service/UserService.class
 ```
 
