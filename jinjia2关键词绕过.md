@@ -274,6 +274,26 @@ lipsum.__globals__['__builtins__'].open('/flag').read()
 ^
 ## **过滤数字**
 370
+用全角数字
+```
+def half2full(half):
+    full = ''
+    for ch in half:
+        if ord(ch) in range(33, 127):
+            ch = chr(ord(ch) + 0xfee0)
+        elif ord(ch) == 32:
+            ch = chr(0x3000)
+        else:
+            pass
+        full += ch
+    return full
+while 1:
+    t = ''
+    s = input("输入想要转换的数字字符串：")
+    for i in s:
+        t += half2full(i)
+    print(t)
+```
 ```
 {%set num=dict(aaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
 {%set numm=dict(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
