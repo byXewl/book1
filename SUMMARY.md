@@ -66,6 +66,7 @@
                 * [nacos中SPEL表达式注入](nacos中SPEL表达式注入.md)
                 * [java服务端模板注入](java服务端模板注入.md)
             * [java审计RCE](java审计RCE.md)
+            * [struts漏洞](struts漏洞.md)
         * [敏感文件下载](敏感文件下载.md)
             * [Web源码泄露](Web源码泄露.md)
         * [nodejs安全](nodejs安全.md)
