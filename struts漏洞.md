@@ -46,3 +46,5 @@ struts.xml是struts2的核心配置文件，在开发过程中利用率最高。
 ?fileName=../../WEB-INF/classes/applicationContext.xml
 ?fileName=../../WEB-INF/classes/user.hbm.xml
 ```
+
+最终可能找到数据库配置文件，数据库sql，存在sql注入等
