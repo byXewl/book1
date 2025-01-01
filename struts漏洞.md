@@ -44,4 +44,5 @@ struts.xml是struts2的核心配置文件，在开发过程中利用率最高。
 下载配置文件
 ```
 ?fileName=../../WEB-INF/classes/applicationContext.xml
+?fileName=../../WEB-INF/classes/user.hbm.xml
 ```
