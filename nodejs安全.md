@@ -1,4 +1,6 @@
-ExpreSs是一个流行的Node.jsWeb框架，它提供了许多有用的功能来构建Web应用程序。
+Express是一个流行的Node.jsWeb框架，它提供了许多有用的功能来构建Web应用程序。
+如果响应头有X-Powered-By: Express
+
 ## **函数特性**
 ```
 Character.toUpperCase()函数，字符ı会转变为I，字符ſ会变为S
