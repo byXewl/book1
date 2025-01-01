@@ -198,7 +198,3 @@ a=os;b=popen;c=cat /flag
 Cookie:c=cat /flag
 ```
 
-```
-?name={{config.__str__().__getitem__(22)}}   # 就是22
-
-```
