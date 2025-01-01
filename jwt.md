@@ -116,6 +116,17 @@ print(base64.b64encode(b.encode('utf-8')))
 # 于是JWT：eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzZWNyZXRpZCI6W10sInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MDg5NTk3M30.
 ```
 
+
+^
+#### **如果后端校验jwt不严**
+可以将jwt头的alg字段改为none，修改载体，在将第三方部分直接删除，保留一个点
+```
+xxx.xxx.
+```
+
+
+
+
 ^
 ## **PS256算法的jwt可以伪造**
 <https://blog.csdn.net/weixin_53090346/article/details/134277438>
