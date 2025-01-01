@@ -23,6 +23,8 @@ for h in host.split('.'):
 处理后变成c/u
 
 以及ℂ变成c等
+
+︷︸变成{} 可以用于ssti注入
 ```
 
 于是传入url=file://suctf.cc/etc/passwd
