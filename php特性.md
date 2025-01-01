@@ -364,3 +364,14 @@ echo $flag;
 ^
 ## **strstr函数**
 strstr可以用于字符匹配，但是可以被大小写绕过
+
+^
+## **floatval()函数** 
+floatval函数用于获取变量的浮点值。
+```
+floatval('2.3aaa1')  // 2.3
+
+
+floatval($_GET[id]) !== '1'
+!== 字符串，这里是一定不等于的。
+```
