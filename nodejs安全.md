@@ -262,7 +262,7 @@ package.json中存在jade。
 
 ^
 ## **express-fileupload原型链污染**
-"express-fileupload": "1.1.7-alpha.4"存在cve，作为入口，配合ejs，污染ejs中outputFunctionName变量实现RCE
+"express-fileupload": "1.1.7-alpha.4"存在cve，其文件上传作为入口，配合ejs，污染ejs中outputFunctionName变量实现RCE
 ```
 const fileUpload= require(' express--fileupload') ;
 app.use(fileUpload({ parseNested: true })); //配置它以解析嵌套的文件字段
