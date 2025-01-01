@@ -157,11 +157,18 @@ https\://xz.aliyun.com/t/7495?time\_\_1311=n4%2BxnD0Dy7GQ3AKeD5DsA3rcC%3D%2FjO4b
 
 ^
 ## **SSRF绕过**
-```
+
 跳转型
+```
 https://33129999.xyz@baidu.com
 
-302型
+已知要符合正则
+if(preg_match('/^http:\/\/ctf\..*show$/i',$x)){
+    echo file_get_contents($url);
+}
+
+要符合http://ctf开头，show结尾，则
+http://ctf.@127.0.0.1/flag.php?show
 ```
 ^
 姿势1：
