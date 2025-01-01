@@ -169,6 +169,8 @@ https://33129999.xyz@baidu.com
 ```
 http://127.1:80
 http://127.1:80/flag.php
+http://0/flag.php
+http://127.255.255.254/flag.php
 ```
 
 姿势2：将点分十进制表示的IP转化为十进制IP地址绕过
