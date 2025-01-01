@@ -132,7 +132,9 @@ BP中使用入口需进行双编码
 利用ssrf操作内网redis写入计划任务反弹shell：<https://blog.csdn.net/qq_63844103/article/details/126896955>
 利用ssrf操作内网：
 <https://www.sqlsec.com/2021/05/ssrf.html>
+![](.topwrite/assets/image_1735724929100.png)
 
+^
 使用gopherus.py对无密码mysql执行sql语句：
 ```
 python2 gopherus.py --exploit mysql
