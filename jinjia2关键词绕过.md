@@ -28,6 +28,12 @@ request.json		 post传json  (Content-Type: application/json)
 config               当前application的所有配置。此外，也可以这样{{ config.__class__.__init__.__globals__['os'].popen('ls').read() }}
 g                    {{g}}得到<flask.g of 'flask_ssti'>
 ```
+^
+## **利用链**
+```
+
+```
+
 
 ^
 ## **绕过基础**
