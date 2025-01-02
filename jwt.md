@@ -143,7 +143,9 @@ JWT的签名加密算法有两种，对称加密算法和非对称加密算法�
 如果是公私钥泄露，直接解密伪造再加密。
 脚本
 ```
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); 
+//npm install jsonwebtoken --save
+
 const fs = require('fs');
 
 var privateKey = fs.readFileSync(process.cwd()+'\\private.key');
@@ -159,7 +161,9 @@ console.log(token)
 CTF题目：[http://demo.sjoerdlangkemper.nl/jwtdemo/rs256.php](https://links.jianshu.com/go?to=http%3A%2F%2Fdemo.sjoerdlangkemper.nl%2Fjwtdemo%2Frs256.php)
 脚本
 ```
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); 
+//npm install jsonwebtoken --save
+
 const fs = require('fs');
 
 var privateKey = fs.readFileSync(process.cwd()+'\\public.key');
