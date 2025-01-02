@@ -140,7 +140,11 @@ JWT的签名加密算法有两种，对称加密算法和非对称加密算法�
 对称加密算法比如HS256，加解密使用同一个密钥，保存在后端。
 非对称加密算法比如RS256，后端加密使用私钥，之后前端后端解密都使用公钥，公钥是我们可以获取到的。
 
-如果我们修改header，将算法从RS256更改为HS256，后端代码会使用RS256的公钥作为HS256算法的密钥。于是我们就可以用RS256的公钥伪造数据
+
+如果是公私钥泄露，直接解密伪造再加密。
+
+如果只有公钥泄露：
+如果我们修改header，将算法从RS256更改为HS256，后端代码会使用RS256的公钥作为HS256算法的密钥。于是我们就可以用RS256的公钥伪造数据。
 CTF题目：[http://demo.sjoerdlangkemper.nl/jwtdemo/rs256.php](https://links.jianshu.com/go?to=http%3A%2F%2Fdemo.sjoerdlangkemper.nl%2Fjwtdemo%2Frs256.php)
 
 
