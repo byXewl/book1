@@ -93,6 +93,8 @@ __unset()                //在不可访问的属性上使用unset()时触发
 __invoke()               //当尝试以调用函数的方式调用一个对象时触发，如new A()时。
 __sleep()                //执行serialize()时，先会调用这个方法
 __wakeup()               //执行unserialize()时，先会调用这个方法
+__unserialize()         //和 __wakeup()类似，如果类中同时定义了 __unserialize() 和 __wakeup() 两个魔术方法，
+则只有 __unserialize() 方法会生效，__wakeup() 方法会被忽略。
 __toString()             //当反序列化后的对象被输出在模板中的时候（转换成字符串的时候）自动调用
 ```
 代码审计搜索：
@@ -193,6 +195,7 @@ var_dump(base64_encode($C));
 //string(68) "TzorNDoiRGVtbyI6Mjp7czoxMDoiAERlbW8AZmlsZSI7czo4OiJmbDRnLnBocCI7fQ=="
 ```
 
+^
 反序列化时绕过__wakeup()方法执行
 ```
 O:4:"Name":2:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:3:"100";}
@@ -200,6 +203,11 @@ O:4:"Name":2:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:
 O:4:"Name":3:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:3:"100";}
 让属性数量大于真实数量3>2
 ```
+```
+如果类中同时定义了 __unserialize() 和 __wakeup() 两个魔术方法，
+则只有 __unserialize() 方法会生效，__wakeup() 方法会被忽略。
+```
+
 ^
 protected类型的属性，反序列化也存在不可打印字符。
 但对于PHP版本7.1+，对属性的类型不敏感，我们可以将protected类型改为public，以消除不可打印字符。
