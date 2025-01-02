@@ -166,6 +166,9 @@ class Ion_Fan_Princess{
 在线php运行：<https://www.jyshare.com/compile/1/>
 
 
+
+
+^
 ## **特性**
 
 private私有属性的反序列化，需要替换字符（注意：在某些终端vscode序列化时会截断显示，用phpsotrm）
@@ -204,7 +207,25 @@ protected类型的属性，反序列化也存在不可打印字符。
 
 
 ^
-正则绕过
+__construct()中的对象可以直接改的
+```
+原：
+private $class = 'info';
+public function __construct() {
+    $this->class = new info();
+}
+
+EXP中：
+private $class = 'backDoor';
+public function __construct() {
+  $this->class = new backDoor();
+}
+```
+
+
+
+^
+## **正则绕过**
 ```
 if (preg_match('/[oc]:\d+:/i', $var))
 这个正则表达式的含义如下：
