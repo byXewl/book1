@@ -147,7 +147,7 @@ $txt = 'flag.txt';
 file_put_contents($txt,$xxe,FILE_APPEND)
 ?>
 ```
-注入点
+注入点。不需要xml也可以，可用于绕过检测xml。
 ```
 [POST]Payload:
 
