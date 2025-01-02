@@ -154,7 +154,8 @@ var privateKey = fs.readFileSync(process.cwd()+'\\private.key');
 var token = jwt.sign({ user: 'admin' }, privateKey, { algorithm: 'RS256' });
 console.log(token)
 ```
-
+或者用厨师，粘贴私钥
+![](.topwrite/assets/image_1735792548241.png)
 ^
 如果只有公钥泄露：
 如果我们修改header，将算法从RS256更改为HS256，后端代码会使用RS256的公钥作为HS256算法的密钥。于是我们就可以用RS256的公钥伪造数据。
