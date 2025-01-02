@@ -213,5 +213,6 @@ sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJzs6Zgv0Lp_eA4Secn8sUEVgIA
 JWT_GUI离线必备：
 <https://github.com/Aiyflowers/JWT_GUI/releases/tag/replace_brute_error>
 
+签名的话可以用厨师
 
 
