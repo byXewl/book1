@@ -167,13 +167,17 @@ class Ion_Fan_Princess{
 
 
 ## **特性**
-^
+
 private私有属性的反序列化，需要替换字符（注意：在某些终端vscode序列化时会截断显示，用phpsotrm）
 赋值使用new Name('admin',100);
 ```
 O:4:"Name":2:{s:14:"口Name口username";s:6:"admine";s:14:"口Name口password";s:3:"100";}
 会有口，改为%00
 O:4:"Name":2:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:3:"100";}
+
+或者输出时就url编码
+$a = serialize(new ctfShowUser());
+echo urlencode($a);
 
 如果private需要base64编码的，就在代码里替换并编码，防止口编码后不同值。
 $C = serialize($a);
