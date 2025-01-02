@@ -799,6 +799,8 @@
     * [OA](OA.md)
     * [WordPress](WordPress.md)
     * [php框架漏洞](php框架漏洞.md)
+        * [Yii漏洞](Yii漏洞.md)
+        * [Laravel漏洞](Laravel漏洞.md)
     * [CMS](CMS.md)
     * [API接口漏洞](API接口漏洞.md)
     * [fastadmin漏洞](fastadmin漏洞.md)
