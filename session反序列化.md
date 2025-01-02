@@ -9,7 +9,7 @@ ini_set('session.serialize_handler', 'php_serialize') 时的Session文件内容�
 ```
 
 ^
-## **session反序列化利用**
+## **session反序列化利用**    
 php(php<5.5.4默认):存储方式是，键名+竖线+经过serialize()函数序列处理的值
 ```php
 meng|s:4:"meng";
