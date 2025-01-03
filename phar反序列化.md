@@ -14,7 +14,7 @@ ctf题中php.ini中的phar.readonly选项，需要为Off（默认是on）
 //即要求存在file_get_contents、fopen、highlight_file这种函数
 include、require、include_once、require_once、highlight_file 、
 show_source 、readfile 、file_get_contents 、fopen 、file、
-file_exists
+file_exists、copy、unlink
 
 phar文件可以改名为任意后缀，只要能被伪协议读取即可。
 
