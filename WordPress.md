@@ -2,8 +2,13 @@
 使用wpscan工具扫描历史漏洞和插件组件漏洞。
 如：任意文件读取等。
 
-好像需要注册token：
+需要注册token才能查看漏洞信息
 <https://blog.csdn.net/weixin_44628122/article/details/107250045>
+```
+命令时带上token
+--api-token 
+```
+
 
 kali中可以使用wpscan：
 ```text
