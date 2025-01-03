@@ -6,7 +6,7 @@
 <https://blog.csdn.net/weixin_44628122/article/details/107250045>
 ```
 命令时带上token
---api-token 
+--api-token mKcu3vyatgfAvUnipF7VMuZEuI2Lr3SGVjAp4ani1aQ
 ```
 
 
