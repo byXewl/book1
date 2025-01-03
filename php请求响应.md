@@ -48,7 +48,7 @@ $_GET,$_POST,$_REQUEST,$_FILES,$_SERVER
 $file = $_FILES['fileInput'];//<input>的name=fileInput
 $fileName = $file['name'];  //文件名
 $fileTmpName = $file['tmp_name']; //上传在服务器上的临时路径，不能直接在服务器上查看这些文件。
-//不能直接访问临时文件。上传后可以用move_uploaded_file将临时文件移动到目标目录文件。
+//不能直接访问临时文件。上传后可以用move_uploaded_file或copy+unlink将临时文件移动到目标目录文件。
 $fileSize = $file['size']; //上传文件大小
 $fileError = $file['error']; //上传文件过程是否发送错误
 ```
