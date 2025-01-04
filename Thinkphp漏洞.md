@@ -1,5 +1,17 @@
 ## **Thinkphp代码基础**
+thinkphp3.2的路由模式：PATHINFO模式
+```
+http://serverName/index.php/模块/控制器/操作
+```
+为了访问下图中的index方法并输出hello 123我们可以通过下面四种模式。 
+```
+PATHINFO模式 http://localhost/index.php/Home/Index/index/name/123/ 
+普通模式 http://localhost/index.php?m=Home&c=Index&f=index&name=123 
+兼容模式 http://localhost/index.php?s=Home/Index/index/name/123 
+    其中参数s来自于ThinkPHP->Conf->convention.php中的VAR_PATH_INFO设置,所以我们也可以改成其他的参数。 
 
+REWRITE模式 http://localhost/Home/Index/index/name/123/
+```
 
 ## **Thinkphp RCE　POC大全**
 在 Vulhub 中，也可以找到了该漏洞的利用 POC
