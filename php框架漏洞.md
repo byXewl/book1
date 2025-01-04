@@ -14,7 +14,7 @@ phpMyadmin漏洞：
 
 ^
 ## **php框架反序列化利用工具**
->PHPGGC 是一个 unserialize（） 有效负载库，以及从命令行或编程方式生成它们的工具*。 当您在没有代码的网站上遇到反序列化时，或者只是在尝试构建漏洞时，此工具允许您生成有效负载，而无需经历查找小工具并组合它们的繁琐步骤。它可以被视为相当于[frohoff的ysoserial](https://github.com/frohoff/ysoserial)，但对于PHP。 目前，该工具支持小工具链，例如：CodeIgniter4，Doctrine，Drupal7，Guzzle，Laravel，Magento，Monolog，Phalcon，Podio，Slim，SwiftMailer，Symfony，Wordpress，Yii和ZendFramework。
+>PHPGGC 是一个 unserialize（） 有效负载库，以及从命令行或编程方式生成它们的工具*。 当您在没有代码的网站上遇到反序列化时，或者只是在尝试构建漏洞时，此工具允许您生成有效负载，而无需经历查找小工具并组合它们的繁琐步骤。它可以被视为相当于[frohoff的ysoserial](https://github.com/frohoff/ysoserial)，但对于PHP。 目前，该工具支持小工具链，例如：CodeIgniter4，Doctrine，Drupal7，Guzzle，Laravel，Magento，Monolog，Phalcon，Podio，Slim，SwiftMailer，Symfony，Wordpress，Yii和ZendFramework，wordpress。
 
 安装：
 <https://www.cnblogs.com/xrzxyyds/p/the-introduction-and-installation-of-the-use-of-phpggc-s81yc.html>
