@@ -3,7 +3,7 @@ select被过滤，试试Select
 
 ^
 ## **编码绕过**
-is_numeric($_GET[‘id’]) ，过滤只允许数字，16进制编码sql注入。
+is_numeric($_GET['id']) ，过滤只允许数字，16进制编码sql注入。
 
 ^
 ## **空格被过滤**
