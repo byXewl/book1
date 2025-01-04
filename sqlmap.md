@@ -78,7 +78,7 @@ sqlmap.py -d "mysql://root:123456@127.0.0.1:3306/mysql" --os-shell
 -v 3      查看注入时使用的语句
 
 --is-dba      看是否是管理员高权限
-、
+
 --privilege    查看权限
 --current-user   查看当前登录数据库的用户名
 
@@ -130,11 +130,22 @@ password字段可能会顺带解密
 
 --threads 10  默认1，设置为10线程方便脱裤
 ```
+
+^
+## **请求方式**
+```
+--user-agent sqlmap 
+--referer http://9.challenge.ctf.show/sqlmap.php
+--data="id=1" --method=PUT --headers="Content-Type: text/plain" 
+
+```
+
+
+^
 ## **绕过防护**
 ```
 --random-agent  随机UA，防止WAF
---user-agent sqlmap 
---referer http://9.challenge.ctf.show/sqlmap.php
+
 
 绕过WAF,修改注入数据格式：
 sqlmap的tamper/文件中自带脚本
