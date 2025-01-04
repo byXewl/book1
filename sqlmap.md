@@ -164,6 +164,43 @@ randomcase: 随机字母大小写
 symboliclogical: 替换or and
 
 base64编码、url编码、双url编码、宽字节、使用/**/分割sql关键字、替换空格为xx
+
+
+
+apostrophemask.py 用utf8代替引号
+equaltolike.py MSSQL * SQLite中like 代替等号
+greatest.py MySQL中绕过过滤’>’ ,用GREATEST替换大于号
+space2hash.py 空格替换为#号 随机字符串 以及换行符
+space2comment.py 用/**/代替空格
+apostrophenullencode.py MySQL 4, 5.0 and 5.5，Oracle 10g，PostgreSQL绕过过滤双引号，替换字符和双引号
+halfversionedmorekeywords.py 当数据库为mysql时绕过防火墙，每个关键字之前添加mysql版本评论
+space2morehash.py MySQL中空格替换为 #号 以及更多随机字符串 换行符
+appendnullbyte.p Microsoft Access在有效负荷结束位置加载零字节字符编码
+ifnull2ifisnull.py MySQL，SQLite (possibly)，SAP MaxDB绕过对 IFNULL 过滤
+space2mssqlblank.py mssql空格替换为其它空符号
+base64encode.py 用base64编码
+space2mssqlhash.py mssql查询中替换空格
+modsecurityversioned.py mysql中过滤空格，包含完整的查询版本注释
+space2mysqlblank.py mysql中空格替换其它空白符号
+between.py MS SQL 2005，MySQL 4, 5.0 and 5.5 * Oracle 10g * PostgreSQL 8.3, 8.4, 9.0中用between替换大于号（>）
+space2mysqldash.py MySQL，MSSQL替换空格字符（”）（’ – ‘）后跟一个破折号注释一个新行（’ n’）
+multiplespaces.py 围绕SQL关键字添加多个空格
+space2plus.py 用+替换空格
+bluecoat.py MySQL 5.1, SGOS代替空格字符后与一个有效的随机空白字符的SQL语句。 然后替换=为like
+nonrecursivereplacement.py 双重查询语句。取代predefined SQL关键字with表示 suitable for替代
+space2randomblank.py 代替空格字符（“”）从一个随机的空白字符可选字符的有效集
+sp_password.py 追加sp_password’从DBMS日志的自动模糊处理的26 有效载荷的末尾
+chardoubleencode.py 双url编码(不处理以编码的)
+unionalltounion.py 替换UNION ALL SELECT UNION SELECT
+charencode.py Microsoft SQL Server 2005，MySQL 4, 5.0 and 5.5，Oracle 10g，PostgreSQL 8.3, 8.4, 9.0url编码；
+randomcase.py Microsoft SQL Server 2005，MySQL 4, 5.0 and 5.5，Oracle 10g，PostgreSQL 8.3, 8.4, 9.0中随机大小写
+unmagicquotes.py 宽字符绕过 GPC addslashes
+randomcomments.py 用/**/分割sql关键字
+charunicodeencode.py ASP，ASP.NET中字符串 unicode 编码
+securesphere.py 追加特制的字符串
+versionedmorekeywords.py MySQL >= 5.1.13注释绕过
+halfversionedmorekeywords.py MySQL < 5.1中关键字前加注释
+
 ```
 ## **获取shell，文件操作等**
 ```
