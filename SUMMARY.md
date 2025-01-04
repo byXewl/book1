@@ -63,6 +63,7 @@
             * [python内存读取SECRET_KEY](python内存读取SECRET_KEY.md)
         * [sql注入考点](sql注入考点.md)
             * [布尔盲注脚本题](布尔盲注脚本题.md)
+            * [时间盲注脚本题](时间盲注脚本题.md)
         * [java考点](java考点.md)
             * [javaSSTI](javaSSTI.md)
                 * [java表达式注入](java表达式注入.md)
