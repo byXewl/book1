@@ -160,6 +160,9 @@ sqlmap的tamper/文件中自带脚本
 
 between: <>=换成between
 space2comment: 空格用/**/替换
+如果过滤的空格又过滤了*，则不能/**/替换
+复制space2comment这个脚本，把里面的/**/换成chr(0x9)等
+
 randomcase: 随机字母大小写
 symboliclogical: 替换or and
 
@@ -169,6 +172,7 @@ base64编码、url编码、双url编码、宽字节、使用/**/分割sql关键�
 
 apostrophemask.py 用utf8代替引号
 equaltolike.py MSSQL * SQLite中like 代替等号
+
 greatest.py MySQL中绕过过滤’>’ ,用GREATEST替换大于号
 space2hash.py 空格替换为#号 随机字符串 以及换行符
 space2comment.py 用/**/代替空格
