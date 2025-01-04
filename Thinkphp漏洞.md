@@ -5,6 +5,7 @@ http://serverName/index.php/模块/控制器/操作
 ```
 为了访问下图中的index方法并传入name参数，输出hello 123我们可以通过下面四种模式。 
 ```
+Home模块，Index控制器，index操作方法
 PATHINFO模式 http://localhost/index.php/Home/Index/index/name/123/ 
 普通模式 http://localhost/index.php?m=Home&c=Index&f=index&name=123 
 兼容模式 http://localhost/index.php?s=Home/Index/index/name/123 
