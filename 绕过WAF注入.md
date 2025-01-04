@@ -140,7 +140,7 @@ $res = $conn->query("SELECT `username` FROM ctfshow_users WHERE id = ($id)");
 ```
 
 ^
-## **where后= like被过滤，用字段名使用正则模糊匹配字段的值**
+## **where后=和like被过滤，用字段名使用正则模糊匹配字段的值**
 需要知道字段名
 ```
 select(real_flag_1s_here)from(users)where(real_flag_1s_here)regexp('^f')
