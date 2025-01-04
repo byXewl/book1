@@ -1,4 +1,4 @@
-## **Thinkphp代码基础**
+## **Thinkphp3代码基础**
 #### **1、默认路由**
 thinkphp3.2的路由模式：PATHINFO模式
 ```
