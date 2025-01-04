@@ -39,7 +39,7 @@ select group_concat(table_name）from mysql.innodb_table_stats where database_na
 ^
 ## **无字段名注入**
 <https://www.cnblogs.com/hello-there/p/12918265.html>
-知道表名
+知道表名，不知道字段名
 ```
 表的字段数判断：select 1,2 union select * from user  试出字段数。
 
@@ -74,6 +74,12 @@ select((select 1,"fla")>(select * from f1ag_1s_h3r3_hhhhh))
 2||((select 1,"{}")>(select * from f1ag_1s_h3r3_hhhhh))
 ```
 
+
+
+
+
+
+^
 ^
 ## **函数等效替换**
 报错函数被过滤，寻找顶替。
