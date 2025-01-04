@@ -136,7 +136,12 @@ password字段可能会顺带解密
 ```
 --user-agent sqlmap 
 --referer http://9.challenge.ctf.show/sqlmap.php
+
+请求方式：
 --data="id=1" --method=PUT --headers="Content-Type: text/plain" 
+
+每次请求之前要去请求一个安全链接
+--safe-url="http://55bec546-a2a9-4ccc-9347-df357c6b8fa8.challenge.ctf.show/api/getToken.php" --safe-freq=1 
 
 ```
 
