@@ -19,7 +19,7 @@ phpMyadmin漏洞：
 安装：
 <https://www.cnblogs.com/xrzxyyds/p/the-introduction-and-installation-of-the-use-of-phpggc-s81yc.html>
 ```
-克隆即可
+克隆进入目录即可使用
 https://github.com/ambionics/phpggc
 ```
 
