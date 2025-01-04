@@ -41,7 +41,8 @@ select(group_concat(table_name))from(information_schema.tables)where(table_schem
 ## **注释符被过滤**
 ```
 1、#编码用%23
-2、将后面的单引号闭合即可。'or(id=26)and'1'='1
+2、将后面的单引号闭合即可。'or(id=26)and'1'='1   
+or '1'='1
 ```
 ^
 ## **or 被过滤导致orderby、information_schema都不能用**
