@@ -37,6 +37,11 @@ select(group_concat(schema_name))from(information_schema.schemata)
 select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())
 ```
 
+反引号代替空格
+```
+username = 0;update`ctfshow_user`set`pass`=1
+```
+
 ^
 ## **注释符被过滤**
 ```
