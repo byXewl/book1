@@ -148,4 +148,5 @@ select(real_flag_1s_here)from(users)where(real_flag_1s_here)regexp('^f')
 select flag from Flag where flag regexp "^f";
 
 flag like "f%"
+(flag)like'c%'
 ```
