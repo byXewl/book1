@@ -111,7 +111,7 @@ select((select 1,"fla")>(select * from f1ag_1s_h3r3_hhhhh))
 ^
 ## **函数等效替换**
 报错函数被过滤，寻找顶替。
-
+ascii和ord
 
 
 ^
