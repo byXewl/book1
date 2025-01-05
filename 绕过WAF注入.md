@@ -16,6 +16,18 @@ is_numeric($_GET['id']) ，过滤只允许数字，16进制编码sql注入。
 ^
 ## **过滤数字**
 可以用true+true组合，相当于1+1
+脚本
+```
+# 用true代替数字
+s='0123456789abcdef-{}'
+def convert(strs):
+  t='concat('
+  for s in strs:
+    # t+= 'char(true'+'+true'*(ord(s)-1)+'),'
+    t+= 'char(true'+'%2btrue'*(ord(s)-1)+'),'
+  return t[:-1]+")"
+print(convert('2'))
+```
 
 
 ^
