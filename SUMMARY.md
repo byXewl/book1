@@ -689,6 +689,7 @@
             * [limit注入](limit注入.md)
             * [orderby+like注入](orderby+like注入.md)
             * [groupby注入](groupby注入.md)
+            * [outfile注入](outfile注入.md)
         * [其他数据库注入](其他数据库注入.md)
             * [oracle注入](oracle注入.md)
             * [sqlserver注入](sqlserver注入.md)
