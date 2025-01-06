@@ -35,5 +35,5 @@ class log
     }
 }
 
-echo(urlencode(serialize(new log)));
+echo((serialize(new log)));
 ```
