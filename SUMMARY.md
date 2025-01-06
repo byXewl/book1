@@ -76,6 +76,7 @@
             * [Web源码泄露](Web源码泄露.md)
         * [nodejs安全](nodejs安全.md)
             * [js原型链](js原型链.md)
+            * [nodejs反序列化](nodejs反序列化.md)
         * [其他语言考点](其他语言考点.md)
     * [MISC杂项](MISC杂项.md)
         * [隐写](隐写.md)
