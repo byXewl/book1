@@ -9,7 +9,7 @@ Apache HTTPD 多后缀解析漏洞
 文件的文件名test.php.aaa.bbb
 文件名后缀不属于Apache解析的黑名单，或白名单
 自动从bbb的位置开始解析，不属于，又会向左aaa，直到能解析到php,最终成功解析成PHP脚本执行。
-
+test.php.aaa.jpg访问也访问test.php.aaa.jpg会解析php
 
 ^
 ## **目录遍历原理**
