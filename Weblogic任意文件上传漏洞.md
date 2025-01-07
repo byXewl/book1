@@ -1,4 +1,13 @@
 ## **Weblogic 任意文件上传漏洞（CVE-2018-2894）**
+漏洞前提
+```
+环境启动后，访问`http://your-ip:7001/console`，即可看到后台登录页面。
+
+执行`docker compose logs | grep password`可查看管理员密码，管理员用户名为`weblogic`。
+
+登录后台页面，点击`base_domain`的配置，在“高级”中开启“启用 Web 服务测试页”选项。
+```
+
 利用该漏洞，可以上传任意jsp文件，进而获取服务器权限。
 ```
 访问IP/ws_utc/config.do，如果进入时不是设置页面而是登陆页面可以刷新一下多试几次
