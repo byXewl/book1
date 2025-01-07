@@ -7,7 +7,7 @@ Spring Boot version ≤ 2.0.0M4
 Spring Data release trains < Kay-RC3
 
 特征spring，有/api目录
-响应如：
+或者直接形如响应：
 ```
 {
 "_links": {
