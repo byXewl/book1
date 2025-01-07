@@ -23,3 +23,4 @@
 然后访问IP/ws_utc/css/config/keystore/[时间戳]_[文件名]，即可执行webshell
 (flag在环境变量里)
 ```
+![](.topwrite/assets/image_1736248492484.png)
