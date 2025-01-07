@@ -785,6 +785,7 @@
             * [Weblogic通用漏洞](Weblogic通用漏洞.md)
             * [Webloginc密文解密](Webloginc密文解密.md)
             * [Weblogic漏洞利用工具](Weblogic漏洞利用工具.md)
+            * [Weblogic任意文件上传漏洞](Weblogic任意文件上传漏洞.md)
         * [JBoss漏洞](JBoss漏洞.md)
         * [Apache漏洞](Apache漏洞.md)
             * [解析漏洞](解析漏洞.md)
