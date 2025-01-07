@@ -330,6 +330,8 @@ namespace{
 
 Laravel开启了Debug模式时，由于Laravel自带的Ignition 组件对file_get_contents()和file_put_contents()函数的不安全使用，攻击者可以通过发起恶意请求，构造恶意Log文件等方式触发Phar反序列化，最终造成远程代码执行。
 
+Laravel <= 8.4.2
+打开配置文件 laravel/config/app.php，找到 'debug’项为true（开启debug模式）
 
 运行exp还需要php，python3，linux环境，下载放在同一级目录下
 使用时只需要修改exp中的URL和命令即可
