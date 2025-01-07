@@ -1,7 +1,10 @@
 跨平台web服务器
-
+回显的nginx，也可能是apche
 ## **Apache解析漏洞**
 <https://blog.csdn.net/qq_41617034/article/details/105069094>
+Apache HTTPD 多后缀解析漏洞
+上传的文件中只要包含.php都能被解析
+
 
 文件的文件名test.php.aaa.bbb
 文件名后缀不属于Apache解析的黑名单，或白名单
