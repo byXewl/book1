@@ -98,5 +98,28 @@ WEB应用程序会把我们写的代码编译为DLL文件存放在Bin文件夹�
 （注：purchase.dll是网站编译的项目名，一般与文件目录对应）
 ```
 
+#### **3、一个web.config示例**
+这个文件包含了目录权限控制、数据库密码等等
+```
+<location path="purchase/orderdetail.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+
+  <authentication mode="Forms" />
+```
+比如我们使用的这套程序中定义了`purchase/orderdetail.aspx`匿名可以访问。
+```
+在web.config中有四种验证模式：
+
+方式	描述
+window	IIS验证，在内联网环境中非常有用
+Passport	微软集中式身份验证，一次登录便可访问所有成员站点，需要收费
+Form	窗体验证，验证帐号/密码，Web编程最佳最流行的验证方式
+None	表示ASP.NET自己根本不执行身份验证，完全依赖IIS身份验证
+```
 
 
