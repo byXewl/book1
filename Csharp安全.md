@@ -109,6 +109,10 @@ WEB应用程序会把我们写的代码编译为DLL文件存放在Bin文件夹�
 我们所关注的也就是Inherits 的值，如上所示他指向了Bin目录下的purchase.dll中Book类的Logout函数
 （注：purchase.dll是网站编译的项目名，一般与文件目录对应）
 ```
+类后端
+![](.topwrite/assets/image_1736307332725.png)
+反编译bin/dll
+![](.topwrite/assets/image_1736307379967.png)
 
 #### **3、一个web.config示例**
 这个文件包含了目录权限控制、数据库密码等等
