@@ -1,5 +1,9 @@
 
 
+在.NET程序中，最容易出现问题的就是权限问题，文件上传apsx，sql注入。
+
+
+
 ### **基础知识：**
 
 ASP.NET开发可以选用两种框架：`ASP.NET Core`与`ASP.NET Framework`
