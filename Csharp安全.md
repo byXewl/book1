@@ -153,3 +153,9 @@ File.Move(sourcePath, destinationPath);
 File.Copy(sourcePath, destinationPath);
 System.IO.File.WriteAllBytes
 ```
+RCE
+```
+cmd
+Process.Start()
+ShellExecute()
+```
