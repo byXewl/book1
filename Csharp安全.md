@@ -163,3 +163,10 @@ SQL注入
 ```
 SQL语句拼接处
 ```
+任意文件读取、目录穿越
+```
+filename为过滤../等
+File 对象的 OpenText 和 OpenRead 方法
+FileStream 对象的 FileMode.Open 和 FileMode.Read
+Response.WriteFile 常用于文件下载
+```
