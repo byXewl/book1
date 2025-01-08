@@ -80,6 +80,7 @@
             * [js原型链](js原型链.md)
             * [nodejs反序列化](nodejs反序列化.md)
         * [其他语言考点](其他语言考点.md)
+        * [Csharp安全](Csharp安全.md)
     * [MISC杂项](MISC杂项.md)
         * [隐写](隐写.md)
             * [常见文件头文件尾](常见文件头文件尾.md)
