@@ -43,7 +43,9 @@ WEB网站，改变代码后不用重启网页。它没用到namespace空间名�
 ```
 aspx：应用程序根目录或子目录，包含web控件与其他
 cs：类文件
-aspx.cs：web窗体后台程序代码文件
+aspx.cs：web窗体后台程序代码文件 
+aspx页面编写前端代码，.aspx.cs页面编写后端代码，后端编译后在bin目录的dll中
+
 ascx：应用程序根目录或子目录,Web 用户控件文件。
 asmx：应用程序根目录或子目录，该文件包含通过 SOAP 方式可用于其他 Web 应用程序的类和方法。
 asax：应用程序根目录，通常是Global.asax
