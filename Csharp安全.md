@@ -238,4 +238,43 @@ Response.WriteFile 常用于文件下载
 ## **0x08、查找路由**
 
 在 .NET Web 项目中，路由定义了 URL 请求如何映射到特定的控制器和操作方法（或者处理程序）。当确定了程序入口点，以及存在风险的不安全函数后，如何访问到存在漏洞的页面呢？Web Forms 项目很简单，直接访问对应的 `xxx.aspx` 即可，其它架构下就需要寻找其路由定义。
+^
+ASP.NET Core 项目路由
+ASP.NET Core 使用 Startup.cs 文件中的 Configure 方法来配置路由。通常你会看到类似如下的代码：
+```
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseRouting();
 
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+    });
+}
+```
+在这里，MapControllerRoute 方法定义了默认的路由模式，你可以在这个 UseEndpoints 方法中查看和定义项目的所有路由。
+
+^
+ASP.NET MVC 项目路由
+在 ASP.NET MVC 项目中，路由通常配置在 RouteConfig.cs 文件中，该文件位于 App_Start 文件夹下：
+```
+public class RouteConfig
+{
+    public static void RegisterRoutes(RouteCollection routes)
+    {
+        routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+        routes.MapRoute(
+            name: "Default",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+        );
+    }
+}
+```
+
+^
+## **0x09、类似注解**
+![](.topwrite/assets/image_1736318681712.png)
