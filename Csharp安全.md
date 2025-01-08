@@ -159,3 +159,7 @@ cmd
 Process.Start()
 ShellExecute()
 ```
+SQL注入
+```
+SQL语句拼接处
+```
