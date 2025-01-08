@@ -60,4 +60,43 @@ soap：应用程序根目录或子目录。soap拓展文件
 
 ^
 ## **代码审计实战思路**
-1、熟悉框架目录
+#### **1、熟悉框架目录配置**
+```
+├─Admin
+├─App_Data  //App_Data文件夹应该包含应用程序的本地数据存储
+├─bin     // 包含应用程序所需的任何预生成的程序集
+├─bootstrap
+├─css
+├─images
+├─img
+├─install
+├─javascript
+├─m
+├─purchase
+├─style
+├─temp
+├─Template
+├─uploads
+└─UserControl
+```
+WEB应用程序会把我们写的代码编译为DLL文件存放在Bin文件夹中，在ASPX文中基本就是一些控件名，所以需要反编译他的DLL来进行审计。
+
+#### **2、一个Logout.aspx示例**
+```
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="Book.Logout" %>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+...
+</html>
+
+在文件头中有这几个参数：
+1.Language="C#" //脚本语言
+2.AutoEventWireup="true" //是否自动关联某些特殊事件
+3.CodeBehind="Logout.aspx.cs" //指定包含与页关联的类的已编译文件的名称
+4.Inherits="Book.Logout" //定义供页继承的代码隐藏类
+
+我们所关注的也就是Inherits 的值，如上所示他指向了Bin目录下的purchase.dll中Book类的Logout函数
+（注：purchase.dll是网站编译的项目名，一般与文件目录对应）
+```
+
+
+
