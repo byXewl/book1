@@ -4,7 +4,7 @@
 
 
 
-### **基础知识：**
+### **0x01、基础知识：**
 
 ASP.NET开发可以选用两种框架：`ASP.NET Core`与`ASP.NET Framework`
 
@@ -20,8 +20,11 @@ WEB网站，改变代码后不用重启网页。它没用到namespace空间名�
 .NET Core 用cshtml居多
 ```
 ^
-## **开发模式：**
-WebForm开发模式。题型最多
+## **0x02、开发模式：**
+三种：WebForm开发模式、MVC 开发模式、ASP.NET Core Razor Pages模式。
+主要就是研究WebForm开发模式
+
+#### **WebForm开发模式**
 ```
 aspx页面显示，通常代码是一些html代码，第一行文件头会显示具体触发功能代码的位置，就可以通过这个位置找到处理的函数。服务器端的动作就是在aspx.cs文件中定义
 .cs是类文件，存放公共类。
@@ -43,7 +46,7 @@ Resources: 存放与特定页面相关的资源文件。
 Web.config: 应用程序的配置文件，用于定义应用程序的设置、连接字符串、路由等。
 ```
 
-MVC 开发模式
+#### **MVC 开发模式**
 
 ASP.NET MVC 是一种基于 MVC 模式的 Web 开发框架，注重分离关注点（Separation of Concerns），即将业务逻辑、用户界面和输入控制分离。具体呈现模式和Java比较类似，在此不做赘述。
 ```
@@ -58,7 +61,7 @@ Bin: 存放编译后的程序集（DLL 文件）和依赖项。
 Global.asax: 应用程序的全局配置文件，用于处理应用程序级别的事件。
 Web.config: 应用程序的配置文件。
 ```
-ASP.NET Core Razor Pages模式
+#### **ASP.NET Core Razor Pages模式**
 ASP.NET Core 是一个跨平台、高性能的开源框架，用于构建现代 Web 应用、云应用和微服务。它整合了 ASP.NET MVC 和 Web API，并具有更好的性能和灵活性。通过 Razor Pages 提供了一种类似 Web Forms 的开发体验，但更轻量。每个页面由一个 Razor 文件（.cshtml）和一个代码隐藏文件（.cshtml.cs）组成，页面逻辑与视图紧密结合。避免了 MVC 中的路由配置复杂性，适合页面数量少的应用，适用于小型项目或单页面应用程序，以及希望简化页面开发的场景。
 ```
 目录结构：
@@ -80,7 +83,7 @@ Properties: 包含项目的属性文件，如 launchSettings.json，用于配置
 
 
 ^
-## **ASP.NET Framework比较关键的文件：**
+## **0x03、ASP.NET Framework比较关键的文件：**
 > web.config:
 
 ```
@@ -98,7 +101,7 @@ Properties: 包含项目的属性文件，如 launchSettings.json，用于配置
 ```
 
 ^
-## **ASP.NET的常见拓展名：**
+## **0x04、ASP.NET的常见拓展名：**
 
 在`%windir%\Microsoft.NET\Framework\v2.0.50727\CONFIG\web.config`中有详细定义，这里提取部分简单介绍。
 
@@ -121,12 +124,12 @@ soap：应用程序根目录或子目录。soap拓展文件
 
 
 ^
-## **代码审计**
+## **0x05、代码审计**
 <https://www.geekby.site/2024/08/dotnet%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E7%B3%BB%E5%88%97%E4%B8%80/>
 
 
 ^
-## **代码审计实战思路**
+## **0x06、代码审计实战思路**
 #### **1、熟悉框架目录配置**
 ```
 ├─Admin
@@ -204,7 +207,7 @@ None	表示ASP.NET自己根本不执行身份验证，完全依赖IIS身份验�
 
 
 ^
-## **代码审计点**
+## **0x07、代码审计点**
 文件上传aspx
 ```
 saveas()
@@ -232,7 +235,7 @@ Response.WriteFile 常用于文件下载
 
 
 ^
-## **查找路由**
+## **0x08、查找路由**
 
 在 .NET Web 项目中，路由定义了 URL 请求如何映射到特定的控制器和操作方法（或者处理程序）。当确定了程序入口点，以及存在风险的不安全函数后，如何访问到存在漏洞的页面呢？Web Forms 项目很简单，直接访问对应的 `xxx.aspx` 即可，其它架构下就需要寻找其路由定义。
 
