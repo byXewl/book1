@@ -143,3 +143,13 @@ None	表示ASP.NET自己根本不执行身份验证，完全依赖IIS身份验�
 ```
 
 
+
+^
+## **代码审计点**
+文件上传aspx
+```
+saveas()
+File.Move(sourcePath, destinationPath);
+File.Copy(sourcePath, destinationPath);
+System.IO.File.WriteAllBytes
+```
