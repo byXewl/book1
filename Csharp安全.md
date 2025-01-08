@@ -85,6 +85,14 @@ soap：应用程序根目录或子目录。soap拓展文件
 ```
 WEB应用程序会把我们写的代码编译为DLL文件存放在Bin文件夹中，在ASPX文中基本就是一些控件名，所以需要反编译他的DLL来进行审计。
 
+发布后目录参考
+```
+-bin
+-Web.config
+-WebForm1.aspx
+```
+
+
 #### **2、一个Logout.aspx示例**
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="Book.Logout" %>
