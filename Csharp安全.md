@@ -12,6 +12,8 @@ WEB应用程序，改变代码后需要重启网页。具有namespace空间名�
 2、WebSite：
 ```
 WEB网站，改变代码后不用重启网页。它没用到namespace空间名称，每个asp页面会转成一个dll。
+.NET Framework 用asp,aspx居多
+.NET Core 用cshtml居多
 ```
 
 ^
