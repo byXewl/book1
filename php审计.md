@@ -130,7 +130,7 @@ include($_GET['file']);
 
 ^
 ## **代码执行**
-eval() assert()
+**eval() assert()**
 ```
 eval() — 把字符串作为PHP代码执行。这个函数一般都是攻击者用的，没什么人会拿这个放到自己的源码里面
 
@@ -141,7 +141,7 @@ PHP 7 ：assert( mixed$assertion, Throwable $exception= ? ) : bool
 assert()会检查指定的 assertion并在结果为 false时采取适当的行动（把字符串 $assertion 作为PHP代码执行）
 ```
 
-preg_replace — 执行一个正则表达式的搜索和替换
+**preg_replace — 执行一个正则表达式的搜索和替换**
 ```
 preg_replace( mixed$pattern, mixed$replacement, mixed$subject, int $limit= -1 , int &$count= ? ) : mixed
 搜索 subject中匹配 pattern的部分，以 replacement进行替换。
@@ -152,7 +152,7 @@ preg_replace("/test/e",$_GET["h"],"jutst test");
 如果我们提交 ?h=phpinfo()，/e就会将h参数当做PHP代码，phpinfo()将会被执行。
 ```
 
-create_function —创建一个匿名（lambda样式）函数
+**create_function —创建一个匿名（lambda样式）函数**
 ```
 语法
 create_function（字符串 $args，字符串 $code）：字符串
@@ -164,7 +164,7 @@ $newfunc('whoami');
 这里就相当于执行了system('whoami')
 ```
 
-array_map — 为数组的每个元素应用回调函数
+**array_map — 为数组的每个元素应用回调函数**
 ```
 语法
 array_map( callable$callback, array $array, array ...$arrays) : array
@@ -179,7 +179,7 @@ $new_array=array_map($arr,$array);
 ?>
 ```
 
-call_user_func — 把第一个参数作为回调函数调用
+**call_user_func — 把第一个参数作为回调函数调用**
 ```
 语法
 call_user_func( callable$callback, mixed$parameter= ? , mixed$...= ? ) : mixed
@@ -193,7 +193,7 @@ call_user_func("assert",$_GET['cmd']);
 通常用来制作变形的PHP一句话后门
 ```
 
-call_user_func_array — 调用回调函数，并把一个数组参数作为回调函数的参数
+**call_user_func_array — 调用回调函数，并把一个数组参数作为回调函数的参数**
 ```
 语法
 call_user_func_array( callable$callback, array $param_arr) : mixed
@@ -220,22 +220,24 @@ call_user_func_array("assert",$array);
 ```
 
 
-array_filter — 使用回调函数过滤数组的元素
+**array_filter — 使用回调函数过滤数组的元素**
 ```
 语法
 array_filter( array $array, callable|null $callback= null, int $mode= 0 ) : array
-遍历 array数组中的每个值，并将每个值传递给 callback回调函数。 如果 callback回调函数返回 true，则将 array数组中的当前值返回到结果 array 数组中。
+遍历 array数组中的每个值，并将每个值传递给 callback回调函数。 
+如果 callback回调函数返回 true，则将 array数组中的当前值返回到结果 array 数组中。
 
-返回结果 array 数组的键名（下标）会维持不变，如果 array参数是索引数组，返回的结果 array 数组键名（下标）可能会不连续。 可以使用 array_values()函数对数组重新索引。
+返回结果 array 数组的键名（下标）会维持不变，如果 array参数是索引数组，
+返回的结果 array 数组键名（下标）可能会不连续。 可以使用 array_values()函数对数组重新索引。
 
-参数¶
+参数
 array
 要遍历的数组
 
 callback
 使用的回调函数
-
-如果没有提供 callback回调函数，将删除数组中 array的所有“空”元素。 有关 PHP 如何判定“空”元素，请参阅 empty()。
+如果没有提供 callback回调函数，将删除数组中 array的所有“空”元素。 
+有关 PHP 如何判定“空”元素，请参阅 empty()。
 
 mode
 决定哪些参数发送到 callback回调的标志：
@@ -243,7 +245,8 @@ mode
 ARRAY_FILTER_USE_KEY- 将键名作为 callback回调的唯一参数，而不是值
 ARRAY_FILTER_USE_BOTH- 将值和键都作为参数传递给 callback回调，而不是仅传递值
 默认值为 0，只传递值作为 callback回调的唯一参数。
-返回值¶
+
+返回值
 返回过滤后的数组。
 
 举个例子
