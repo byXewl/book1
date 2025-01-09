@@ -338,6 +338,9 @@ simplexml_load_string()
 xpath()
 
 
+
+
+
 // 允许加载外部实体
 libxml_disable_entity_loader(false);
 // xml文件来源于数据流
@@ -371,6 +374,26 @@ if(isset($xmlfile)){
     $dom = new DOMDocument();
     $dom->loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
 }
+```
+SimpleXMLElement
+对象
+```
+// 解析 XML 数据
+$xmlData = '<root><element>value</element></root>';
+$xml = new SimpleXMLElement($xmlData);
+
+// 解析 XML 文件 URL
+$xmlUrl = 'http://example.com/example.xml';
+$xml = new SimpleXMLElement($xmlUrl, 0, TRUE);
+此时外链的xml是存在xxe即可。
+
+// 解析 XML 数据并指定解析选项
+$xmlData = '<root><element>value</element></root>';
+$xml = new SimpleXMLElement($xmlData, LIBXML_NOCDATA | LIBXML_NOEMPTYTAG);
+
+// 解析 XML 数据并指定命名空间
+$xmlData = '<root xmlns:ns="http://example.com/ns"><ns:element>value</ns:element></root>';
+$xml = new SimpleXMLElement($xmlData, 0, FALSE, 'http://example.com/ns');
 ```
 
 ## **引发信息泄露的危险函数**
