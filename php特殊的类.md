@@ -30,3 +30,17 @@ eval("echo new FilesystemIterator(getcwd());");
 
 
 ^
+## **存在XXE的类**
+PHP的内置类
+SimpleXMLElement
+对象
+```
+// 解析 XML 数据
+$xmlData = '<root><element>value</element></root>';
+$xml = new SimpleXMLElement($xmlData);
+
+// 解析 XML 文件 
+URL$xmlUrl = 'http://example.com/example.xml';
+$xml = new SimpleXMLElement($xmlUrl, 0, TRUE);
+此时外链的xml是存在xxe即可。
+```
