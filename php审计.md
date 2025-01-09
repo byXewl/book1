@@ -375,6 +375,8 @@ if(isset($xmlfile)){
     $dom->loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
 }
 ```
+
+PHP的内置类
 SimpleXMLElement
 对象
 ```
