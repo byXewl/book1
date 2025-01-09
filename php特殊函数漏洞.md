@@ -50,6 +50,7 @@ preg_replace 函数来将字符串中的大写字母转换为小写字母：
 又因为$_GET传入首字母是非法字符时候会把 .（点号）改成下划线，因此得将\.*换成\S*
 
 所以payload：?\S*=${getFlag()}&cmd=system('ls /'); 
+${getFlag()}不是{${getFlag()}}
 此时getFlag()会被代码执行，调用函数，即可使用cmd。
 ```
 
