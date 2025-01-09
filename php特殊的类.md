@@ -44,3 +44,12 @@ URL$xmlUrl = 'http://example.com/example.xml';
 $xml = new SimpleXMLElement($xmlUrl, 0, TRUE);
 此时外链的xml是存在xxe即可。
 ```
+
+
+^
+## **搜索文件名的类**
+列出当前目录.php结尾有什么文件。
+```
+new GlobIterator("./*.php",0);
+GlobIterator&param=./*.php&param2=0
+```
