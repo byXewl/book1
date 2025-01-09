@@ -10,7 +10,7 @@ preg_replace($pat,$rep,$sub);
 
 
 ^
-正则替换函数
+正则替换函数，第三个参数代码执行情况：
 ```
 function getFlag(){
     @eval($_GET['cmd']);
