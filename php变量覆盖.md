@@ -83,11 +83,12 @@ parse_str($str);
 // 输出解析后的变量
 echo $name; // 输出 Kimi
 echo $age;  // 输出 30
-```
-```
+
 parse_str($str,$arr);
 $arr['name']
 $arr['age']
+```
+```
 $v1 = $_POST['v1'];
 $v3 = $_GET['v3'];
    parse_str($v1,$v2);
