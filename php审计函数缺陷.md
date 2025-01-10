@@ -151,3 +151,14 @@ php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variabl
 ```
 ?ps=${phpinfo()}
 ```
+
+
+^
+## 12、**htmlentities()拿来过滤sql**
+
+**htmlentities()** 并不能转换所有的特殊字符，是转换除了空格之外的特殊字符，且单引号和双引号需要单独控制（通过第二个参数）。第2个参数取值有3种，分别如下：
+* ENT_COMPAT（默认值）：只转换双引号。
+* ENT_QUOTES：两种引号都转换。
+* ENT_NOQUOTES：两种引号都不转换
+
+如果只是ENT_COMPAT的话，可以用单引号进行sql注入。
