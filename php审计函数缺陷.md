@@ -154,7 +154,7 @@ php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variabl
 
 
 ^
-## 12、**htmlentities()拿来过滤sql**
+#### **12、htmlentities()拿来过滤sql**
 
 **htmlentities()** 并不能转换所有的特殊字符，是转换除了空格之外的特殊字符，且单引号和双引号需要单独控制（通过第二个参数）。第2个参数取值有3种，分别如下：
 * ENT_COMPAT（默认值）：只转换双引号。
@@ -163,3 +163,10 @@ php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variabl
 
 如果只是ENT_COMPAT的话，只转义“，可以用单引号进行sql注入。
 如果是ENT_QUOTES，”和'都会转义，此时可以直接传入转义符\，重写闭合进行sql注入。
+
+
+
+^
+#### **13、addslashes()处理过滤**
+作用：在单引号（'）、双引号（"）、反斜线（\）与 NUL（ NULL 字符）字符之前加上反斜线。
+
