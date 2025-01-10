@@ -194,3 +194,12 @@ get_object_vars($this)是获取本类的属性和属性值，做为数组返回�
 
 ^
 #### **eregi函数**
+老php的正则匹配
+```
+$check=eregi('select|insert|update|delete|\*/\/\*|\*|\.\.\/|\.\/|union|into|load_file|outfile'，$str);
+if($check) exit();
+```
+使用00截断即可绕过
+```
+-1/*%00*/union/**/select/**/1,flag,3,4/**/from/**/flag
+```
