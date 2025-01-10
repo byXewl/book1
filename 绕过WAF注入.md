@@ -200,6 +200,14 @@ $res = $conn->query("SELECT `username` FROM ctfshow_users WHERE id = ($id)");
 ?id=222)%20union%20select%20group_concat(table_name)%20from%20mysql.innodb_table_stats%20where%20database_name%20=%20database()%23
 ```
 
+
+^
+类似还有\导致'转义逃逸sql注入
+```
+md5(128, true) //这个true返回二进制的数据结尾就是\，可以转义'。
+
+```
+
 ^
 ## **where后=和like被过滤，用字段名使用正则模糊匹配字段的值**
 需要知道字段名
