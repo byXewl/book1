@@ -177,6 +177,8 @@ php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variabl
 
 ^
 ## **函数突破**
+
+#### **get_object_vars函数**
 ```
 file_put_contents(
     self::EXTERNAL_DIRECTORY . $this->id,
@@ -188,3 +190,7 @@ get_object_vars($this)是获取本类的属性和属性值，做为数组返回�
 ```
 ?name=',)%0a<?php phpinfo();?>//
 ```
+
+
+^
+#### **eregi函数**
