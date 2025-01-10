@@ -24,6 +24,11 @@ h_in.t传参h[in.t
 
 a_b直接传参a_b即可
 ```
+ps:
+```
+i_d=select&i.d=2  
+$_SERVER['REQUEST_URI']  并不会对特殊的符号进行替换
+```
 
 
 ^
