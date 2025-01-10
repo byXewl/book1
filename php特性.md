@@ -28,6 +28,9 @@ ps:
 ```
 i_d=select&i.d=2  
 $_SERVER['REQUEST_URI']  并不会对特殊的符号进行替换
+
+因此对i_d参数的过滤，下面语句可以绕过
+?i_d=-1/**/union/**/select/**/1,flag,3,4/**/from/**/ctf.users&i.d=123
 ```
 
 
