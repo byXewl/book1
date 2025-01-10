@@ -186,5 +186,5 @@ file_put_contents(
 get_object_vars($this)是获取本类的属性和属性值，做为数组返回。
 又写入文件，可以通过闭合，写入shell。
 ```
-?name=',)%0a\<?php phpinfo();?>//
+?name=',)%0a<?php phpinfo();?>//
 ```
