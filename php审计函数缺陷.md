@@ -136,3 +136,18 @@ header（'Location:/error/');
 assert（"(int)$pi ==3")
 ```
 没有使用die ，exit等函数，assert还能执行，$pi直接代码执行。
+
+
+^
+#### **11、未过滤${的可变代码执行**
+```
+ $content = '<?php  $mysql_server_name="'.$local.'";   $mysql_database="'.$data.'";    $mysql_username="'.$user.'";  $mysql_password="'.$ps.'";   ?>';  
+
+file_put_contents($file,$content);
+```
+php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variables.variable.php) 。在PHP中双引号包裹的字符串中可以解析变量，而单引号则不行。 （[\[红日安全\]代码审计](https://www.freebuf.com/column/182130.html)）
+可以发现拼接后的字符串把所有的变量都放到了单引号中，并且在字符串过滤时并没有过滤‘{}’，‘()’和‘$’等非法字符。这样一来漏洞利用方式就很清晰了，通过变量注入可执行代码，再去访问注入代码的php文件即可。
+
+```
+?ps=${phpinfo()}
+```
