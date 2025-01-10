@@ -169,4 +169,6 @@ php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variabl
 ^
 #### **13、addslashes()处理过滤**
 作用：在单引号（'）、双引号（"）、反斜线（\）与 NUL（ NULL 字符）字符之前加上反斜线。
-
+```
+同理，如果配合substr截断，当转义\'后，正好截断到\，此时\可以转义sql的拼接。
+```
