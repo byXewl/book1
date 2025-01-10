@@ -100,7 +100,7 @@ GET：v3=0
 POST: v1=flag=cfcd208495d565ef66e7dff9f98764da
 ```
 
-
+^
 和extract()配合题：
 ```
 $key1 = 0;
