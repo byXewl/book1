@@ -161,4 +161,5 @@ php语言的特性：[PHP可变变量](http://php.net/manual/zh/language.variabl
 * ENT_QUOTES：两种引号都转换。
 * ENT_NOQUOTES：两种引号都不转换
 
-如果只是ENT_COMPAT的话，可以用单引号进行sql注入。
+如果只是ENT_COMPAT的话，只转义“，可以用单引号进行sql注入。
+如果是ENT_QUOTES，”和'都会转义，此时可以直接传入转义符\，重写闭合进行sql注入。
