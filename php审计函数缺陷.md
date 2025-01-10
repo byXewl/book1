@@ -125,3 +125,14 @@ foreach (array('_GET','_POST') as $method) {
 
 msg=1%00' and updatexml(1,concat(0x7e,(select * from flag),0x7e),1))#&limit_words[\0\]=
 ```
+
+
+^
+#### **10、程序在过滤后没有退出，程序还能执行**
+```
+error_log（"Hacking attempt.");
+header（'Location:/error/');
+
+assert（"(int)$pi ==3")
+```
+没有使用die ，exit等函数，assert还能执行，$pi直接代码执行。
