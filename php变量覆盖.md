@@ -84,7 +84,7 @@ parse_str($str);
 echo $name; // 输出 Kimi
 echo $age;  // 输出 30
 
-parse_str($str,$arr);
+parse_str($str,$arr);   //将把值存在数组里
 $arr['name']
 $arr['age']
 ```
