@@ -33,6 +33,7 @@
                 * [session反序列化](session反序列化.md)
                 * [php的yaml_parse反序列化](php的yaml_parse反序列化.md)
                 * [php框架漏洞](php框架漏洞.md)
+                * [数组反序列化](数组反序列化.md)
             * [文件包含](文件包含.md)
                 * [php伪协议](php伪协议.md)
                 * [文件包含利用方式](文件包含利用方式.md)
