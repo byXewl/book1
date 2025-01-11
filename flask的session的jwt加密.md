@@ -58,3 +58,12 @@ python flask_session_cookie_manager3.py encode -s "ckj123" -t  "{'_fresh': True,
 
 
 最后抓包替换即可。
+
+
+^
+## **爆破SECRET_KEY**
+用flask-unsign爆破SECRET_KEY
+或./jwtcrack
+
+
+
