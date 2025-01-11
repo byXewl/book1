@@ -194,6 +194,7 @@ var_dump($C);
 var_dump(base64_encode($C));
 //string(68) "TzorNDoiRGVtbyI6Mjp7czoxMDoiAERlbW8AZmlsZSI7czo4OiJmbDRnLnBocCI7fQ=="
 ```
+有时private可以直接改public方便赋值。
 
 ^
 反序列化时绕过__wakeup()方法执行
