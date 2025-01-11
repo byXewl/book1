@@ -67,7 +67,7 @@ python flask_session_cookie_manager3.py encode -s "ckj123" -t  "{'_fresh': True,
 pip311 install flask-unsign[wordlist]
 
 
-flask-unsign --unsign -e eyJ.... --wordlist key.txt
+flask-unsign --unsign -c eyJ1c2VybmFtZSI6ImxieiJ9.ZoO6sQ.1qmeqKQDnxZyPqeCWGtw_50wWss --wordlist key1.txt
 
 自动破解
 flask-unsign --decode --cookie 'eyJ1c2VybmFtZSI6ImxieiJ9.ZoO6sQ.1qmeqKQDnxZyPqeCWGtw_50wWss'
