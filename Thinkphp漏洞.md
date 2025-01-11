@@ -225,3 +225,8 @@ insert是直接替换的字符串，使用如下触发sql注入
 /index/index/index?username[0]=point&username[1]=1&username[2]=updatexml(1,concat(0x7,user(),0x7e),1)^&username[3]=0
 ```
 需要开启app_debug才能看到报错注入。
+
+
+^
+## **ThinkPHP5全版本 sql注入**
+
