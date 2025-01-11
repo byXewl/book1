@@ -240,6 +240,13 @@ class Index
     {
         $username = request()->get('username');
         $result = db('users')->where('username','exp',$username)->select(); //触发条件
+
+        
+//这里的`'exp'`是一个特殊的关键字，表示后面的`$username`是一个原生的SQL表达式，而不是一个普通的值。
+//也就是说，会直接将`$username`的内容作为SQL语句的一部分来执行，而不是作为参数进行值替换。
+
+
+
         return 'select success';
     }
 }
