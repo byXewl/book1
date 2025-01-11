@@ -212,3 +212,5 @@ os.'''
 pickletools.dis(opcode)
 print(base64.b64encode(opcode)) #对反弹shell进行unicode即可。
 ```
+![](.topwrite/assets/image_1736578398139.png)
+参考：<https://blog.csdn.net/your_friends/article/details/126979899>
