@@ -73,9 +73,21 @@ flask-unsign --unsign -e eyJ.... --wordlist key.txt
 flask-unsign --decode --cookie 'eyJ1c2VybmFtZSI6ImxieiJ9.ZoO6sQ.1qmeqKQDnxZyPqeCWGtw_50wWss'
 自动破解并输出密钥
 flask-unsign --unsign --cookie 'eyJ1c2VybmFtZSI6ImxieiJ9.ZoO6sQ.1qmeqKQDnxZyPqeCWGtw_50wWss'
-
 ```
 或./jwtcrack
 
+
+
+^
+字典生成
+列如：os.urandom(2).hex()会生成长度为4的字符串
+```
+import os
+file_path='./key.txt'
+with open(file_path, 'w') as f:
+    for i in range(1,9999):
+        key = os.urandom(2).hex()
+        f.write("\"{}\"\n".format(key))
+```
 
 
