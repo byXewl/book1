@@ -2,6 +2,8 @@
 <https://www.cnblogs.com/murkuo/p/15174413.html>
 先获取session的解密原session。
 python ctf/flask_decode.py   .eJw9kE-xxx
+
+session.get('a')  即 session['a'] 即 jwt令牌中的a参数。
 ```
 #!/usr/bin/env python3
 import sys
