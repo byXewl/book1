@@ -19,7 +19,7 @@ pin码是flask在开启debug模式下，进行代码调试模式所需的进入�
 5.uuidnode mac地址的十进制
 ```
 任意文件读/sys/class/net/ethe/address或
-/sys/class/net/ens33/address 去掉冒号后int(“c2f233c6de75”,16)转换为十进制
+/sys/class/net/ens33/address 去掉冒号后int("c2f233c6de75",16)转换为十进制
 ```
 6.machine_id 机器码 
 ```
