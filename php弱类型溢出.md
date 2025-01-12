@@ -106,7 +106,7 @@ md5("NAN") === md5(NAN)
 ^
 **数据库中的MD5造成注入：**
 ```
-select * from 'admin' where password=md5($pass,true)
+select * from 'admin' where password=md5($pass,true) //开启true返回md5二进制
 ```
 ```
 <?php
