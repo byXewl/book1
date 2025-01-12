@@ -18,8 +18,23 @@ pin码是flask在开启debug模式下，进行代码调试模式所需的进入�
 4.moddir flask库下app.py的绝对路径,可以通过报错拿到,如传参的时候给个不存在的变量
 5.uuidnode mac地址的十进制,任意文件读/sys/class/net/ethe/address
 6.machine_id 机器码 这个待会细说,一般就生成pin码不对就是这错了
+```
+machine-id 基于不同版本有不同的算法
+
+在werkzeug 1.0.0rc1之前为:
+docker环境: /proc/self/cgroup里面…/docker/后面的内容
+非docker: /etc/machine-id或/proc/sys/kernel/random/boot_id的内容
+
+在werkzeug 1.0.0rc1及之后为:
+/etc/machine-id或/proc/sys/kernel/random/boot_id
++
+/proc/self/cgroup
+生成pin码也有md5和sha1算法两种
+```
 然后通过程序生成pin
-控制台利用：
+
+^
+## **控制台利用**
 ```
 os.popen("ls -l /").read()
 os.popen("cat /this_is_the_flag.txt").read()
