@@ -129,6 +129,7 @@ password字段可能会顺带解密
 --skip="user-agent referer"  跳过注入
 
 --threads 10  默认1，设置为10线程方便脱裤
+--time-sec 10 延时盲注时间，默认5
 ```
 
 ^
