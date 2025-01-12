@@ -105,7 +105,24 @@ local-file://绝对路径 或 local-file://flag.txt
 gopher://
 
 
+## **传参类型不同，值同**
+```
+if params.get("username") == params.get("password"):
+    self.send_response(403)
+    self.end_headers()
+    self.wfile.write(b"YOU CANNOT LOGIN WITH SAME USERNAME AND PASSWORD!")
+    print("same")
+    return
+hashed = gethash(params.get("username"), params.get("password"))
+for k, v in hashed_users.items():
+```
+一个字符串类型，一个数值即可
+```
+{"username":"1","password":1}
+```
 
+
+^
 ^
 ## **python反序列化**
 python中反序列化的库主要有两个，`pickle`和`cPickle`，这俩除了运行效率上有区别外，其他没啥区别
