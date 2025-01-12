@@ -217,7 +217,7 @@ print(base64.b64encode(opcode)) #对反弹shell进行unicode即可。
 
 
 ^
-#### **传python马**
+#### **传python内存马**
 ```
 import pickle
 import base64
