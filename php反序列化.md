@@ -87,7 +87,7 @@ public function __call($name, $arguments) { $this->{$name} ;}
 //$name为不可访问的方法名 ,这里方法里的$this->{$name}，意味着调用一个同名的不可访问方法名字的属性
 
 
-__set()                  //在给不可访问属性赋值时触发
+
 __isset()                //当对不可访问属性调用 isset() 或 empty() 时触发
 __unset()                //在不可访问的属性上使用unset()时触发
 __invoke()               //当尝试以调用函数的方式调用一个对象时触发，如new A()时。同时也可以传参给__invoke()
@@ -96,6 +96,11 @@ __wakeup()               //执行unserialize()时，先会调用这个方法
 __unserialize()         //和 __wakeup()类似，如果类中同时定义了 __unserialize() 和 __wakeup() 两个魔术方法，
 则只有 __unserialize() 方法会生效，__wakeup() 方法会被忽略。
 __toString()             //当反序列化后的对象被输出在模板中的时候（转换成字符串的时候）自动调用
+
+__set()                  //在给不可访问属性赋值时触发
+类中没有dangerous属性，有__set方法。
+$a->dangerous    
+public function __set($a, $b) //这里的$b就是dangerous。
 ```
 代码审计搜索：
 unserialize
