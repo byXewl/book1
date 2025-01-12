@@ -16,11 +16,13 @@ pin码是flask在开启debug模式下，进行代码调试模式所需的进入�
 2.modname 默认 flask.app
 3.appname 默认Flask
 4.moddir flask库下app.py的绝对路径,可以通过报错拿到,如传参的时候给个不存在的变量，乱传ssti
-5.uuidnode mac地址的十进制
+5.uuidnode mac地址的十进制，一定要先去:再转10进制。
 ```
 任意文件读/sys/class/net/eth0/address或具体ls查看
 /sys/class/net/eth0/address
-/sys/class/net/ens33/address 去掉冒号后int("c2f233c6de75",16)转换为十进制
+/sys/class/net/ens33/address 
+c6:f0:91:cb:86:e4
+去掉冒号后int("c6f091cb86e4",16)转换为十进制
 ```
 6.machine_id 机器码 
 ```
