@@ -25,6 +25,7 @@ pin码是flask在开启debug模式下，进行代码调试模式所需的进入�
 6.machine_id 机器码 
 ```
 machine-id 基于不同版本有不同的算法
+machine_id由三个合并(docker就后两个)：1./etc/machine-id 2./proc/sys/kernel/random/boot_id 3./proc/self/cgroup
 
 在werkzeug 1.0.0rc1之前为:
 docker环境: /proc/self/cgroup里面…/docker/后面的内容
@@ -34,6 +35,7 @@ docker环境: /proc/self/cgroup里面…/docker/后面的内容
 /etc/machine-id或/proc/sys/kernel/random/boot_id
 +
 /proc/self/cgroup
+
 生成pin码也有md5和sha1算法两种
 ```
 然后通过程序生成pin
