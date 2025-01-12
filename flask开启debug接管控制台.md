@@ -15,7 +15,7 @@ pin码是flask在开启debug模式下，进行代码调试模式所需的进入�
 1.username在可以任意文件读的条件下读/etc/passwd进行猜测
 2.modname 默认 flask.app
 3.appname 默认Flask
-4.moddir flask库下app.py的绝对路径,可以通过报错拿到,如传参的时候给个不存在的变量
+4.moddir flask库下app.py的绝对路径,可以通过报错拿到,如传参的时候给个不存在的变量，乱传ssti
 5.uuidnode mac地址的十进制
 ```
 任意文件读/sys/class/net/ethe/address或具体ls查看
