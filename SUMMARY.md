@@ -356,7 +356,6 @@
             * [flask](flask.md)
             * [django](django.md)
         * [py项目依赖管理](py项目依赖管理.md)
-    * [go](go.md)
     * [安卓](安卓.md)
         * [adb](adb.md)
             * [AS通过adb连接虚拟机调试](AS通过adb连接虚拟机调试.md)
@@ -401,7 +400,6 @@
         * [异步编程](异步编程.md)
         * [OAuth](OAuth.md)
         * [微服务](微服务.md)
-    * [POC](POC.md)
 * [中间件基础](中间件基础.md)
     * [apache](apache.md)
         * [apache配置文件](apache配置文件.md)
@@ -1204,11 +1202,4 @@
         * [ARP攻击](ARP攻击.md)
         * [DNS劫持](DNS劫持.md)
     * [靶机常见思路](靶机常见思路.md)
-
-## 法律法规
-* [网安法律法规](网安法律法规.md)
-* [等级保护](等级保护.md)
-* [重保服务](重保服务.md)
-* [网安大事件](网安大事件.md)
-* [数据安全](数据安全.md)
 
