@@ -248,6 +248,7 @@ fun=assert($a[0])
 ```
 
 ^
+## **call_user_func调用无字母函数**
 ## **_()函数gettext()函数和get_defined_vars函数**
 当php扩展目录下有php_gettext.dll时，_()是一个函数等同gettext()函数。
 并且gettext("get_defined_vars");会返会get_defined_vars。
