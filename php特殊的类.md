@@ -7,6 +7,10 @@ var_dump(get_class_vars('ctfshow'));
 
 反射获取类信息
 echo new ReflectionClass('ctfshow');
+
+
+
+get_object_vars($this)是获取本类的属性和属性值，做为数组返回。
 ```
 
 ## **eval和new类结合**
