@@ -139,7 +139,7 @@ b[s]=03c7c0ace395d80182db07ae2c30f034
 ## **sha哈希**
 和md5类似，
 
-以下值在sha1加密后以oE开头：
+以下值在sha1加密后以0E开头：
 ```
 sha1('aaroZmOk')
 sha1('aaK1STfY')
