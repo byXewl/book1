@@ -1,3 +1,13 @@
+^
+## **flag在某个类的属性里**
+代码执行
+```
+要读取一个类信息
+var_dump(get_class_vars('ctfshow'));
+
+反射获取类信息
+echo new ReflectionClass('ctfshow');
+```
 
 ## **eval和new类结合**
 ```
