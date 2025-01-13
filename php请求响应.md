@@ -30,6 +30,7 @@ $headers = (array)json_decode($input)->headers;
 $email = filter_input(INPUT_POST, 'email',FILTER_VALIDATE_EMAIL);
 filter_input()用于从外部变量（如$_GET、$_POST、$_COOKIE、$_SERVER、$_ENV、$_REQUEST）中获取输入，并应用过滤器对输入进行处理。
 可能被模仿邮箱地址绕过sql注入:'union/**/select/**/username/**/from/**/user#@qq.com
+123@qq.com' UNION SELECT * FROM admin WHERE 1=1 #
 
 
 
