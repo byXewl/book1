@@ -65,5 +65,5 @@ $xml = new SimpleXMLElement($xmlUrl, 0, TRUE);
 列出当前目录.php结尾有什么文件。
 ```
 new GlobIterator("./*.php",0);
-GlobIterator&param=./*.php&param2=0
+?a=GlobIterator&param=./*.php&param2=0
 ```
