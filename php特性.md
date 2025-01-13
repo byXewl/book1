@@ -210,6 +210,7 @@ Payload：
 ```
 
 ## **$_SERVER['argv']**
+获取参数
 ```
 对于GET传参：?a=b+fl0g=flag_give_me
 $a=$_SERVER['argv']; //为数组 
