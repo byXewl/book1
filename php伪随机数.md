@@ -21,6 +21,7 @@ echo mt_rand();
 
 ^
 ## **爆破题**
+解密生成的随机串
 ```
 $_SESSION['seed']=rand(0,999999999);
 mt_srand($_SESSION['seed']);
