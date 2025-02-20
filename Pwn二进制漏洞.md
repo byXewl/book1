@@ -39,6 +39,16 @@ get()函数的栈溢出，修改某个变量值，调用某个函数
 ROP链
 ```
 <https://www.bilibili.com/video/BV1ub4y1F71R/?spm_id_from=333.337.search-card.all.click&vd_source=972491eeb83c0ed4c0015aef1be6c537>
+
+ROP返回导向编程
+```
+ROP的原理是利用程序内存中已存在的以返回指令结尾的指令序列（gadgets）来控制程序执行流程。攻击者通过缓冲区溢出或其他方式在栈上布置数据，覆盖返回地址为gadgets的地址，从而我们可以实现代码注入。
+
+ROP不需要在栈上执行任何新的代码，只需要利用现有的代码，所以可以绕过NX保护。
+
+ROP需要精心选择和拼接gadgets，以实现所需的功能。
+```
+
 ## **CTF题**
 利用系统漏洞，编写脚本获取服务器shell，再获取flag。
 出题人给出服务器的ip和端口，端口上运行一个进程，
