@@ -42,5 +42,6 @@ hook `okhttp3` `java.net.HttpURLConnection` `java.net.URL` 三个常见请�
 
 jadx也可以快速右键复制hook函数代码。
 
-adb进入任意activity页面。
+adb进入任意暴露的activity页面。
+![](.topwrite/assets/image_1740222448645.png)
 ![](.topwrite/assets/image_1740222329220.png)
