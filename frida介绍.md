@@ -40,4 +40,7 @@ Interceptor.attach(Module.findExportByName("libexample.so", "example_func"), {
 hook `okhttp3` `java.net.HttpURLConnection` `java.net.URL` 三个常见请求库，
 如：发现捕获到的所有请求均来自`java.net.URL`。
 
-jadx也可以快速右键复制hook函数代码
+jadx也可以快速右键复制hook函数代码。
+
+进入任意activity页面。
+![](.topwrite/assets/image_1740222329220.png)
