@@ -43,7 +43,7 @@ _CRT_SECURE_NO_WARNINGS
 
 
 ^
-#### 显示格式和创建文件夹目录：
+#### 目录显示格式和创建文件夹：
 ![](.topwrite/assets/image_1740194273248.png)
 
 
