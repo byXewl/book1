@@ -7,7 +7,7 @@
 如果java的mysql的jdbc连接信息可以自定义，可以修改mysql的ip和连接配置如：
 ```
 test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
-jdbc:mysql://47.109.58.205:3306/test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
+jdbc:mysql://1.92.88.247:3306/test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
 root
 password
 
