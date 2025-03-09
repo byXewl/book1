@@ -42,6 +42,8 @@ select * from mysql.user     #查看数据库所有用户权限，和加密后�
 mysql5.0以上information_schema库：
 纪录了数据库中所有库名，表名，字段名。
 ```
+select(group_concat(schema_name))from(information_schema.schemata)
+
 进入库查表 use information_schema;
 进入不了库使用 库名.表名 查询。
 
