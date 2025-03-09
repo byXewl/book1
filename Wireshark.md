@@ -1,6 +1,6 @@
 网络封包分析软件
 Wireshark只能查看封包，不能修改封包内容或者发送封包。
-可以监听查看网卡的包，或者手动导入数据包.cap/.pcap/.pcapng(由网络数据包捕获工具Wireshark、tcpdump 等生成)。
+可以监听查看网卡的包，或者手动导入数据包.cap/.pcap/.pcapng(由网络数据包捕获工具Wireshark、tcpdump等生成)。
 流量包可能是http,tcp,dns,mysql等。
 
 linux的Tshark
@@ -163,3 +163,8 @@ mysql
 sql注入
 http.request.uri contains "select"
 ![](.topwrite/assets/image_1729044627557.png)
+
+
+^
+dnslog
+域名中的可控部分 可能出现敏感编码信息
