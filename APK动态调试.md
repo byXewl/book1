@@ -60,8 +60,8 @@ am start -n 表示启动一个activity
 am start -D 表示将应用设置为可调试模式
 
 ### 5.Jeb附加调试进程
-
-激活jeb
+**激活jeb：**
+<https://www.52pojie.cn/thread-1598242-1-1.html>
 
 在线python运行
 [https://tool.lu/coderunner/](https://tool.lu/coderunner/)
