@@ -135,6 +135,8 @@ raw_input("Enter to Exit...")
 ```
 ^
 ### **jeb使用**
+jeb.bat启动，将安装包apk拖入。
+
 底部快捷字符搜索，字符常量。
 字符常量，右键解析，跳转java代码。
 java代码，双击进入函数。
