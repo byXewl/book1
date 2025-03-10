@@ -11,8 +11,7 @@ Dalvik是Google专门为Android设计的一个虚拟机，Dalvik有专属的文�
 Art(Android Runtime)相当于Dalvik的升级版，本质与Dalvik无异
 
 ## 2.smali及其语法
-
-[](https://github.com/ZJ595/AndroidReverse/blob/main/Article/03%E7%AC%AC%E4%B8%89%E8%AF%BE%E3%80%81%E5%88%9D%E8%AF%86smali%EF%BC%8Cvip%E7%BB%88%E7%BB%93%E8%80%85%EF%BC%8C%E4%B8%80%E9%94%AE%E4%B8%89%E8%BF%9E.md#2smali%E5%8F%8A%E5%85%B6%E8%AF%AD%E6%B3%95)
+通过jadx反编译是java代码可以读，但是要实际修改是修改的smali代码。
 
 smali是Dalvik的寄存器语言，smali代码是dex反编译而来的。
 
