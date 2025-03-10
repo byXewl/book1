@@ -33,6 +33,7 @@ Interceptor.attach(Module.findExportByName("libexample.so", "example_func"), {
 ## **Frida操作**
 快速入门操作：<https://www.freebuf.com/articles/system/190565.html>
 功能：打印定位，中间截取数据篡改等。
+配合算法助手的hook日志，继续hook。
 实现：重写方法、重载方法，RPC，实例找到类中所有方法并调用。
 
 
