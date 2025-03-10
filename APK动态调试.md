@@ -45,9 +45,8 @@ android:debuggable="true"
 
 夜神模拟器：adb connect 127.0.0.1:62001
 
-### 3.下段点
-
-
+### 3.jeb下断点
+jeb中
 ctrl+b下断点 
 
 ### 4.debug模式启动
