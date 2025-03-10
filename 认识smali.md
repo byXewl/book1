@@ -15,6 +15,7 @@ Art(Android Runtime)相当于Dalvik的升级版，本质与Dalvik无异
 jadx可以搜索汉字，汉字的unicode，英文，来定位。
 jadx底部可以转成smali代码。
 
+修正：再MT管理器查看安装包，使用Dex编辑器++，进行修改。
 
 smali是Dalvik的寄存器语言，smali代码是dex反编译而来的。
 
