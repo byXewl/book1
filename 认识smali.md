@@ -76,7 +76,107 @@ smali是Dalvik的寄存器语言，smali代码是dex反编译而来的。
 例子：
 
 ```
-//一个私有、静态、不可变的方法   方法名.method private static final onCreate$lambda-2(Lkotlin/jvm/internal/Ref$IntRef;Lcom/zj/wuaipojie/ui/ChallengeSecond;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/view/View;)Z //(这里面是方法的参数)这里是方法返回值类型，表示布尔值类型，返回假或真    .registers 7  //寄存器数量    .line 33  //代码所在的行数    iget p0, p0, Lkotlin/jvm/internal/Ref$IntRef;->element:I  //读取p0(第一个参数，参考寄存器知识)中element的值赋值给p0    const/4 p5, 0x1  //p5赋值1    const/16 v0, 0xa //v0赋值10，在16进制里a表示10    if-ge p0, v0, :cond_15  //判断p0的值是否大于或等于v0的值(即p0的值是否大于或等于10)，如果大于或等于则跳转到:cond_15    .line 34  //以下是常见的Toast弹窗代码    check-cast p1, Landroid/content/Context; //检查Context对象引用    const-string p0, "请先获取10个硬币哦" //弹窗文本信息，把""里的字符串数据赋值给p0    check-cast p0, Ljava/lang/CharSequence; //检查CharSequence对象引用    invoke-static {p1, p0, p5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;    //将弹窗文本、显示时间等信息传给p1    move-result-object p0  //结果传递给p0    invoke-virtual {p0}, Landroid/widget/Toast;->show()V  //当看到这个Toast;->show你就应该反应过来这里是弹窗代码    goto :goto_31  //跳转到:goto_31    :cond_15 //跳转的一个地址    invoke-virtual {p1}, Lcom/zj/wuaipojie/ui/ChallengeSecond;->isvip()Z  //判断isvip方法的返回值是否为真(即结果是否为1)    move-result p0  //结果赋值给p0    if-eqz p0, :cond_43 //如果结果为0则跳转cond_43地址    const p0, 0x7f0d0018  //在arsc中的id索引，这个值可以进行查询    .line 37    invoke-virtual {p2, p0}, Landroid/widget/ImageView;->setImageResource(I)V //设置图片资源    const p0, 0x7f0d0008    .line 38    invoke-virtual {p3, p0}, Landroid/widget/ImageView;->setImageResource(I)V    const p0, 0x7f0d000a    .line 39    invoke-virtual {p4, p0}, Landroid/widget/ImageView;->setImageResource(I)V    .line 40    sget-object p0, Lcom/zj/wuaipojie/util/SPUtils;->INSTANCE:Lcom/zj/wuaipojie/util/SPUtils;    check-cast p1, Landroid/content/Context;    const/4 p2, 0x2 //p2赋值2    const-string p3, "level" //sp的索引    invoke-virtual {p0, p1, p3, p2}, Lcom/zj/wuaipojie/util/SPUtils;->saveInt(Landroid/content/Context;Ljava/lang/String;I)V //写入数据    goto :goto_50 //跳转地址    :cond_43    check-cast p1, Landroid/content/Context;    const-string p0, "\u8bf7\u5148\u5145\u503c\u5927\u4f1a\u5458\u54e6\uff01" //请先充值大会员哦！    check-cast p0, Ljava/lang/CharSequence;    invoke-static {p1, p0, p5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;    move-result-object p0    invoke-virtual {p0}, Landroid/widget/Toast;->show()V    :goto_50    return p5  //返回p5的值.end method //方法结束//判断是否是大会员的方法.method public final isvip()Z    .registers 2    const/4 v0, 0x0 //v0赋值0    return v0 //返回v0的值.end method
+//一个私有、静态、不可变的方法   方法名
+.method private static final onCreate$lambda-2(Lkotlin/jvm/internal/Ref$IntRef;Lcom/zj/wuaipojie/ui/ChallengeSecond;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/view/View;)Z //(这里面是方法的参数)这里是方法返回值类型，表示布尔值类型，返回假或真
+    .registers 7  //寄存器数量
+
+    .line 33  //代码所在的行数
+    iget p0, p0, Lkotlin/jvm/internal/Ref$IntRef;->element:I  //读取p0(第一个参数，参考寄存器知识)中element的值赋值给p0
+
+    const/4 p5, 0x1  //p5赋值1
+
+    const/16 v0, 0xa //v0赋值10，在16进制里a表示10
+
+    if-ge p0, v0, :cond_15  //判断p0的值是否大于或等于v0的值(即p0的值是否大于或等于10)，如果大于或等于则跳转到:cond_15
+
+    .line 34  //以下是常见的Toast弹窗代码
+    check-cast p1, Landroid/content/Context; //检查Context对象引用
+
+    const-string p0, "请先获取10个硬币哦" //弹窗文本信息，把""里的字符串数据赋值给p0
+
+    check-cast p0, Ljava/lang/CharSequence; //检查CharSequence对象引用
+
+    invoke-static {p1, p0, p5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast; 
+    //将弹窗文本、显示时间等信息传给p1
+
+    move-result-object p0  //结果传递给p0
+
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V  //当看到这个Toast;->show你就应该反应过来这里是弹窗代码
+
+    goto :goto_31  //跳转到:goto_31
+
+    :cond_15 //跳转的一个地址
+    
+    invoke-virtual {p1}, Lcom/zj/wuaipojie/ui/ChallengeSecond;->isvip()Z  //判断isvip方法的返回值是否为真(即结果是否为1)
+  
+    move-result p0  //结果赋值给p0
+  
+    if-eqz p0, :cond_43 //如果结果为0则跳转cond_43地址
+    
+    const p0, 0x7f0d0018  //在arsc中的id索引，这个值可以进行查询
+
+    .line 37
+    invoke-virtual {p2, p0}, Landroid/widget/ImageView;->setImageResource(I)V //设置图片资源
+
+    const p0, 0x7f0d0008
+
+    .line 38
+    invoke-virtual {p3, p0}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const p0, 0x7f0d000a
+
+    .line 39
+    invoke-virtual {p4, p0}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 40
+    sget-object p0, Lcom/zj/wuaipojie/util/SPUtils;->INSTANCE:Lcom/zj/wuaipojie/util/SPUtils; 
+
+    check-cast p1, Landroid/content/Context;
+
+    const/4 p2, 0x2 //p2赋值2
+
+    const-string p3, "level" //sp的索引
+
+    invoke-virtual {p0, p1, p3, p2}, Lcom/zj/wuaipojie/util/SPUtils;->saveInt(Landroid/content/Context;Ljava/lang/String;I)V //写入数据
+
+    goto :goto_50 //跳转地址
+    
+    :cond_43
+  
+    check-cast p1, Landroid/content/Context;
+  
+  
+    const-string p0, "\u8bf7\u5148\u5145\u503c\u5927\u4f1a\u5458\u54e6\uff01" //请先充值大会员哦！
+  
+  
+    check-cast p0, Ljava/lang/CharSequence;
+  
+  
+    invoke-static {p1, p0, p5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+  
+  
+    move-result-object p0
+
+
+  
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+  
+  
+    :goto_50
+    return p5  //返回p5的值
+.end method //方法结束
+
+
+//判断是否是大会员的方法
+.method public final isvip()Z
+    .registers 2
+    
+    const/4 v0, 0x0 //v0赋值0
+    
+    return v0 //返回v0的值
+    
+.end method
+
 ```
 
 修改方法：修改判断、强制跳转、修改寄存器的值
