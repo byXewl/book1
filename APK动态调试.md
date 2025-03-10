@@ -13,10 +13,8 @@ android:debuggable="true"
 ```
 
 方法二：XappDebug模块hook对应的app
-
-项目地址
-
-[XappDebug](https://github.com/Palatis/XAppDebug)
+项目地址[XappDebug](https://github.com/Palatis/XAppDebug)
+记得重启即可开启debug
 
 方法三：Magisk命令(重启失效)
 
