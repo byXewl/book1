@@ -28,7 +28,7 @@ android:debuggable="true"
 4.  stop;start; #一定要通过该方式重启
 ```
 
-方法四:刷入MagiskHide Props Config模块(永久有效，但我这两台手机都不行，哭死，呜呜呜)
+方法四:刷入MagiskHide Props Config模块(永久有效，但我这两台手机都不行)
 
 一般来说，在4选项中如果有ro.debuggable那就直接修改
 没有的话就选5
@@ -46,7 +46,7 @@ android:debuggable="true"
 ### 3.下段点
 
 
-ctrl+b下断点
+ctrl+b下断点 
 
 ### 4.debug模式启动
 
