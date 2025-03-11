@@ -87,8 +87,11 @@ ctrl+b
 
 定义：Log插桩指的是反编译APK文件时，在对应的smali文件里，添加相应的smali代码，将程序中的关键信息，以log日志的形式进行输出。
 
-调用命令
+1、将特定dex文件加入apk里，并命令为classes2.dex。
+![](.topwrite/assets/image_1741673968111.png)
+2、在目标dex中使用dex编辑器搜索定位到想要查看的变量寄存器，如v0，再下方插入如下代码。
 ```
 invoke-static {对应寄存器}, Lcom/mtools/LogUtils;->v(Ljava/lang/Object;)V
+invoke-static {v0}, Lcom/mtools/LogUtils;->v(Ljava/lang/Object;)V
 ```
 
