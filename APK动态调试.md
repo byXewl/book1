@@ -95,3 +95,4 @@ invoke-static {对应寄存器}, Lcom/mtools/LogUtils;->v(Ljava/lang/Object;)V
 invoke-static {v0}, Lcom/mtools/LogUtils;->v(Ljava/lang/Object;)V
 ```
 
+3、打包运行，用算法助手进行log捕获。
