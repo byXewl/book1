@@ -85,7 +85,11 @@ Xposed是一款可以在不修改APK的情况下影响程序运行的框架，�
 implementation 使用该方式依赖的库将会参与编译和打包
 compileOnly 只在编译时有效，不会参与打包
 ```
-6.新建-->Folder-->Assets Folder，创建xposed_init(不要后缀名):只有一行代码，就是说明入口类
+6.新建src/main/assets目录，创建xposed_init(不要后缀名):只有一行代码，就是说明入口类
+类似com.example.xposeddemo.Hook
+
+![](.topwrite/assets/image_1741684189503.png)
+
 7.新建Hook类，实现IXposedHookLoadPackage接口，然后在handleLoadPackage函数内编写Hook逻辑
 ```java
 import de.robv.android.xposed.IXposedHookLoadPackage; 
