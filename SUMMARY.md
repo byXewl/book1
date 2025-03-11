@@ -501,7 +501,7 @@
             * [修改弹窗布局](修改弹窗布局.md)
             * [APK动态调试](APK动态调试.md)
             * [APK签名对抗](APK签名对抗.md)
-            * [xposed的hook](xposed的hook.md)
+            * [xposed的插件hook](xposed的插件hook.md)
 * [工具脚本](工具脚本.md)
     * [常用脚本](常用脚本.md)
     * [谷歌插件](谷歌插件.md)
