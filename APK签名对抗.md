@@ -375,6 +375,8 @@ Java_com_zj_wuaipojie_util_SecurityUtil_hook(JNIEnv *env, jclass clazz, jobject 
     invoke-static {p10}, Lcom/zj/wuaipojie/util/SecurityUtil;->hook(Landroid/content/Context;)V
 ```
 
+在apk的文件存储目录里，建一个files目录，里面放原来正常的apk包命名为base.apk。
+
 ## 7.其他常见校验
 
 
