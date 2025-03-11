@@ -52,8 +52,7 @@ jeb中
 ctrl+b下断点 
 
 ### 4.debug模式启动
-
-
+终端
 ```
 adb shell am start -D -n com.zj.wuaipojie/.ui.MainActivity
 ```
@@ -62,12 +61,12 @@ adb shell am start -D -n 包名/类名
 am start -n 表示启动一个activity
 am start -D 表示将应用设置为可调试模式
 
-### 5.Jeb附加调试进程
-**激活jeb：**
-<https://www.52pojie.cn/thread-1598242-1-1.html>
+此时返回jeb点击debug按钮运行
 
 ^
-### **jeb使用**
+### 5.jeb使用
+激活jeb：<https://www.52pojie.cn/thread-1598242-1-1.html>
+
 jeb.bat启动，将安装包apk拖入。
 
 底部快捷字符搜索，字符常量。
