@@ -79,6 +79,7 @@ Xposed是一款可以在不修改APK的情况下影响程序运行的框架，�
     android:name="xposedminversion"
     android:value="89" />
 ```
+![](.topwrite/assets/image_1741683470054.png)
 5.修改build.gradle,将此处修改为compileOnly 默认的是implementation
 ```
 implementation 使用该方式依赖的库将会参与编译和打包
