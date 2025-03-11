@@ -82,7 +82,7 @@ private boolean SignCheck() {
 
 方法一:核心破解插件，不签名安装应用
 
-方法二:一键过签名工具，例如MT、NP、ARMPro、CNFIX、Modex的去除签名校验功能
+方法二:一键过签名工具，例如MT、NP、ARMPro、CNFIX、Modex的都有多个去除签名校验功能
 
 方法三:具体分析签名校验逻辑(手撕签名校验)
 
