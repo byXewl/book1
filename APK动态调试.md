@@ -4,9 +4,13 @@
 
 注册码是根据机型特征特定算法生成的存储在临时变量寄存器中。动态调试读取即可。
 
+
 ## **3.动态调试步骤**
 
 ### 1.修改debug权限
+apk需要开启debug权限模式来运行，才能调试。
+开启方式如下
+
 方法一:在AndroidManifest.xml里添加可调试权限
 ```xml
 android:debuggable="true"
