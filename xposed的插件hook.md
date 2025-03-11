@@ -107,7 +107,7 @@ public class Hook implements IXposedHookLoadPackage {
 
 
 ![](.topwrite/assets/image_1741690646699.png)
-运行配置launch为Nothing，如此打包生成lsp模块的apk，lsp中可以启动。
+运行配置launch为Nothing，如此打包生成lsp模块的apk，lsp中可以启动模块。
 
 
 
