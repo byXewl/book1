@@ -61,7 +61,9 @@ adb shell am start -D -n 包名/类名
 am start -n 表示启动一个activity
 am start -D 表示将应用设置为可调试模式
 
-此时返回jeb点击debug按钮运行
+此时返回jeb点击debug按钮运行。
+查看局部变量：p1,p2是传参参数。
+局部变量类型：类型可以修改是string修改为string才正常显示输入。
 
 ^
 ### 5.jeb使用
