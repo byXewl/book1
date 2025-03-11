@@ -103,6 +103,14 @@ public class Hook implements IXposedHookLoadPackage {
 }
 ```
 继承了IXposedHookLoadPackag便拥有了hook的能力
+
+
+
+![](.topwrite/assets/image_1741690646699.png)
+运行配置launch为Nothing，如此打包生成lsp模块的apk
+
+
+
 ## 6.Xpoosed常用API
 
 [An efficient Hook API and Xposed Module solution built in Kotlin](https://github.com/fankes/YukiHookAPI)
