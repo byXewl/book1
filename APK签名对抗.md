@@ -86,10 +86,10 @@ private boolean SignCheck() {
 
 方法三:具体分析签名校验逻辑(手撕签名校验)
 
-方法四:io重定向--VA&SVC：ptrace+seccomp
+方法四: io重定向--VA&SVC：ptrace+seccomp
 [SVC的TraceHook沙箱的实现&无痕Hook实现思路](https://bbs.pediy.com/thread-273160.htm)
 
-方法五:去作者家严刑拷打拿到.jks文件和密码
+方法五:通过作者拿到.jks文件和密码
 
 ## 5.手动实现PM代理
 
