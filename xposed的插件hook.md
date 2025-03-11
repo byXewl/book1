@@ -61,6 +61,8 @@ Xposed是一款可以在不修改APK的情况下影响程序运行的框架，�
 
 1.Android Studio创建新项目
 2.将下载的xposedBridgeApi.jar包拖进libs文件夹
+<https://github.com/bywhat/XposedBridgeApi/tree/main>
+
 3.右击jar包，选择add as library
 4.修改xml文件配置
 ```xml
