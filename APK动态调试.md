@@ -83,13 +83,12 @@ R运行到光标处
 ctrl+b
 
 ## **3.Log插桩**
+类似于调试获取变量值。
 
 定义：Log插桩指的是反编译APK文件时，在对应的smali文件里，添加相应的smali代码，将程序中的关键信息，以log日志的形式进行输出。
 
 调用命令
-```smali
-
+```
 invoke-static {对应寄存器}, Lcom/mtools/LogUtils;->v(Ljava/lang/Object;)V
-
 ```
 
