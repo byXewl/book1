@@ -161,6 +161,9 @@ ApplicationPackageManager对象里面的mPM变量
 
 MT管理器查看包的原签名的原始信息，复制为base64替换代码中【原包的签名信息】
 
+再导入dex调用即可。
+PM代理过校验有点过时。
+
 ## 6.IO重定向
 
 什么是IO重定向？
