@@ -64,6 +64,7 @@ taimen:/data/local/tmp # ./fs1280 -l 0.0.0.0:6666
 
 adb输出日志
 ```
+adb shell
 `logcat |grep "D.zj2595"`日志捕获
 `adb connect 127.0.0.1:62001`模拟器端口转发
 ```
