@@ -259,5 +259,5 @@ public static boolean a(boolean z, SaiUpgradeInfo saiUpgradeInfo) {
 android:visibility="gone"
 ```
 2.上帝模式优化布局
-
+上帝模式APP，拖动删除。
 [[白嫖大法]某影视邀请协议分析](https://www.52pojie.cn/thread-1452996-1-1.html)
