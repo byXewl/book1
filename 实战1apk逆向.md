@@ -123,6 +123,7 @@ public void initData() {
         System.exit(0);
     }
 ```
+邀请人免广告时间功能
 getFree_time()方法里有free_time变量，修改赋值即可。
 ```java
 .method public getFree_time()J
