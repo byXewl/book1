@@ -231,5 +231,5 @@ v7a使用ida32分析即可。
 ^
 对于静态注册，ida中exports模块搜索java，即可找到固定的java开头的导出函数。
 
-可以使用ida中的key path插件修改汇编重写so。
+可以使用ida中的key patch插件修改汇编重写so。
 将so替换回去，删除其他同类so，再apk重签名安装。
