@@ -227,6 +227,8 @@ public static boolean a(boolean z, SaiUpgradeInfo saiUpgradeInfo) {
 ## 4.布局优化
 [【吾爱破解安卓逆向入门教程《安卓逆向这档事》四、恭喜你获得广告&弹窗静默卡】](https://www.bilibili.com/video/BV14v4y1D7yA/?share_source=copy_web&vd_source=3bc2e3777e91ab913d8a64fe4871a3b1)
 
+利用开发助手APP，查看布局定位。
+
 1.修改xml中的属性值
 | 元素名称 | 属性名称 | 描述 |
 | --- | --- | --- |
