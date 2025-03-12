@@ -28,9 +28,9 @@ so使用ida动态调试
 ## 2.IDA动态调试
 ### 1.前置操作：
 1.在IDA目录下的dbgsrv，选择跟手机架构一致的server
-一般来说android_server64
+一般来说android_server64文件
 
-2.adb push as /data/local/tmp/
+2.adb push android_server64 /data/local/tmp/
 
 3.进入手机端命令：adb shell
 
@@ -38,7 +38,7 @@ so使用ida动态调试
 
 5.跳到对应路径：cd /data/local/tmp/
 
-6.提权：chmod 777 as
+6.提权：chmod 777 android_server64
 
 7.XappDebug hook
 
