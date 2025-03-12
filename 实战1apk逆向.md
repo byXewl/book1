@@ -188,6 +188,8 @@ getFree_time()方法里有free_time变量，修改赋值即可。
 ![](_assets_00/7462852ab6eb72614bcf04006c7899b8889.webp)
 
 ## 3. 去除更新弹窗
+算法助手-弹窗定位，日志。
+
 ```java
 public static boolean a(boolean z, SaiUpgradeInfo saiUpgradeInfo) {  
         if (!a.b.b() && saiUpgradeInfo != null) {  
