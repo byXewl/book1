@@ -123,3 +123,86 @@ Java_com_example_ndkdemo_MainActivity_stringFromJNI(
 ```
 
 
+
+
+^
+### 1.JNI的前世今生
+NDK是开发套件，JNI才是调用的框架。所以与其说是NDK开发，不如说是JNI的开发。不过NDK是Android提供的开发套件。JNI可不是，JNI全称Java Native Interface,即Java本地接口，JNI是Java调用Native 语言的一种特性。通过JNI可以使得Java与C/C++机型交互。即可以在Java代码中调用C/C++等语言的代码或者在C/C++代码中调用Java代码。
+### 2.JNI的两种注册方式
+#### jni静态注册方式
+-   优点: 理解和使用方式简单, 属于傻瓜式操作, 使用相关工具按流程操作就行, 出错率低
+-   缺点: 当需要更改类名,包名或者方法时, 需要按照之前方法重新生成头文件, 灵活性不高
+#### jni动态注册方式
+
+native-lib.cpp
+```
+#include <jni.h>
+#include <string>
+
+extern "C" {
+
+JNIEXPORT jstring JNICALL Java_com_example_ndkdemo_MainActivity_nativeGetStringFromJNI(JNIEnv* env, jobject obj) {
+    std::string hello = "Hello wuaipojie";
+    return env->NewStringUTF(hello.c_str());
+}
+
+// 定义本地方法注册函数
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
+    JNIEnv* env;
+    if (vm->GetEnv(reinterpret_cast<void**>(&env), JNI_VERSION_1_6) != JNI_OK) {
+        return -1;
+    }
+
+    // 定义要注册的本地方法
+    JNINativeMethod methods[] = {
+        {"nativeGetStringFromJNI", "()Ljava/lang/String;", reinterpret_cast<void*>(Java_com_example_ndkdemo_MainActivity_nativeGetStringFromJNI)}
+    };
+
+    // 获取类引用
+    jclass clazz = env->FindClass("com/example/ndkdemo/MainActivity");
+    if (clazz == nullptr) {
+        return -1;
+    }
+
+    // 注册本地方法
+    if (env->RegisterNatives(clazz, methods, sizeof(methods) / sizeof(methods[0])) < 0) {
+        return -1;
+    }
+
+    return JNI_VERSION_1_6;
+}
+
+} // extern "C"
+
+
+```
+
+####  数据类型
+下面是一些常见的C++数据类型和它们在Java中的对应关系，以及它们在JNI动态注册中的数据类型签名（signature）：
+
+
+| C++ 数据类型 | Java 数据类型     | JNI 数据类型签名 |
+| ------------ | ---------------- | ---------------- |
+| jint         | int              | "I"              |
+| jboolean     | boolean          | "Z"              |
+| jbyte        | byte             | "B"              |
+| jchar        | char             | "C"              |
+| jshort       | short            | "S"              |
+| jlong        | long             | "J"              |
+| jfloat       | float            | "F"              |
+| jdouble      | double           | "D"              |
+| jobject      | Object           | "Ljava/lang/Object;" |
+| jstring      | String           | "Ljava/lang/String;" |
+| jarray       | Array            | "[elementType"    |
+| jobjectArray | Object[]         | "[Ljava/lang/Object;" |
+| jbooleanArray| boolean[]        | "[Z"             |
+| jbyteArray   | byte[]           | "[B"             |
+| jcharArray   | char[]           | "[C"             |
+| jshortArray  | short[]          | "[S"             |
+| jintArray    | int[]            | "[I"             |
+| jlongArray   | long[]           | "[J"             |
+| jfloatArray  | float[]          | "[F"             |
+| jdoubleArray | double[]         | "[D"             |
+
+
+在JNI动态注册中，需要使用正确的数据类型签名来声明本地方法。例如，如果你要注册一个返回`int`类型的本地方法，其数据类型签名应为`I`。
