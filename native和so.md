@@ -224,4 +224,6 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
 ## **so分析**
 此时打包出来的apk中，有lib目录中有so文件。
 ![](.topwrite/assets/image_1741759131553.png)
-使用ida分析即可。
+![](.topwrite/assets/image_1741759314992.png)
+v8a使用ida64分析即可。
+v7a使用ida32分析即可。
