@@ -143,6 +143,9 @@ lazyIDA 在汇编页，右键有NOP可以快去去除花指令（先点击后+d 
 右键有Convert类似Export data可以导出python格式数据。
 
 D-810 去除混淆
+
+GPT辅助分析插件：<https://github.com/WPeace-HcH/WPeChatGPT>
+
 ^
 ## **IDA动态调试**
 汇编页，打断点
