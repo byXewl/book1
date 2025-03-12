@@ -126,10 +126,22 @@ Java_com_example_ndkdemo_MainActivity_stringFromJNI(
 
 
 ^
+## **JNI的注册方式**
 ### 1.JNI的前世今生
 NDK是开发套件，JNI才是调用的框架。所以与其说是NDK开发，不如说是JNI的开发。不过NDK是Android提供的开发套件。JNI可不是，JNI全称Java Native Interface,即Java本地接口，JNI是Java调用Native 语言的一种特性。通过JNI可以使得Java与C/C++机型交互。即可以在Java代码中调用C/C++等语言的代码或者在C/C++代码中调用Java代码。
 ### 2.JNI的两种注册方式
 #### jni静态注册方式
+静态注册的核心特点：命名规则严格遵循JNI规范。
+上方的默认例子就是静态注册。本地方法的C++函数名严格按照 `Java_包名_类名_方法名` 的格式命名，例如：
+```
+Java_com_example_ndkdemo_MainActivity_stringFromJNI
+      * `com.example.ndkdemo` 是Java类的包名
+      * `MainActivity` 是包含native方法的Java类名
+      * `stringFromJNI` 是Java层的native方法名
+```
+
+
+ 
 -   优点: 理解和使用方式简单, 属于傻瓜式操作, 使用相关工具按流程操作就行, 出错率低
 -   缺点: 当需要更改类名,包名或者方法时, 需要按照之前方法重新生成头文件, 灵活性不高
 #### jni动态注册方式
