@@ -277,3 +277,6 @@ ClassName.privateFunc();
 
 ```
 保存后即运行。
+
+^
+### 9.jadx里直接右键复制frida代码
