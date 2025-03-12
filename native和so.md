@@ -228,4 +228,4 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
 v8a使用ida64分析即可。
 v7a使用ida32分析即可。
 
-对于静态注册，ida中exports模块搜索java，即可找到固定的java开头的函数。
+对于静态注册，ida中exports模块搜索java，即可找到固定的java开头的导出函数。
