@@ -125,6 +125,7 @@ public void initData() {
 ```
 邀请人免广告时间功能
 getFree_time()方法里有free_time变量，修改赋值即可。
+或者使用算法助手自定义hook修改返回值。
 ```java
 .method public getFree_time()J
     .registers 3
