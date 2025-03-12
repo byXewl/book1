@@ -4,6 +4,7 @@ so使用ida动态调试
 作用：反调试、脱壳、注入等
 
 流程图：
+![](.topwrite/assets/image_1741761512828.png)
 ![](.topwrite/assets/image_1741761330020.png)
 
 函数的基本介绍：
