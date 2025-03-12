@@ -218,3 +218,10 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
 
 
 在JNI动态注册中，需要使用正确的数据类型签名来声明本地方法。例如，如果你要注册一个返回`int`类型的本地方法，其数据类型签名应为`I`。
+
+
+^
+## **so分析**
+此时打包出来的apk中，有lib目录中有so文件。
+![](.topwrite/assets/image_1741759131553.png)
+使用ida分析即可。
