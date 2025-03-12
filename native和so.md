@@ -6,10 +6,10 @@ NDK（Native Development Kit）是一套用于开发Android应用程序的工具
 ^
 
 
-1.下载NDK和CMake
+1.AS下载NDK和CMake
 ![](.topwrite/assets/image_1741756441671.png)
 
-2.新建一个项目,往下拉,找到"c++"这个选项
+2.AS新建一个项目,往下拉,找到"c++"这个选项
 
 
 
