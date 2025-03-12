@@ -91,6 +91,7 @@ private boolean SignCheck() {
 老规矩，先签个名直接安装，果不其然，闪退。
 用算法助手拦截闪退，通过拦截日志找到系统退出的类方法代码。修改smali代码让其不闪退。
 搜索退出代码关键词，修改smali。
+或者直接修改为原来的签名值。
 
 方法四: io重定向--VA&SVC：ptrace+seccomp
 [SVC的TraceHook沙箱的实现&无痕Hook实现思路](https://bbs.pediy.com/thread-273160.htm)
