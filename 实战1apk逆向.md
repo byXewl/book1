@@ -140,6 +140,9 @@ getFree_time()方法里有free_time变量，修改赋值即可。
 ```
 
 ## 2.去除签名校验
+老规矩，先签个名直接安装，果不其然，闪退。
+
+
 [吾爱破解安卓逆向入门教程《安卓逆向这档事》六、校验的N次方-签名校验对抗、PM代理、IO重定向](https://www.bilibili.com/video/BV1X24y1m7cj/?share_source=copy_web&vd_source=3bc2e3777e91ab913d8a64fe4871a3b1)
 
 1.核心破解，免签名安装
