@@ -28,6 +28,7 @@ so使用ida动态调试
 ## 2.IDA动态调试
 ### 1.前置操作：
 1.在IDA目录下的dbgsrv，选择跟手机架构一致的server
+一般来说android_server64
 
 2.adb push as /data/local/tmp/
 
