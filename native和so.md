@@ -24,7 +24,7 @@ NDK（Native Development Kit）是一套用于开发Android应用程序的工具
 
 
 解释：
-
+MainActivity类
 ```java
 public class MainActivity extends AppCompatActivity {
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 }
 
 ```
-
+CMakeLists.txt
 ```java
 # For more information about using CMake with Android Studio, read the
 # documentation: https://d.android.com/studio/projects/add-native-code.html
@@ -99,7 +99,7 @@ target_link_libraries(
         ${log-lib})
 
 ```
-
+native-lib.cpp
 ```c++
 #include <jni.h> // JNI头文件，提供了JNI函数和数据类型的定义
 #include <string> // C++标准库的string类
