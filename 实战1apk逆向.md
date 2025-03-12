@@ -153,6 +153,7 @@ getFree_time()方法里有free_time变量，修改赋值即可。
 [[实战破解]白描-动态代{过}{滤}理Hook签名校验](https://www.52pojie.cn/thread-1526854-1-1.html)
 
 3.手动分析签名校验
+下面是修改smali代码返回原始的签名值md5。
 ```java
 .method public static f()Ljava/util/List;
     .registers 2
