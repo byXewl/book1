@@ -189,7 +189,8 @@ getFree_time()方法里有free_time变量，修改赋值即可。
 
 ## 3. 去除更新弹窗
 算法助手-弹窗定位，日志。
-
+算法助手-屏蔽关键词弹窗
+下面是类似弹窗代码，直接再前面返回false即可。
 ```java
 public static boolean a(boolean z, SaiUpgradeInfo saiUpgradeInfo) {  
         if (!a.b.b() && saiUpgradeInfo != null) {  
