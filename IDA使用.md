@@ -146,6 +146,8 @@ D-810 去除混淆
 
 GPT辅助分析插件：<https://github.com/WPeace-HcH/WPeChatGPT>
 
+汇编指令转16进制：<https://armconverter.com/>
+
 ^
 ## **IDA动态调试**
 汇编页，打断点
