@@ -276,3 +276,4 @@ ClassName.privateFunc();
     //return ret;
 
 ```
+保存后即运行。
