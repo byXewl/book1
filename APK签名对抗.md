@@ -59,10 +59,10 @@ finish----------仅仅针对Activity，当调用finish()时，只是将活动推
 在我个人见过最恶心的签名校验中，当属三角校验(低调大佬教的)最烦人。
 所谓三角校验，就是so检测dex，动态加载的dex(在软件运行时会解压释放一段dex文件，检测完后就删除)检测so，dex检测动态加载的dex
 
-![](.topwrite/assets/image_1741675288243.png)
+
 
 普通获取签名校验代码：
-```java
+```
 private boolean SignCheck() {
     String trueSignMD5 = "d0add9987c7c84aeb7198c3ff26ca152";
     String nowSignMD5 = "";
@@ -89,7 +89,8 @@ private boolean SignCheck() {
 
 方法三: 具体分析签名校验逻辑(手撕签名校验)
 老规矩，先签个名直接安装，果不其然，闪退。
-用算法助手拦截闪退，通过拦截日志找到系统退出的类方法代码。修改smile代码让其不闪退。
+用算法助手拦截闪退，通过拦截日志找到系统退出的类方法代码。修改smali代码让其不闪退。
+搜索退出代码关键词，修改smali。
 
 方法四: io重定向--VA&SVC：ptrace+seccomp
 [SVC的TraceHook沙箱的实现&无痕Hook实现思路](https://bbs.pediy.com/thread-273160.htm)
