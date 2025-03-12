@@ -502,6 +502,7 @@
                 * [免root快速hook](免root快速hook.md)
             * [native和so](native和so.md)
             * [so加载和动态调试](so加载和动态调试.md)
+            * [实战1apk逆向](实战1apk逆向.md)
 * [工具脚本](工具脚本.md)
     * [常用脚本](常用脚本.md)
     * [谷歌插件](谷歌插件.md)
