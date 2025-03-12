@@ -123,8 +123,7 @@ public void initData() {
         System.exit(0);
     }
 ```
-
-赋值参考第六课52:08
+getFree_time()方法里有free_time变量，修改赋值即可。
 ```java
 .method public getFree_time()J
     .registers 3
