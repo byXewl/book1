@@ -1,3 +1,4 @@
+基础js模板
 ### 1.基础指令
 1.frida-ps -U  查看当前手机运行的进程
 2.frida-ps --help 查看help指令
