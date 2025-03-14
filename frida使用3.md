@@ -219,14 +219,13 @@ function hookTest6(){
 ^
 ## 7.Hook_dlopen
 
-dlopen()是加载库的一种函数。
+dlopen是加载库的一类函数。
 有的apk在一开始的时候就加载的so，我们不注意就可能hook不到这个so。
+因此我们使用下面这种hook dlopen。
 
 [dlopen源码](http://aospxref.com/android-8.0.0_r36/xref/bionic/libdl/libdl.c?r=&mo=4035&fi=101#101)
-
 [android_dlopen_ext源码](http://aospxref.com/android-8.0.0_r36/xref/bionic/libdl/libdl.c#146)
-
-```js
+```
 function hook_dlopen() {
     var dlopen = Module.findExportByName(null, "dlopen");
     Interceptor.attach(dlopen, {
@@ -249,7 +248,13 @@ function hook_dlopen() {
     });
 }
 ```
+同时最好以Spawn模式hook
+```
+frida -U -f 进程名 -l hook.js
+```
 
+
+^
 ## 8.借助IDA脚本实现一键式hook
 ![](.topwrite/assets/image_1741948031787.png)
 
