@@ -32,8 +32,8 @@ pip list
 pip3 list
 pip311 list 这里看到frida版本16.1.3
 
-pip install frida
-pip install frida-tools
+pip install frida ==  16.1.3
+pip install frida-tools == 12.0.0
 ```
 然后去https://github.com/frida/frida/releases
 下载对应型号且与电脑安装Frida版本一致的Frida-server版本frida。
