@@ -21,7 +21,7 @@ pip311 install virtualenvwrapper-win -i https://pypi.tuna.tsinghua.edu.cn/simple
 创建一个WORKON_HOME文件夹，并加入环境变量名为WORKON_HOME值为路径。
 ```
 workon 查看已有虚拟环境
-mkvirtualenv 新建环境
+mkvirtualenv frida14objection新建环境
 rmvirtualenv 删除环境
 ```
 Frida安装以及多版本处理
