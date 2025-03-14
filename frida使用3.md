@@ -1,6 +1,7 @@
 使用frida来native层hook so
 
 ## 1.Process、Module、Memory基础
+frida库中的对象。
 ### 1.Process
 `Process` 对象代表当前被Hook的进程，能获取进程的信息，枚举模块，枚举范围等
 | API                       | 含义 |
