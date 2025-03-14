@@ -213,7 +213,10 @@ function hookTest6(){
 2. 通过IDA里的opcode bytes来判断，arm 指令为 4 个字节(options -> general -> Number of opcode bytes (non-graph)  输入4)
 3. thumb 指令，函数地址计算方式： so 基址 + 函数在 so 中的偏移0x1071C + 1  
 	arm 指令，函数地址计算方式： so 基址 + 函数在 so 中的偏移0x1071C
+![](.topwrite/assets/image_1741969381198.png)
 
+
+^
 ## 7.Hook_dlopen
 [dlopen源码](http://aospxref.com/android-8.0.0_r36/xref/bionic/libdl/libdl.c?r=&mo=4035&fi=101#101)
 
