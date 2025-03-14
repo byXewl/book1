@@ -1,3 +1,6 @@
+objection用命令来hook。
+trace获取函数调用栈，防止混淆。
+
 ## **1.objection**
 ### 1.什么是objection
 objection是基于frida的命令行hook集合工具, 可以让你不写代码, 敲几句命令就可以对java函数的高颗粒度hook, 还支持RPC调用。可以实现诸如内存搜索、类和模块搜索、方法hook打印参数返回值调用栈等常用功能，是一个非常方便的，逆向必备、内存漫游神器。
