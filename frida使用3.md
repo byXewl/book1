@@ -1,7 +1,7 @@
 使用frida来native层hook so
 
 看到有so函数静态注册（ida打开导出，搜java找到静态注册函数），可以直接java层hook。
-也可以hook native层，这里最好使用root的真机。
+也可以hook native层，这里最好使用root的真机（否则可能会出现找不到arm地址）。
 
 ## 1.Process、Module、Memory基础
 frida库中的对象。
