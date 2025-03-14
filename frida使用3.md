@@ -19,8 +19,8 @@ frida库中的对象。
 | `enumerateImports()`                                       | 枚举所有Import库函数，返回Module数组对象                         |
 | `enumerateExports()`                                       | 枚举所有Export库函数，返回Module数组对象                         |
 | `enumerateSymbols()`                                       | 枚举所有Symbol库函数，返回Module数组对象                         |
-| `Module.findExportByName(exportName)、Module.getExportByName(exportName)` | 寻找指定so中export库中的函数地址 |
-| `Module.findBaseAddress(name)、Module.getBaseAddress(name)` | 返回so的基地址 |
+| Module.findExportByName(exportName)、Module.getExportByName(exportName) | 寻找指定so中export库中的函数地址 |
+| Module.findBaseAddress(name)、Module.getBaseAddress(name) | 返回so的基地址 |
 ### 3.Memory
 `Memory`是一个工具对象，提供直接读取和修改进程内存的功能，能够读取特定地址的值、写入数据、分配内存等
 
