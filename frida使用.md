@@ -63,7 +63,7 @@ server端需要安装在要hook的主机上，server端的安装版本必须与�
 则下载frida-server-16.1.3-android-x86_64.xz，解压。
 
 adb root 获取root权限，模拟器中点确认授权给shell。
-adb push D:/xxx/frida-server-xx-xx    /data/loacl/frida-server
+adb push D:/xxx/frida-server-xx-xx    /data/local/tmp/frida-server
 adb shell
 cd /data/local/
 chmod 777 ./frida-server
