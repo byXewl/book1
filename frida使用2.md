@@ -127,7 +127,7 @@ function  android_logger_set_prune_list         0x72e0be8948
 android intent launch_activity com.zj.wuaipojie.ui.ChallengeThird
 
 5. 关闭ssl校验  android sslpinning disable
-6. 关闭root检测  android root disable
+6. 关闭root检测  android root disable3
 ### 5.objection内存漫游
 1. 内存搜刮类实例
 ```
