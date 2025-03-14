@@ -37,5 +37,9 @@ pip2 install --upgrade pip
 sudo pip2 install --upgrade setuptools
 
 ^
+离线安装包
+<https://pypi.org/> 下载对应的egg文件，使用easy_install命令安装即可
+
+^
 .pyc文件
 .py文件在被import运行的时候会在同目录下编译一个pyc的文件（为了下次快速加载），这个文件可以和py文件一样使用，但无法阅读和修改；python工具支持将pyc文件反编译为py文件:<https://tool.lu/pyc/>
