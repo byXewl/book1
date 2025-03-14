@@ -220,6 +220,7 @@ function hookTest6(){
 ## 7.Hook_dlopen
 
 dlopen()是加载库的一种函数。
+有的apk在一开始的时候就加载的so，我们不注意就可能hook不到这个so。
 
 [dlopen源码](http://aospxref.com/android-8.0.0_r36/xref/bionic/libdl/libdl.c?r=&mo=4035&fi=101#101)
 
