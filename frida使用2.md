@@ -74,6 +74,7 @@ Usage: objection [OPTIONS] COMMAND [ARGS]...
 
 2.注入命令
 ```
+objection -g com.zj.wuaipojie explore
 objection -g 包名 explore
 
 -   help：不知道当前命令的效果是什么，在当前命令前加help比如:help env，回车之后会出现当前命令的解释信息
