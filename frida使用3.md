@@ -1,5 +1,7 @@
 使用frida来native层hook so
 
+看到有so函数静态注册（ida打开导出，搜java找到静态注册函数），可以直接java层hook。
+
 ## 1.Process、Module、Memory基础
 frida库中的对象。
 ### 1.Process
