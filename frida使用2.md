@@ -232,7 +232,7 @@ android hooking watch class_method 类名.方法名
 [项目地址](https://github.com/hluwa/ZenTracer)
 
 缺点:无法打印调用栈，无法`hook`构造函数
-![图片](_assets_14/f45308a95f466b7f2288c9f03aed90bc8183.webp)
+![](.topwrite/assets/image_1741947114770.png)
 ```
 因为以长久不更新，故新版frida不兼容，下面是我跑起来的版本
 python==3.8.8
