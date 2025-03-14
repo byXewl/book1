@@ -42,9 +42,13 @@ frida-ps --help
 |---|---|---|---|---|
 | Spawn模式 | 将启动App的权利交由Frida来控制，即使目标App已经启动，在使用Frida注入程序时还是会重新启动App | 在CLI模式中，Frida通过加上 -f 参数指定包名以spawn模式操作App | 适合于需要在App启动时即进行注入的场景，可以在App启动时即捕获其行为 | 当需要监控App从启动开始的所有行为时使用 |
 | Attach模式 | 在目标App已经启动的情况下，Frida通过ptrace注入程序从而执行Hook的操作 | 在CLI模式中，如果不添加 -f 参数，则默认会通过attach模式注入App | 适合于已经运行的App，不会重新启动App，对用户体验影响较小 | 在App已经启动，或者我们只关心特定时刻或特定功能的行为时使用 |
+
 Spawn模式
 ```
 frida -U -f 进程名 -l hook.js
+
+
+frida -U -f wuaipojie -l hook.js
 ```
 
 attach模式 ：
