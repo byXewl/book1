@@ -124,7 +124,7 @@ function  android_logger_set_prune_list         0x72e0be8948
 3. android hooking list activities -查看内存中加载的activity   /android hooking list services -查看内存中加载的services
 ![图片](_assets_14/149aa38a7e5ef7ea0a4f1e2cfa0815a66608.webp)
 4. android intent launch_activity 类名 -启动`activity`或`service`(可以用于一些没有验证的activity,在一些简单的ctf中有时候可以出奇效)
-android intent launch_activity com.zj.wuaipojie.ui.challengeThird
+android intent launch_activity com.zj.wuaipojie.ui.ChallengeThird
 
 5. 关闭ssl校验  android sslpinning disable
 6. 关闭root检测  android root disable
