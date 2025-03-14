@@ -18,6 +18,7 @@ pip3 install frida-tools==9.2.4 会自动安装frida 14.2.18版本
 pip311 install virtualenvwrapper-win -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 设置WORKON_HOME环境变量
+创建一个WORKON_HOME文件夹，并加入环境变量名为WORKON_HOME值为路径。
 ```
 workon 查看已有虚拟环境
 mkvirtualenv 新建环境
