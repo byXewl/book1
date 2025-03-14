@@ -506,6 +506,7 @@
             * [frida使用](frida使用.md)
                 * [frida使用1](frida使用1.md)
                 * [frida使用2](frida使用2.md)
+                * [frida使用3](frida使用3.md)
 * [工具脚本](工具脚本.md)
     * [常用脚本](常用脚本.md)
     * [谷歌插件](谷歌插件.md)
