@@ -7,8 +7,8 @@ objection是基于frida的命令行hook集合工具, 可以让你不写代码, �
 已不更新，要和frida的版本匹配
 ```
 python使用的版本建议大于3.8，不然可能会报错，或者你调低frida以及objection的版本
-pip3 install objection==1.11.0
-pip3 install frida-tools==9.2.4 会自动安装frida 14.2.18版本
+pip install objection==1.11.0
+pip install frida-tools==9.2.4 会自动安装frida 14.2.18版本
 ```
 
 
@@ -24,9 +24,9 @@ workon 查看已有虚拟环境
 mkvirtualenv frida14objection新建环境
 rmvirtualenv 删除环境
 ```
-Frida安装以及多版本处理
+Frida安装以及多版本处理，虚拟环境中用pip
 ```
-pip311 install frida-tools -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install frida-tools -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 
