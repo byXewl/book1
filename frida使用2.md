@@ -220,7 +220,8 @@ android hooking watch class_method 类名.$init
 android hooking watch class_method 类名.方法名
 ```
 
-# 2.trace实战java控制流混淆
+^
+## **2.trace实战java控制流混淆**
 样本展示:
 ![图片](_assets_14/a7d36d5536989c6662d83cd3b69fa840277.webp)
 ![图片](_assets_14/6f038189728ce1e3ca2b7a590a4693534680.webp)
