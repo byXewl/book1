@@ -15,15 +15,17 @@ pip3 install frida-tools==9.2.4 会自动安装frida 14.2.18版本
 #### 虚拟环境的env的安装
 安装环境
 ```
-pip install virtualenvwrapper-win -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip311 install virtualenvwrapper-win -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 设置WORKON_HOME环境变量
 ```
-mkvirtualenv 新建环境rmvirtualenv 删除环境
+workon 查看已有虚拟环境
+mkvirtualenv 新建环境
+rmvirtualenv 删除环境
 ```
 Frida安装以及多版本处理
 ```
-pip install frida-tools -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip311 install frida-tools -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 
