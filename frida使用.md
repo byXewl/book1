@@ -21,7 +21,7 @@ Frida：https://github.com/frida/frida/releases
 
 ^
 ### **安装**
-电脑本地安装frida本地版：frida 15.2.2
+电脑本地安装frida本地版：frida 
 电脑模拟器安装frida-server服务版x86版本（真机arm版本）
 本地版连接服务版
 再用r0capture免证书抓包。
@@ -30,13 +30,13 @@ python3环境
 
 pip list
 pip3 list
-pip311 list
+pip311 list 这里看到frida版本16.1.3
 
 pip install frida
 pip install frida-tools
 ```
 然后去https://github.com/frida/frida/releases
-下载对应型号且与电脑安装Frida版本一致的Frida-server版本frida 15.2.2。
+下载对应型号且与电脑安装Frida版本一致的Frida-server版本frida。
 ```
 例如我的机器为arm32为架构，就选择frida-server-12.8.14-android-arm.xz下载
 可以在adb使用命令 adb shell getprop ro.product.cpu.abi 查询手机架构
