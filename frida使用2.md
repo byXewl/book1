@@ -12,6 +12,23 @@ pip install frida-tools==9.2.4
 frida 14.2.18
 ```
 
+
+#### 虚拟环境的env的安装
+安装环境
+```
+pip install virtualenvwrapper-win -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+设置WORKON_HOME环境变量
+```
+mkvirtualenv 新建环境rmvirtualenv 删除环境
+```
+Frida安装以及多版本处理
+```
+pip install frida-tools -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+
+
 ### 3.objection快速上手
 1.help命令注释
 ```
