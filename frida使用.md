@@ -29,6 +29,9 @@ Frida：https://github.com/frida/frida/releases
 python3环境
 
 pip list
+pip3 list
+pip311 list
+
 pip install frida
 pip install frida-tools
 ```
