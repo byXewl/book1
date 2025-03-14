@@ -12,7 +12,7 @@ python他人知识库：
 ```
 路径下执行，创建一个名为Demo的虚拟环境目录：
 python -m venv Demo 或 virtualenv --no-site-packages Demo
-
+    
 Demo目录里有Include/ Lib/ Scripts/ .cfg目录，是独立的python初始环境，
 其中 Scripts/目录里有python.exe和pip.exe
 Scripts/目录里有个active，命令执行正式打开一个虚拟环境的终端。
