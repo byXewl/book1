@@ -46,10 +46,10 @@ frida-ps --help
 
 Spawn模式
 ```
-frida -U -f 进程名 -l hook.js
+frida -U -f 包名 -l hook.js
 
-
-frida -U -f wuaipojie -l hook.js
+apk自动重新打开。
+frida -U -f com.zj.wuaipojie -l hook.js
 ```
 
 attach模式 ：
