@@ -218,6 +218,9 @@ function hookTest6(){
 
 ^
 ## 7.Hook_dlopen
+
+dlopen()是加载库的一种函数。
+
 [dlopen源码](http://aospxref.com/android-8.0.0_r36/xref/bionic/libdl/libdl.c?r=&mo=4035&fi=101#101)
 
 [android_dlopen_ext源码](http://aospxref.com/android-8.0.0_r36/xref/bionic/libdl/libdl.c#146)
