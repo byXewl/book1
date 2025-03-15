@@ -1,5 +1,5 @@
 ## 1.Frida写数据
-
+脱壳可能用到
 ```js
 //一般写在app的私有目录里，不然会报错:failed to open file (Permission denied)(实际上就是权限不足)
 var file_path = "/data/user/0/com.zj.wuaipojie/test.txt";
