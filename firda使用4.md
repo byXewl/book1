@@ -26,7 +26,9 @@ Inline hook（内联钩子）是一种在程序运行时修改函数执行流程
 [substrate](http://www.cydiasubstrate.com/)
 
 PS：Frida的inlinehook不是太稳定，崩溃是基操，另外新版的frida兼容性会比较好
-```js
+
+下面是修改so中汇编偏移量0x10428的x22寄存器的值
+```
 function inline_hook() {
     var soAddr = Module.findBaseAddress("lib52pojie.so");
     if (soAddr) {
