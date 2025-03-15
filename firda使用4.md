@@ -59,7 +59,8 @@ console.log(codeAddr.toString());
 2. Frida Api
 
 [arm转hex](https://armconverter.com/)
-```js
+
+```
 var soAddr = Module.findBaseAddress("lib52pojie.so");
 var codeAddr = soAddr.add(0x10428);
 Memory.patchCode(codeAddr, 4, function(code) {
