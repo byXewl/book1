@@ -235,7 +235,7 @@ jnitrace -m attach -l lib52pojie.so com.zj.wuaipojie -o trace.json //attach模�
 
 `-o path/output.json`- 用于指定`jnitrace`存储所有跟踪数据的输出路径
 
-
+![](.topwrite/assets/image_1742029667713.png)
 
 
 ^
@@ -243,8 +243,7 @@ jnitrace -m attach -l lib52pojie.so com.zj.wuaipojie -o trace.json //attach模�
 ```
 python sktrace.py -m attach -l lib52pojie.so -i 0x103B4 com.zj.wuaipojie
 ```
-
-!
+![](.topwrite/assets/image_1742029678635.png)
 
 ^
 ## 5.控制流混淆对抗新发现
@@ -257,7 +256,6 @@ PS：注意jdk的版本要高于17，不然打不开
 [下载地址](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
 恐怖如斯的效果对比图:
-
-![图片](_assets_16/9f23f5f8dc5bb2f1c7b14f2ad406c7891341.webp)
+![](.topwrite/assets/image_1742029710652.png)
 
 PS:珍惜表哥说dexlib2也能混淆对抗，效果比jeb的还强大
