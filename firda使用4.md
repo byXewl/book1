@@ -203,12 +203,14 @@ Java 方法跟踪：
 `-o`:日志输出到文件
 
 ```
+建议使用frida14
 使用案例：
 frida-trace -U -F -I "lib52pojie.so" -i "Java_" #附加当前进程并追踪lib52pojie.so里的所有Java_开头的jni导出函数
 ```
+![](.topwrite/assets/image_1742029313347.png)
 
-![图片](_assets_16/288c4c7447228d803b9355891be976457415.webp)
 
+^
 ### 4.2jnitrace
 前提
 ```
