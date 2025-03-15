@@ -61,7 +61,8 @@ console.log(codeAddr.toString());
 
 [arm转hex](https://armconverter.com/)
 
-这里arm汇编转成hex，再修改hex，实现修改汇编
+这里arm汇编转成hex，再修改arm后hex注入，实现修改汇编
+![](.topwrite/assets/image_1742028079227.png)
 ```
 var soAddr = Module.findBaseAddress("lib52pojie.so");
 var codeAddr = soAddr.add(0x10428);
