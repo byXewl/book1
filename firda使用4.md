@@ -235,14 +235,18 @@ jnitrace -m attach -l lib52pojie.so com.zj.wuaipojie -o trace.json //attach模�
 
 `-o path/output.json`- 用于指定`jnitrace`存储所有跟踪数据的输出路径
 
-![图片](_assets_16/6030c0c3518cca31e9a9651dadc2875f7693.webp)
 
+
+
+^
 ### 4.3sktrace
 ```
 python sktrace.py -m attach -l lib52pojie.so -i 0x103B4 com.zj.wuaipojie
 ```
 
-![图片](_assets_16/2316edaea1d4685375ef7ecb0104f9196857.webp)
+!
+
+^
 ## 5.控制流混淆对抗新发现
 [细品sec2023安卓赛题](https://bbs.kanxue.com/thread-278648.htm)
 
