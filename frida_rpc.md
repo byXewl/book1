@@ -58,6 +58,9 @@ function get_url() {
 frida14.2.18
 
 frida-tools==9.2.4，uvicorn，fastapi，requests
+
+python3
+pip3
 ```
 ```python
 # 导入需要的库
