@@ -50,6 +50,7 @@ function inline_hook() {
 ```
 
 1. 将地址的指令解析成汇编
+
 即查看0x10428偏移量的汇编指令
 ```
 var soAddr = Module.findBaseAddress("lib52pojie.so");
@@ -60,6 +61,7 @@ console.log(codeAddr.toString());
 
 [arm转hex](https://armconverter.com/)
 
+这里arm汇编转成hex，再修改hex，实现修改汇编
 ```
 var soAddr = Module.findBaseAddress("lib52pojie.so");
 var codeAddr = soAddr.add(0x10428);
