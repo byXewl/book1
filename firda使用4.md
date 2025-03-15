@@ -1,4 +1,8 @@
-Frida修改so中汇编
+Frida修改so中汇编。
+
+frida-trace跟踪native函数调用。
+
+
 
 ## 1.Frida写数据
 脱壳可能用到
