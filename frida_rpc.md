@@ -55,6 +55,8 @@ function get_url() {
 
 需要提前pip安装好的几个库
 ```
+frida14.2.18
+
 frida-tools==9.2.4，uvicorn，fastapi，requests
 ```
 ```python
