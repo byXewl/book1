@@ -174,6 +174,7 @@ bool check_maps() {
 ```  
 ### 方法1  
 `anti脚本`  
+hook libc的比较函数
 ```js  
 // 定义一个函数anti_maps，用于阻止特定字符串的搜索匹配，避免检测到敏感内容如"Frida"或"REJECT"  
 function anti_maps() {  
@@ -333,6 +334,8 @@ bool check_status() {
 ```  
   
 `anti脚本`  
+
+hook libc的比较函数
 ```js  
 function replace_str() {  
     var pt_strstr = Module.findExportByName("libc.so", 'strstr');  
