@@ -517,7 +517,7 @@ function hook_memcmp_addr(){
 
 
 ^
-## 6.Syscall&SVC的检测hook&自定义strstr  
+## 6.Syscall&SVC的检测hook&自定义strstr的hook  
 在上面的检测对抗中，我们hook了libc.so中的fread、strstr、open等系统函数，但是如果app不讲武德，自实现这些函数，阁下又该如何应对？  
 ![](_assets_19/a706cdbf6ef8fe2814f0db18564378892331.png)  
 	在用户空间和内核空间之间，有一个叫做Syscall(系统调用, system call)的中间层，是连接用户态和内核态的桥梁。这样即提高了内核的安全型，也便于移植，只需实现同一套接口即可。Linux系统，用户空间通过向内核空间发出Syscall，产生软中断，从而让程序陷入内核态，执行相应的操作。  
