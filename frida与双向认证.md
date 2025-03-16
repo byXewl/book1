@@ -222,3 +222,47 @@ function hook_KeyStore_load() {
     });  
 }  
 ```  
+本地校验继续用单向的hook
+```js  
+function anti_ssl_cert() {  
+        // 使用Frida获取Java类X509TrustManager的引用  
+    var X509TrustManager = Java.use('javax.net.ssl.X509TrustManager');  
+    // 使用Frida获取Java类SSLContext的引用  
+    var SSLContext = Java.use('javax.net.ssl.SSLContext');  
+    // 注册一个自定义的TrustManager类  
+    var TrustManager = Java.registerClass({  
+        // 指定自定义TrustManager的全名  
+        name: 'dev.asd.test.TrustManager',  
+        // 指定自定义TrustManager实现的接口  
+        implements: [X509TrustManager],  
+        // 定义自定义TrustManager的方法实现  
+        methods: {  
+            // 客户端证书信任检查，这里不实现任何逻辑  
+            checkClientTrusted: function(chain, authType) {},  
+            // 服务器证书信任检查，这里不实现任何逻辑  
+            checkServerTrusted: function(chain, authType) {},  
+            // 返回受信任的CA证书数组，这里返回空数组  
+            getAcceptedIssuers: function() {return []; }  
+        }  
+    });  
+    // 准备一个TrustManager数组，用于传递给SSLContext.init()方法  
+    var TrustManagers = [TrustManager.$new()];  
+    // 获取SSLContext.init()方法的引用，该方法用于初始化SSL上下文  
+    var SSLContext_init = SSLContext.init.overload(  
+        '[Ljavax.net.ssl.KeyManager;', '[Ljavax.net.ssl.TrustManager;', 'java.security.SecureRandom'  
+    );  
+    try {  
+        // 覆盖init方法的实现，指定使用自定义的TrustManager  
+        SSLContext_init.implementation = function(keyManager, trustManager, secureRandom) {  
+            console.log('[+] Bypassing Trustmanager (Android < 7) pinner');  
+            // 调用原始的init方法，并使用自定义的TrustManager数组  
+            SSLContext_init.call(this, keyManager, TrustManagers, secureRandom);  
+        };  
+    } catch (err) {  
+        // 如果覆盖init方法失败，打印错误信息  
+        console.log('[-] TrustManager (Android < 7) pinner not found');  
+        console.log(err); // 可以取消注释来打印异常的详细信息  
+    }  
+}  
+  
+```  
