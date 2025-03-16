@@ -13,6 +13,7 @@ frida -U -f 进程名 -l hook.js
   
 PS:学会看注入报错的日志，比如说当app主动附加自身进程时，这时候再注入就会提示`run frida as root`（以spawn的方式启动进程即可）  
 4.借助脚本定位检测frida的so  
+将so中检测frida点nop掉
 ```js  
 function hook_dlopen() {  
     Interceptor.attach(Module.findExportByName(null, "android_dlopen_ext"),  
