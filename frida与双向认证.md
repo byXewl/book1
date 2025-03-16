@@ -186,6 +186,7 @@ fun ssl_verify() = Thread {
 ```  
   
 `dump内置证书:`  
+dump正确的客户端证书，交给抓包工具，再给服务端校验。
 ```js  
 function hook_KeyStore_load() {  
     Java.perform(function () {  
