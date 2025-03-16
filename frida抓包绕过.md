@@ -131,8 +131,8 @@ function hook_vpn() {
         NetworkInterface.getName.implementation = function () {  
             var name = this.getName();  //hook java层的getName方法  
             console.log("name: " + name);  
-            if (name === "tun0" || name === "ppp0") {  
-                return "rmnet_data0";  
+            if (name === "tun0" || name === "ppp0") { //vpn的接口 
+                return "rmnet_data0";   //替换非vpn的接口
             } else {  
                 return name;  
             }  
