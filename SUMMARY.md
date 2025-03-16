@@ -511,6 +511,7 @@
                 * [frida使用5](frida使用5.md)
                 * [frida_rpc](frida_rpc.md)
                 * [frida防止检测](frida防止检测.md)
+                * [frida持久化](frida持久化.md)
 * [工具脚本](工具脚本.md)
     * [常用脚本](常用脚本.md)
     * [谷歌插件](谷歌插件.md)
