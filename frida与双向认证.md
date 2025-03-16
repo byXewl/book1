@@ -93,6 +93,7 @@ openssl pkcs12 -export -out client.p12 -inkey client.key -in client.crt -certfil
 PS:因为双向认证是本地搭建，所以需要完成几个前置条件:  
 1.确保电脑和手机处于同一wifi连接下  
 2.重打包替换生成的server.cer(路径在res/raw)，替换ssl_verify方法里的ip地址以及res/xml/network_config.xml的ip地址(通过ipconfig获取实际的ipv4地址)  
+![](.topwrite/assets/image_1742139699106.png)
 3.运行服务端代码，然后再请求看看是否能正常输出  
   
 **服务端代码：**  
