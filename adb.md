@@ -71,4 +71,5 @@ adb pull /data/app/test.apk
 # 把电脑里里的test.apk文件上传到手机系统的 /data/local/tmp 下
 adb push ./test.apk /data/local/tmp
 ```
-
+as也可以过滤查看日志，等同adb logcat | findstr com.app.test
+![](.topwrite/assets/image_1742132712629.png)
