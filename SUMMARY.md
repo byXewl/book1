@@ -514,6 +514,7 @@
                 * [frida持久化](frida持久化.md)
                 * [frida抓包绕过](frida抓包绕过.md)
                 * [frida与双向认证](frida与双向认证.md)
+                * [frida抓包对抗](frida抓包对抗.md)
 * [工具脚本](工具脚本.md)
     * [常用脚本](常用脚本.md)
     * [谷歌插件](谷歌插件.md)
