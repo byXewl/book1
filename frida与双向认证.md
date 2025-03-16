@@ -184,8 +184,10 @@ fun ssl_verify() = Thread {
 }.start()  
   
 ```  
-  
-### **dump内置证书**
+ 
+^
+### **服务端校验绕过**
+dump客户端内置证书
 dump正确的客户端证书.p12和密码，交给抓包工具，再给服务端校验。
 ```js  
 function hook_KeyStore_load() {  
@@ -222,6 +224,8 @@ function hook_KeyStore_load() {
     });  
 }  
 ```  
+^
+### **客户端校验绕过**
 本地校验继续用单向的hook
 ```js  
 function anti_ssl_cert() {  
