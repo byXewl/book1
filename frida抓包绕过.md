@@ -20,8 +20,9 @@ SSL Pinning 单向证书校验。
 使用JustTrust模块，绕过单向校验和VPN接口tun0被替换为正常接口junge。但是Transports: VPN和双向认证没成功。
 ![](.topwrite/assets/image_1742135404456.png)
 
-Transports: VPN通过hook过。
+Transports: VPN通过hook尝试过。
 
+^
 ## **1.代理检测**
 `定义`  
 代理检测是用于检测设备是否设置了网络代理。这种检测的目的是识别出设备是否尝试通过代理服务器（如抓包工具）来转发网络流量，从而可能截获和分析App的网络通信。  
