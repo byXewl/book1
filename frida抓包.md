@@ -143,7 +143,7 @@ function hook_vpn() {
 ## 3.SSL Pinning  
 `SSL Pinning` 也称为证书锁定，是Google官方推荐的检验方式，意思是将服务器提供的SSL/TLS证书内置到移动客户端，当客户端发起请求的时候，通过对比内置的证书与服务器的证书是否一致，来确认这个连接的合法性。  
 PS:这里还要提到一个概念:`单向校验`，本质上二者没区别，`SSL Pinning`可以理解为加强版的`单向校验`  
-![图片](_assets_23/3e7d68353ecaa9c62720955d1d230ea61665.png)  
+![](.topwrite/assets/image_1742114121713.png)
 ```  
 1.客户端向服务端发送SSL协议版本号、加密算法种类、随机数等信息。  
 2.服务端给客户端返回SSL协议版本号、加密算法种类、随机数等信息，同时也返回服务器端的证书，即公钥证书  
@@ -265,14 +265,12 @@ fun check_SSL_PINNING_key() {
   
 ```  
 安装openssl，[OpenSSL Windows 版本](https://slproweb.com/products/Win32OpenSSL.html?spm=5176.28103460.0.0.3a32572c9fMUi9)  
-![图片](_assets_23/860cb5670ca1da633d4f7cd69a9b024a8599.png)  
-配置环境变量  
-![图片](_assets_23/b66485d2d34c392a8f599b496a59f0fc3877.png)  
+
 cmd窗口输入以下命令获取  
 ```  
 openssl s_client -connect www.52pojie.cn:443 -servername www.52pojie.cn | openssl x509 -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64  
 ```  
-![图片](_assets_23/693f228eb6a69046a950dd8b35992c6f3820.png)  
+
 `anti脚本`  
 ```js  
 function anti_ssl_key() {  
