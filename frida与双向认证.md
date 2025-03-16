@@ -189,8 +189,10 @@ fun ssl_verify() = Thread {
  
 ^
 ### **服务端校验绕过**
-dump客户端内置证书
-dump正确的客户端证书.p12和密码，交给抓包工具，再给服务端校验。
+hook dump客户端内置证书
+hook dump正确的客户端证书.p12和密码，交给抓包工具，再给服务端校验。
+
+也可能直接安装包里结合代码找到.p12和密码。
 ```js  
 function hook_KeyStore_load() {  
     Java.perform(function () {  
