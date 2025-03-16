@@ -117,10 +117,12 @@ bool check_fd() {
 众所周知frida我们一般都会放在data/local/tmp目录下，旧版fridaserver端运行时都会释放到re.frida.server，所以这里在旧版也会被当做一个检测点，而新版已不再释放  
 ## 2检测map  
 ```  
-adb shell ps | findstr com.zj.wuaipojie  
-cat /proc/12186/maps|grep frida  
+adb shell ps | findstr com.zj.wuaipojie
+  
+cat /proc/12186/maps | grep frida   //显示有frida字样
 ```  
-![](_assets_18/8d434c16d1a2af86d824723e4525de9e8343.png)  
+![](.topwrite/assets/image_1742087696132.png)
+![](.topwrite/assets/image_1742087726717.png)
   
 | 字段    | 描述                                                                                                 |  
 | ------- | ---------------------------------------------------------------------------------------------------- |  
@@ -383,7 +385,7 @@ function replace_str() {
   
 ## 4.检测inlinehook  
 通过Frida查看一个函数hook之前和之后的机器码，以此来判断是否被Frida的inlinehook注入。  
-![](_assets_18/25f2a3c1d478357bb60008780a9539bf6487.png)  
+![](.topwrite/assets/image_1742087820393.png)
 下面的方案以内存中字节和本地对应的字节进行比较，如果不一致，那么可以认为内存中的字节被修改了，即被inlinehook了  
 ```c  
 #include <jni.h>  
