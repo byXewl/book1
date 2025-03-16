@@ -210,7 +210,7 @@ function hook_KeyStore_load() {
             console.log(Java.use("android.util.Log").getStackTraceString(Java.use("java.lang.Throwable").$new()));  
             console.log("KeyStore.load2:", arg0, arg1 ? StringClass.$new(arg1) : null);  
             if (arg0){  
-                var file =  Java.use("java.io.File").$new("/data/user/0/com.zj.wuaipojie/files/client"+".p12");  
+                var file =  Java.use("java.io.File").$new("/data/user/0/com.zj.wuaipojie/files/client"+".p12");  //dump保存的路径
                 var out = Java.use("java.io.FileOutputStream").$new(file);  
                 var r;  
                 while( (r = arg0.read(buffer)) > 0){  
