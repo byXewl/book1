@@ -225,7 +225,11 @@ function hook_KeyStore_load() {
 }  
 ```
 ![](.topwrite/assets/image_1742140995759.png)
+
   
+burp导入客户端证书：
+<https://blog.csdn.net/qq_33530840/article/details/144085439>
+
 ^
 ### **客户端校验绕过**
 本地校验继续用单向的hook
