@@ -15,7 +15,7 @@ SSL Pinning 单向证书校验。
 ## **测试**
 最初代理，无VPN，无抓包。
 ![](.topwrite/assets/image_1742133435676.png)
-有黄鸟ssl抓包。可知单向校验，证书和证书指纹都不过。VPN也检测到tun0和ransports: VPN
+有黄鸟ssl抓包。可知单向校验，证书和证书指纹都不过。VPN也检测到tun0 vpn接口和ransports: VPN
 ![](.topwrite/assets/image_1742133365878.png)
 
 ## **1.代理检测**
