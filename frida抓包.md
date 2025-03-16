@@ -37,6 +37,8 @@ function anti_proxy() {
 [安卓上基于透明代理对特定APP抓包](https://blog.seeflower.dev/archives/207/)  
 虚拟机不代理，宿主机代理。
 
+3、算法助手
+
 ^
 ### 2.VPN检测  
 `定义`  
@@ -159,9 +161,11 @@ PS:这里还要提到一个概念:`单向校验`，本质上二者没区别，`S
 `SSL Pinning`主流的三套方案:`公钥校验`、`证书校验`、`Host校验`  
 因为是客户端做的校验，所以可以在本地进行hook对抗，参考以下的两个项目:  
 [JustTrustMe](https://github.com/Fuzion24/JustTrustMe)、[sslunpining](https://github.com/ac-pm/SSLUnpinning_Xposed)  
+即用算法助手(JustTrustMe)模块。
+
+^
 ### 1.指纹校验  
 在网站中我们可以看到网站的证书相关信息，其中就包含了指纹信息  
-![图片](_assets_23/fa47478f32c76bf2adee8ad73e206b295695.png)  
 `常见安卓网络开发框架`  
   
 | 框架名称               | 描述                                                                        | GitHub 地址                                                                                                            |  
