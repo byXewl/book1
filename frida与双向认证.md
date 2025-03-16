@@ -223,7 +223,9 @@ function hook_KeyStore_load() {
         };  
     });  
 }  
-```  
+```
+![](.topwrite/assets/image_1742140995759.png)
+  
 ^
 ### **客户端校验绕过**
 本地校验继续用单向的hook
