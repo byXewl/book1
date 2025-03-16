@@ -368,7 +368,7 @@ cmd窗口输入以下命令获取证书信息
 ```  
 openssl s_client -connect 52pojie.cn:443 -servername 52pojie.cn | openssl x509 -out wuai.pem  
 ```  
-![图片](_assets_23/616433f141a1a49e76ff6be600dfcde46951.png)  
+![](.topwrite/assets/image_1742115088314.png)
 `证书信知识补充:`  
   
 | 名词            | 含义                                                                      |     |  
