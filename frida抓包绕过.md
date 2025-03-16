@@ -5,7 +5,7 @@
 SSL Pinning 单向证书校验。
 单向校验，本地校验，失败提示异常(网络请求未发出去)。
 1、Frida+r0capture底层获取数据包。
-2、JustTrust模块&HOOK，让APP不在验证代理和证书，再WIFI代理抓包。
+2、JustTrustMe模块&HOOK，让APP不在验证代理和证书，再WIFI代理抓包。
 3、反编译逆向提取证书重编打包
 
 ^

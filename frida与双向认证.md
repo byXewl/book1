@@ -236,7 +236,7 @@ burp导入客户端证书： setting -> TLS -> Client TLS Certificates
 
 ^
 ### **客户端校验绕过**
-本地校验继续用单向的hook，或者JustTrust模块。
+本地校验继续用单向的hook，或者JustTrustMe模块。
 
 ```js  
 function anti_ssl_cert() {  
