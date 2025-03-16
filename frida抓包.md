@@ -533,7 +533,7 @@ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out c
 openssl pkcs12 -export -out client.p12 -inkey client.key -in client.crt -certfile ca.crt  
 ```  
 到这一步的时候，设置密码和验证密码光标不会显示，直接输入即可  
-![图片](_assets_23/9008c362571f7ceff9b68a57858707423332.png)  
+![](.topwrite/assets/image_1742119525667.png)
 #### 环境配置  
 PS:因为双向认证是本地搭建，所以需要完成几个前置条件:  
 1.确保电脑和手机处于同一wifi连接下  
