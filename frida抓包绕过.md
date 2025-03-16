@@ -13,10 +13,14 @@ SSL Pinning 单向证书校验。
 提取证书和密码，或Frida底层绕过证书抓包。
 
 ## **测试**
-最初代理，无VPN，无抓包。
+最初无代理，无VPN，无抓包。正常接口和Transports: VPN。
 ![](.topwrite/assets/image_1742133435676.png)
-有黄鸟ssl抓包。可知单向校验，证书和证书指纹都不过。VPN也检测到tun0 vpn接口和ransports: VPN
+有黄鸟ssl抓包。可知单向校验，证书和证书指纹都不过。VPN也检测到tun0 vpn接口和Transports: VPN。
 ![](.topwrite/assets/image_1742133365878.png)
+使用JustTrust模块，绕过单向校验和VPN接口tun0被替换为正常接口junge。但是Transports: VPN和双向认证没成功。
+![](.topwrite/assets/image_1742135404456.png)
+
+Transports: VPN通过hook过。
 
 ## **1.代理检测**
 `定义`  
