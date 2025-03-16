@@ -15,7 +15,7 @@ SSL Pinning 单向证书校验。
 ## **测试**
 最初代理，无VPN，无抓包。
 ![](.topwrite/assets/image_1742133435676.png)
-有黄鸟ssl抓包。可知单向校验，证书和证书指纹都不过。
+有黄鸟ssl抓包。可知单向校验，证书和证书指纹都不过。VPN也检测到tun0
 ![](.topwrite/assets/image_1742133365878.png)
 
 ## **1.代理检测**
@@ -62,7 +62,7 @@ function anti_proxy() {
 `定义`  
 VPN检测是指应用程序或系统检查用户是否正在使用虚拟专用网络（Virtual Private Network, VPN）的一种技术。当用户使用VPN时，他们的网络流量会被加密并通过一个远程服务器路由，这可以隐藏用户的实际IP地址和位置信息，同时保护数据的安全性和隐私。  
 `原理`  
-当客户端运行VPN虚拟隧道协议时，会在当前节点创建基于`eth`之上的`tun0`接口或`ppp0`接口。这些接口是用于建立虚拟网络连接的特殊网络接口。  
+当客户端运行VPN虚拟隧道协议时，会在当前节点创建基于eth之上的tun0接口或ppp0接口、p2p0、ccmni0。这些接口是用于建立虚拟网络连接的特殊网络接口。  
 根据OSI七层模型，二者分别支持的协议:  
   
 | VPN | OpvenVPN、IPsec、IKEv2、PPTP、L2TP、WireGuard等 |  
