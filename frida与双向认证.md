@@ -227,7 +227,7 @@ function hook_KeyStore_load() {
 ![](.topwrite/assets/image_1742140995759.png)
 
   
-burp导入客户端证书：
+burp导入客户端证书： setting -> TLS -> Client TLS Certificates
 <https://blog.csdn.net/qq_33530840/article/details/144085439>
 
 ^
