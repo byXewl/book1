@@ -91,6 +91,8 @@ openssl pkcs12 -export -out client.p12 -inkey client.key -in client.crt -certfil
 ```  
 到这一步的时候，设置密码和验证密码光标不会显示，直接输入即可  
 ![](.topwrite/assets/image_1742119525667.png)
+
+^
 #### 环境配置  
 PS:因为双向认证是本地搭建，所以需要完成几个前置条件:  
 1.确保电脑和手机处于同一wifi连接下  
@@ -190,7 +192,7 @@ fun ssl_verify() = Thread {
 ^
 ### **服务端校验绕过**
 hook dump客户端内置证书
-hook dump正确的客户端证书.p12和密码，交给抓包工具，再给服务端校验。
+hook dump正确的客户端证书.p12和密码，交给抓包工具作为客户端，再给服务端校验。
 
 也可能直接安装包里结合代码找到.p12和密码。
 ```js  
