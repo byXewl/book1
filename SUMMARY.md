@@ -512,7 +512,7 @@
                 * [frida_rpc](frida_rpc.md)
                 * [frida防止检测](frida防止检测.md)
                 * [frida持久化](frida持久化.md)
-                * [frida抓包](frida抓包.md)
+                * [frida抓包绕过](frida抓包绕过.md)
                 * [frida与双向认证](frida与双向认证.md)
 * [工具脚本](工具脚本.md)
     * [常用脚本](常用脚本.md)
