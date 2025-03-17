@@ -499,7 +499,7 @@
             * [APK动态调试](APK动态调试.md)
             * [APK签名对抗](APK签名对抗.md)
             * [xposed的插件hook](xposed的插件hook.md)
-                * [免root快速hook](免root快速hook.md)
+                * [免root和快速hook](免root和快速hook.md)
             * [native和so](native和so.md)
             * [so加载和动态调试](so加载和动态调试.md)
             * [实战1apk逆向](实战1apk逆向.md)
