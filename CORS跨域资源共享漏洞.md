@@ -3,6 +3,7 @@
 
 <https://www.freebuf.com/articles/web/204023.html>
 
+根目录crossdomain.xml文件 可跨域域名
 
 CORS资源共享漏洞：
 用户A在登录社交网站，这个时候访问了第三方的页面，第三方页面的js中有可以通过JSONP跨域去请求各种社交网站的个人信息，用户A访问了的社交网站的个人信息的接口如果是回调数据，则可获得个人信息。
