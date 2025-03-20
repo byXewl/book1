@@ -39,6 +39,7 @@ XSS：往往结合一些用户cookie凭据打出高危，如（百度bduss）。
 csrf：借助两个账号的cookie。
 如果网站的登录后请求包没有authorized,refer,orgin,token字段，则极可能存在csrf。
 
+ssrf：字节给的高
 
 数据xls泄露（身份证）：大量泄露上中高危
 
