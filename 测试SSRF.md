@@ -202,6 +202,8 @@ http://2852039166/  = http://169.254.169.254
 姿势3：利用DNS解析
 ```
 http://customer1.app.my.company.127.0.0.1.nip.io = 127.0.0.1
+
+127.0.0.1.nip.io解析后ip就是127.0.0.1
 ```
 
 <https://mp.weixin.qq.com/s/r6wOTmzcduWi_6v6ujVBwg>
