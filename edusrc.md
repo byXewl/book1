@@ -1,12 +1,22 @@
-教育src：
+
+## **edu挖掘必备**
+fofa
 ```
-语法
+"系统" && org="China Education and Research Network Center"
 org="China Education and Research Network Center"
+org="China Education and Research Network Center" && icon_hash="1691956220"
 body="大学"
-host="edu.cn"
 domain="edu.cn"
+host="edu.cn" 
+country="CN"
+```
 
 谷歌
-site="*.edu.cn"
 ```
-
+site: ***.edu.cn
+site: *.edu.cn
+site:.xxx.edu.cn 密码
+filetype:xls site:xxx.edu  身份证
+filetype:xls  site:xxx.edu  sh  gh  SFZ
+```
+![](.topwrite/assets/image_1742535577083.png)
