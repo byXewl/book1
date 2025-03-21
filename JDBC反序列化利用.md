@@ -2,7 +2,7 @@ JDBC（Java DataBase Connectivity）是一种用于执行Sql语句的Java Api，
 
 Mysql JDBC 中包含一个危险的扩展参数： "autoDeserialize"。这个参数配置为 true 时，JDBC 客户端将会自动反序列化服务端返回的数据，造成RCE漏洞。​
 
-​
+​Postgres JDBC: <https://xz.aliyun.com/news/11258>
 ^
 ## **分析​**
 JDBC定义了一个叫java.sql.Driver的接口类负责实现对数据库的连接，所有的数据库驱动包都必须实现这个接口才能够完成数据库的连接操作。java.sql.DriverManager.getConnection(xxx)其实就是间接的调用了java.sql.Driver类的connect方法实现数据库连接的。数据库连接成功后会返回一个叫做java.sql.Connection的数据库连接对象，一切对数据库的查询操作都将依赖于这个Connection对象。​
