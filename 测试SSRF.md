@@ -27,7 +27,7 @@ http://metadata.tencentyun.com/latest/meta-data/
 http://169.254.169.254/
 http://169.254.169.254/latest/meta-data/instance-id
 ```
-
+云ssrf：<https://cloud.tencent.com/developer/article/1968655?areaSource=105001.3&traceId=FyZTpLc2ixMvGwJf2-pDn>
 
 
 
