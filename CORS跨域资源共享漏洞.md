@@ -18,3 +18,6 @@ CORS资源共享漏洞：
 ^
 跨域获取铭感信息key，再把key传递给黑阔
 ![](.topwrite/assets/image_1742744397237.png)
+
+特征
+![](.topwrite/assets/image_1742744460081.png)
