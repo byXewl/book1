@@ -30,6 +30,7 @@ http://169.254.169.254/latest/meta-data/instance-id
 云ssrf：
 <https://cloud.tencent.com/developer/article/1968655?areaSource=105001.3&traceId=FyZTpLc2ixMvGwJf2-pDn>
 
+<https://aws.amazon.com/cn/blogs/china/talking-about-the-metadata-protection-on-the-instance-from-the-data-leakage-of-capital-one/>
 腾讯文档：
 <https://cloud.tencent.com/document/product/213/4934#.E6.A3.80.E7.B4.A2E7.94.A8.E6.88.B7.E6.95.B0.E6.8D.AE>
 ![](.topwrite/assets/image_1742705365696.png)
