@@ -250,3 +250,7 @@ SSRF的host过滤器的是以下几个步骤：
 
 绕过：<https://xz.aliyun.com/news/8300?time__1311=Yq0x07G%3DD%3DoWqGNqeeqBIc08DuiTosWa4D&u_atoken=be005aa1eddc5ab8ea7880e49b8109f9&u_asig=1a0c381017427031663571905e003f>
 
+
+^
+## **并发绕过**
+原理待测
