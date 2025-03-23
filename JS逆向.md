@@ -19,7 +19,10 @@ sign也有可能有个+固定值再哈希MD5
 var str="password=123456&timestamp=1691141967479&username=admin&secret=123456"
 console.log(SHA1_Encrypt(str)) //sign
 ```
+sc：同sign，往往不在请求头，在url中
 
+
+^
 搜索关键词
 ```
 encrypt(
