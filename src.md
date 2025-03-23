@@ -8,17 +8,11 @@ cve：小白申请cve
 <https://cloud.tencent.com/developer/article/2233051>
 
 
-## **分类**
-cve：全球漏洞编号的漏洞
-cnvd：国家级src，有证书。分为事件型（一般国企站点），通用型（cms之类的）
-教育src：教育类站点
-公益src：一般网站漏洞
-企业src：难度大，有奖金
-
 ## **漏洞提交**
+资产确认。
 复现过程。
+危害。
 脱敏：消除身份敏感信息。
-提交平台。
 企业SRC的报告不可不脱密传播。
 
 
@@ -50,3 +44,12 @@ ssrf：字节给的高
 网站没有使用https安全传输，
 
 OPTIONS发送404页面请求测试可请求方法(如果能响应，且响应中有可PUT，则网站存在不安全的请求方法)
+
+
+^
+阿里ssrf
+![](.topwrite/assets/image_1742710556620.png)
+
+^
+腾讯ssrf
+![](.topwrite/assets/image_1742710586012.png)
