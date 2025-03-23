@@ -34,8 +34,8 @@ http://169.254.169.254/latest/meta-data/instance-id
 <https://cloud.tencent.com/document/product/213/4934#.E6.A3.80.E7.B4.A2E7.94.A8.E6.88.B7.E6.95.B0.E6.8D.AE>
 ![](.topwrite/assets/image_1742705365696.png)
 查看用户
-curl http://metadata.tencentyun.com/latest/meta-data/cam/curl/security-credentials
-
+curl http://metadata.tencentyun.com/latest/meta-data/cam/security-credentials
+curl http://metadata.tencentyun.com/latest/meta-data/cam/security-credentials/TKE_QCSLinkedRolelnEKSLog
 
 ^
 file:
