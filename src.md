@@ -31,18 +31,16 @@ cve：小白申请cve
 逻辑漏洞：验证码漏洞，刷金币，不扣血。
 
 XSS：往往结合一些用户cookie凭据打出高危，如（百度bduss）。
+
 csrf：借助两个账号的cookie。
 如果网站的登录后请求包没有authorized,refer,orgin,token字段，则极可能存在csrf。
 
 ssrf：字节给的高
 
-数据xls泄露（身份证）：大量泄露上中高危
+数据泄露：大量泄露上中高危
 
 
 
-网站没有使用https安全传输，
-
-OPTIONS发送404页面请求测试可请求方法(如果能响应，且响应中有可PUT，则网站存在不安全的请求方法)
 
 
 ^
@@ -58,3 +56,5 @@ http://tst.qq.com/ssrf.png
 ^
 支付
 ![](.topwrite/assets/image_1742805934804.png)
+
+百度src新号*3，没活动时，推荐新号提交。
