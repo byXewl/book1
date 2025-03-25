@@ -45,3 +45,28 @@ statement
 ## **二次注入场景**
 第一次使用了预编译，执行sql语句时转义了，但是存储的数据没有转义。
 但是读取存储的数据后，再作为sql执行参数，相信了而没有使用预编译。
+
+
+
+^
+## **mybatis-plus场景sql注入**
+
+
+Mybatisplus中的 PaginationInterceptor 主要用于处理数据库的物理分页，避免内存分页。\
+分析PaginationInterceptor 的源码可以发现
+
+Orderby场景下的SQL注入
+
+前面提到了分页中会存在Orderby的使用，因为Orderby动态查询没办法进行预编译，所以不经过安全检查的话会存在注入风险。PaginationInnerInterceptor主要是通过设置com.baomidou.mybatisplus.extension.plugins.pagination.page对象里的属性来实现orderby的，主要是以下函数的调用，因为直接使用sql拼接，所以需要对进行排序的列名进行安全检查：
+
+```
+
+com.baomidou.mybatisplus.extension.plugins.pagination.page
+
+page.setAscs();
+page.setDescs();
+```
+
+```
+http://127.0.0.1:8080/account?current=1&size=10&ascs=create_time;DROP
+```
