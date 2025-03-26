@@ -60,13 +60,16 @@ Orderby场景下的SQL注入
 前面提到了分页中会存在Orderby的使用，因为Orderby动态查询没办法进行预编译，所以不经过安全检查的话会存在注入风险。PaginationInnerInterceptor主要是通过设置com.baomidou.mybatisplus.extension.plugins.pagination.page对象里的属性来实现orderby的，主要是以下函数的调用，因为直接使用sql拼接，所以需要对进行排序的列名进行安全检查：
 
 ```
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
-com.baomidou.mybatisplus.extension.plugins.pagination.page
 
+page.addOrder();
 page.setAscs();
 page.setDescs();
 ```
 
 ```
 http://127.0.0.1:8080/account?current=1&size=10&ascs=create_time;DROP
+
+/page?orderBy1=name AND (SELECT 2406 FROM (SELECT(SLEEP(5)))OCkK)
 ```
