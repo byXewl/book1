@@ -219,11 +219,11 @@ jwt没有主动失效，只有靠时间失效，容易被盗取。
 ## **破解jwt**
 如对HS256方式进行爆破密钥
 
-\#访问靶场，获取token
+1、访问靶场，获取token
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJFdElwSGjcs3zs6Zgv0Lp\_eA4Secn8sUEVgIA
 
-\#使用c-jwt-cracker-master 破解，<https://www.cnblogs.com/easyday/p/18022431#:~:text=Manual%20Com>
+2、使用c-jwt-cracker-master 破解，<https://www.cnblogs.com/easyday/p/18022431#:~:text=Manual%20Com>
 获得key：hello
 ```
 git clone https://github.com/brendan-rius/c-jwt-cracker
@@ -234,7 +234,7 @@ make
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJzs6Zgv0Lp_eA4Secn8sUEVgIA
 ```
-#使用https\://jwt.io/，进行加密
+3、使用<https://jwt.io/>，或者 <https://www.bejson.com/jwt/> 进行加密
 
 
 ^
