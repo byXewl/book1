@@ -9,14 +9,14 @@
 
 ## **场景**
 ```
-order by&group by&like&in查询：（由于这种不能预编译，强行预编译转义字符后功能会失效。所以需要过滤器或自定义过滤）
+order by&group by&like&in查询：（由于这种不能预编译，强行预编译转义字符后功能会失效报错等。所以需要过滤器或自定义过滤）
 
 盲注。
 报错捕获异常回显。
 
 防御：能预编译的情况都做预编译，一些特殊无法做预编译的，则过滤用户可控的参数。
 ```
-
+学习<https://zhuanlan.zhihu.com/p/408555998>
 
 ## **关键词**
 大多数JavaEE网站，用的相对多的是SpringMVC架构，那么用到的Mybatis框架就会比较多，所以搜索SQL关键字就是"${}"优先，其次是以下的关键字。
@@ -99,6 +99,7 @@ select * from test where school_name like '%'+${name},+'%'
 预编译
 ```
 #### Mysql数据库
+select * from test where school_name like concat('%',#{name},'%') 
 sql = " and indexNum like concat('%',?,'%') "
 
 #### [Oracle]

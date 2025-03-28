@@ -79,7 +79,7 @@ select * from test where school_name like '%'+${name},+'%'
 预编译
 ```
 #### Mysql数据库
-
+select * from test where school_name like concat('%',#{name},'%') 
 sql = " and indexNum like concat('%',?,'%') "
 
 #### [Oracle]
