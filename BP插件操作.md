@@ -59,7 +59,7 @@ xiaSQL
 <https://github.com/gh0stkey/CaA>
 ![](.topwrite/assets/image_1743175635653.png)
 
-fuzz爆破：Collectlnfo右键生成fuzz。发送到intruder，全选数据包标记，playload选择来着插件。
+fuzz爆破：Collectlnfo右键生成fuzz。发送到intruder，全选数据包标记，playload选择来自插件，去除url编码勾选。
 ![](.topwrite/assets/image_1743176139794.png)
 ^
 ## **lazyCSRF**
