@@ -55,9 +55,12 @@ xiaSQL
 
 ^
 ## **CaA**
-参数频率统计，右键复制参数可以fuzz参数
+参数频率统计，右键复制参数可以fuzz参数。生成fuzz爆破字典。
 <https://github.com/gh0stkey/CaA>
 ![](.topwrite/assets/image_1743175635653.png)
+
+fuzz爆破：Collectlnfo右键生成fuzz。发送到intruder，全选数据包标记，playload选择来着插件。
+![](.topwrite/assets/image_1743176139794.png)
 ^
 ## **lazyCSRF**
 CSRF POC
