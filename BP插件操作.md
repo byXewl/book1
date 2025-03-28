@@ -55,7 +55,7 @@ xiaSQL
 
 ^
 ## **CaA**
-参数频率统计
+参数频率统计，右键复制参数可以fuzz参数
 <https://github.com/gh0stkey/CaA>
 ![](.topwrite/assets/image_1743175635653.png)
 ^
