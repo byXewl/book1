@@ -33,6 +33,18 @@ order by GTID_SUBSET((version(),1)))
 
 ^
 ## **like**
+> 模糊查询使用like关键字，可以使用通配符进行占位:
+> （1）_ : 代表单个任意字符
+> （2）% : 代表任意个数字符，**可以为0个**
+```
+查询第二个字是'花'的学员信息  
+select * from stu where name like '_花%';
+
+查询名字中包含 '德' 的学员信息
+select * from stu where name like '%德%'; 
+```
+
+  
 like可以使用联合注入。
 like一般也在where语句之后。
 ```
