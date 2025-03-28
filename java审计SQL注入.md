@@ -73,3 +73,37 @@ http://127.0.0.1:8080/account?current=1&size=10&ascs=create_time;DROP
 
 /page?orderBy1=name AND (SELECT 2406 FROM (SELECT(SLEEP(5)))OCkK)
 ```
+
+
+^
+## **like场景**
+
+
+在区分数据库下的用法区分，例如：
+不安全
+```
+//mysql环境
+mybatis和php
+select * from test where school_name like concat('%',${name},'%') 
+select * from test where school_name like concat('%',$name,'%')
+
+
+//oracle环境
+select * from test where school_name like '%'||${name},'%' 
+
+//SQL Server环境
+select * from test where school_name like '%'+${name},+'%'
+```
+
+安全
+预编译
+```
+#### Mysql数据库
+sql = " and indexNum like concat('%',?,'%') "
+
+#### [Oracle]
+sql = " like '%' || ? || '%' "
+
+#### []()SQL Server
+sql = " like '%' + ? + '%' "
+```

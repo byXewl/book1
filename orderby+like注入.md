@@ -59,29 +59,25 @@ admin'+union+select+sleep(15)--+
 ```
 
 
-防御
-
-
-like避免sql注入的示例：
-
 在区分数据库下的用法区分，例如：
-
+不安全
 ```
 //mysql环境
-
+mybatis和php
 select * from test where school_name like concat('%',${name},'%') 
+select * from test where school\_name like concat('%',$name,'%')
+
 
 //oracle环境
-
 select * from test where school_name like '%'||${name},'%' 
 
 //SQL Server环境
-
 select * from test where school_name like '%'+${name},+'%'
+```
 
-
-
-
+安全
+预编译
+```
 #### Mysql数据库
 
 sql = " and indexNum like concat('%',?,'%') "
