@@ -45,3 +45,44 @@ where name like " admin" union select 1,2,3,database()-- "
 
 admin'+union+select+sleep(15)--+
 ```
+
+
+防御
+
+
+like避免sql注入的示例：
+
+在区分数据库下的用法区分，例如：
+
+```
+//mysql环境
+
+select * from test where school_name like concat('%',${name},'%') 
+
+//oracle环境
+
+select * from test where school_name like '%'||${name},'%' 
+
+//SQL Server环境
+
+select * from test where school_name like '%'+${name},+'%'
+
+
+
+
+#### Mysql数据库
+
+sql = " and indexNum like concat('%',?,'%') "
+
+#### [Oracle]
+
+sql = " like '%' || ? || '%' "
+
+#### []()SQL Server
+
+sql = " like '%' + ? + '%' "
+
+
+```
+
+
