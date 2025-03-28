@@ -57,7 +57,7 @@ xiaSQL
 ## **CaA**
 参数频率统计
 <https://github.com/gh0stkey/CaA>
-
+![](.topwrite/assets/image_1743175635653.png)
 ^
 ## **lazyCSRF**
 CSRF POC
