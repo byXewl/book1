@@ -18,7 +18,7 @@ OAuth 的流程通常包括以下步骤：
 
 OAuth 有多个版本，其中最常用的是 OAuth 2.0，它提供了更灵活的授权流程和更好的安全性。OAuth 2.0 支持多种授权流程，如授权码流程（Authorization Code Grant）、客户端凭据流程（Client Credentials Grant）、密码凭据流程（Resource Owner Password Credentials Grant）和简化流程（Implicit Grant）等，以满足不同场景的需求。
 
-
+![](.topwrite/assets/image_1743239285361.png)
 OAuth 2.0 的一个简单解释
 <https://www.ruanyifeng.com/blog/2019/04/oauth_design.html>
 
