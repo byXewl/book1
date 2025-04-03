@@ -54,6 +54,11 @@ xia越
 xiaSQL
 
 ^
+## **SSRF、请求、未授权**
+AutoRepeater
+
+
+^
 ## **CaA**
 参数频率统计，右键复制参数可以fuzz参数。生成fuzz爆破字典。
 <https://github.com/gh0stkey/CaA>
