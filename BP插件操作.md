@@ -54,9 +54,9 @@ xia越
 xiaSQL
 
 ^
-## **SSRF、请求、未授权**
+## **SSRF、请求、重定向**
 AutoRepeater
-
+<https://github.com/Lotus6/AutoRepeater/>
 
 ^
 ## **CaA**
