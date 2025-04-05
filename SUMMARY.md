@@ -791,6 +791,7 @@
         * [CRLF注入请求头走私漏洞](CRLF注入请求头走私漏洞.md)
         * [认证漏洞](认证漏洞.md)
             * [OAuth](OAuth.md)
+            * [OAuth漏洞](OAuth漏洞.md)
 * [框架中间件漏洞](框架中间件漏洞.md)
     * [中间件等漏洞](中间件等漏洞.md)
         * [Tomcat漏洞](Tomcat漏洞.md)
