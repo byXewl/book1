@@ -21,3 +21,10 @@
 ^
 ## **逻辑错误**
 ![](.topwrite/assets/image_1743849861206.png)
+
+^
+## **应用校验第三方不严**
+
+![](.topwrite/assets/image_1743850514173.png)
+![](.topwrite/assets/image_1743850570807.png)
+![](.topwrite/assets/image_1743850644155.png)
