@@ -28,10 +28,8 @@ OAuth 2.0 的一个简单解释
 ^
 ## **以GitHub为例**
 
-### 1. GitHub登录请求的发起（`githubLogin` 方法）
-* **目的**：引导用户跳转到GitHub的授权页面，用户在该页面上授权应用访问其GitHub账户信息。
+### 1. GitHub登录请求的发起（后端githubLogin接口）
 
-* **流程**：
   1. **构建GitHub授权服务器地址**：
 
      * 基础地址为`https://github.com/login/oauth/authorize`。
@@ -50,15 +48,13 @@ OAuth 2.0 的一个简单解释
      * 方法返回给前端构建好的GitHub授权URL，前端接收到URL使用重定向将前端重定向到该地址。
 
   3. **GitHub授权**
-    * 用户在该GitHub页面登录授权，授权后会重定向到your_redirect_uri，并且your_redirect_uri/?code=xxx&state，有code值。
+    * 用户在该GitHub授权页面登录授权，授权后前端会重定向到your_redirect_uri，并且your_redirect_uri/?code=xxx&state，此时就有code值。
 
    4. **前端请求回调地址**
-   * 前端匹配到请求了your_redirect_uri/?code=xxx&state，此时把?code=xxx&state作为参数再去请求githubCallback，获取令牌从而获取GitHub个人信息等。
+   * 前端匹配到请求了your_redirect_uri/?code=xxx&state，此时把?code=xxx&state作为参数再去请求githubCallback接口，获取access_token令牌，作为获取GitHub个人信息前提。
 
-### 2. GitHub回调处理（`githubCallback` 方法）
-* **目的**：处理GitHub授权服务器重定向回的请求，携带code向GitHub认证服务器申请令牌。通过令牌获取用户的GitHub账户信息，封装到本地并实现登录或注册，返回前端jwt。
+### 2. GitHub回调处理（后端githubCallback接口）
 
-* **流程**：
   1. **验证`state`参数**：
      * 从Redis中获取与用户IP地址关联的`state`值，与回调请求中携带的`state`参数进行比对。
      * 如果不一致，抛出异常，防止CSRF攻击。
