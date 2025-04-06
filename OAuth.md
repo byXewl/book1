@@ -54,7 +54,7 @@ response_type=code&client_id=your_client_id&state=generated_state&redirect_uri=y
      * 用户在该GitHub授权页面登录授权，授权后前端会重定向到your_redirect_uri，并且有加入code参数，如your_redirect_uri/?code=xxx&state。
 
   4. **前端请求回调地址**
-     * 前端监听匹配到url变成了your_redirect_uri/?code=xxx&state，此时把?code=xxx&state作为参数再去请求githubCallback接口。
+     * your_redirect_uri页面的前端监听匹配到url变成了your_redirect_uri/?code=xxx&state，此时把?code=xxx&state作为参数再去请求githubCallback接口。
 
 ### 2. GitHub回调处理（后端githubCallback接口）
 
@@ -87,7 +87,6 @@ response_type=code&client_id=your_client_id&state=generated_state&redirect_uri=y
      * 获取到的GitHub用户信息包括`login`（用户名）、`id`（用户ID）、`avatar_url`（头像URL）等。
 
   4. **用户处理**：
-
      * 根据GitHub用户ID查询本地数据库，判断用户是否已存在。
      * 如果不存在，将GitHub用户信息保存到本地数据库，并设置默认密码（如`github-login`）。
      * 生成JWT令牌，用于后续的用户认证。
