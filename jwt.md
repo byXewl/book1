@@ -23,6 +23,20 @@ McX2dyX5yW0S6lUsDC4s4qQpKHW072bmoS3fRSaUn9I
 
 
 ^
+## **jwt密钥**
+```
+这里密钥secret=xxx;
+
+Algorithm algorithm = Algorithm.HMAC256(secret);
+
+JWT.create()
+    .withClaim("userId", userId) // 创建负载
+    .withExpiresAt(DateUtil.offsetHour(new Date(), 200)) // 设置超时日期 2小时
+    .sign(algorithm); // 创建签名并设置密钥
+```
+
+
+^
 ## **jwt会话**
 jwt一般后端通过json响应体或setcookie给前端
 前端通过请求头携带Authorization: Bearer xxx.xxx.xxx
