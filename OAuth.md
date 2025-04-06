@@ -25,3 +25,78 @@ OAuth 2.0 的一个简单解释
 <https://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html>
 
 
+^
+## **以GitHub为例**
+
+### 1. GitHub登录请求的发起（`githubLogin` 方法）
+* **目的**：引导用户跳转到GitHub的授权页面，用户在该页面上授权应用访问其GitHub账户信息。
+
+* **流程**：
+  1. **构建GitHub授权服务器地址**：
+
+     * 基础地址为`https://github.com/login/oauth/authorize`。
+
+     * 需要传递以下参数：
+
+       * `response_type=code`：指定响应类型为授权码模式。
+       * `client_id`：应用在GitHub上注册时分配的客户端ID（`GITHUB_CLIENT_ID`）。
+       * `state`：一个随机生成的字符串，用于防止CSRF攻击。该值会存储到Redis中，与用户的IP地址关联，存储时间为30分钟。
+       * `redirect_uri`：授权成功后GitHub会将用户重定向到的地址（`GITHUB_REDIRECT_URL`）。
+
+     * 最终拼接的URL形式为：`https://github.com/login/oauth/authorize?response_type=code&client_id=your_client_id&state=generated_state&redirect_uri=your_redirect_uri`。
+
+  2. **返回授权URL**：
+
+     * 方法返回给前端构建好的GitHub授权URL，前端接收到URL使用重定向将前端重定向到该地址。
+
+  3. **GitHub授权**
+    * 用户在该GitHub页面登录授权，授权后会重定向到your_redirect_uri，并且your_redirect_uri/?code=xxx&state，有code值。
+
+   4. **前端请求回调地址**
+   * 前端匹配到请求了your_redirect_uri/?code=xxx&state，此时把?code=xxx&state作为参数再去请求githubCallback，获取令牌从而获取GitHub个人信息等。
+
+### 2. GitHub回调处理（`githubCallback` 方法）
+* **目的**：处理GitHub授权服务器重定向回的请求，携带code向GitHub认证服务器申请令牌。通过令牌获取用户的GitHub账户信息，封装到本地并实现登录或注册，返回前端jwt。
+
+* **流程**：
+  1. **验证`state`参数**：
+     * 从Redis中获取与用户IP地址关联的`state`值，与回调请求中携带的`state`参数进行比对。
+     * 如果不一致，抛出异常，防止CSRF攻击。
+
+  2. **向GitHub申请令牌**：
+
+     * 使用GitHub提供的`https://github.com/login/oauth/access_token`接口，传递以下参数：
+
+       * `grant_type=authorization_code`：指定授权类型为授权码模式。
+       * `code`：GitHub授权服务器重定向时携带的授权码。
+       * `redirect_uri`：与授权请求时一致的重定向地址。
+       * `client_id`和`client_secret`：应用的客户端ID和密钥。
+
+     * 发起POST请求，获取响应结果。
+
+     * 响应结果可能包含：
+
+       * 成功：`access_token`和`token_type`。
+       * 失败：`error`和`error_description`。
+
+     * 如果响应中包含`error`，抛出异常，终止流程。
+
+  3. **获取用户信息**：
+
+     * 使用获取到的`access_token`，访问GitHub的用户信息接口`https://api.github.com/user`。
+     * 在请求头中添加`Authorization: token <access_token>`。
+     * 获取到的用户信息包括`login`（用户名）、`id`（用户ID）、`avatar_url`（头像URL）等。
+
+  4. **用户处理**：
+
+     * 根据GitHub用户ID查询本地数据库，判断用户是否已存在。
+     * 如果不存在，将GitHub用户信息保存到本地数据库，并设置默认密码（如`github-login`）。
+     * 生成JWT令牌，用于后续的用户认证。
+     * 将用户信息和JWT令牌存储到Redis中，设置过期时间。
+
+  5. **返回用户信息**：
+
+     * 返回用户信息和JWT令牌，前端可以使用该令牌进行后续的用户认证操作。
+
+
+
