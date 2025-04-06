@@ -26,7 +26,9 @@ OAuth 2.0 的一个简单解释
 
 
 ^
-## **以GitHub为例**
+## **以GitHub登录为例**
+这里是两个后端接口，配合前端，实现认证。
+
 
 ### 1. GitHub登录请求的发起（后端githubLogin接口）
 
@@ -41,17 +43,18 @@ OAuth 2.0 的一个简单解释
        * `state`：一个随机生成的字符串，用于防止CSRF攻击。该值会存储到Redis中，与用户的IP地址关联，存储时间为30分钟。
        * `redirect_uri`：授权成功后GitHub会将用户重定向到的地址（`GITHUB_REDIRECT_URL`）。
 
-     * 最终拼接的URL形式为：`https://github.com/login/oauth/authorize?response_type=code&client_id=your_client_id&state=generated_state&redirect_uri=your_redirect_uri`。
+     * 最终拼接的URL形式为：https://github.com/login/oauth/authorize?
+response_type=code&client_id=your_client_id&state=generated_state&redirect_uri=your_redirect_uri。
 
   2. **返回授权URL**：
 
      * 方法返回给前端构建好的GitHub授权URL，前端接收到URL使用重定向将前端重定向到该地址。
 
   3. **GitHub授权**
-    * 用户在该GitHub授权页面登录授权，授权后前端会重定向到your_redirect_uri，并且your_redirect_uri/?code=xxx&state，此时就有code值。
+     * 用户在该GitHub授权页面登录授权，授权后前端会重定向到your_redirect_uri，并且有加入code参数，如your_redirect_uri/?code=xxx&state。
 
-   4. **前端请求回调地址**
-   * 前端匹配到请求了your_redirect_uri/?code=xxx&state，此时把?code=xxx&state作为参数再去请求githubCallback接口，获取access_token令牌，作为获取GitHub个人信息前提。
+  4. **前端请求回调地址**
+     * 前端监听匹配到url变成了your_redirect_uri/?code=xxx&state，此时把?code=xxx&state作为参数再去请求githubCallback接口。
 
 ### 2. GitHub回调处理（后端githubCallback接口）
 
@@ -77,11 +80,11 @@ OAuth 2.0 的一个简单解释
 
      * 如果响应中包含`error`，抛出异常，终止流程。
 
-  3. **获取用户信息**：
+  3. **获取GitHub用户信息**：
 
      * 使用获取到的`access_token`，访问GitHub的用户信息接口`https://api.github.com/user`。
      * 在请求头中添加`Authorization: token <access_token>`。
-     * 获取到的用户信息包括`login`（用户名）、`id`（用户ID）、`avatar_url`（头像URL）等。
+     * 获取到的GitHub用户信息包括`login`（用户名）、`id`（用户ID）、`avatar_url`（头像URL）等。
 
   4. **用户处理**：
 
@@ -95,4 +98,9 @@ OAuth 2.0 的一个简单解释
      * 返回用户信息和JWT令牌，前端可以使用该令牌进行后续的用户认证操作。
 
 
+## **OAuth安全**
+重定向的地址都写死封装到了后端接口里，无法篡改，比较安全。
+>如果可以篡改重定向地址，则可能盗取code，从而获取用户令牌或登录系统。
 
+处理回调的接口，即使你有code，需要验证state值防止csrf，比较安全。
+>如果没有csrf的state，则可能攻击者的GitHub的code绑定到受害者的用户上。
