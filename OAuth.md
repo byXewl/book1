@@ -104,3 +104,17 @@ response_type=code&client_id=your_client_id&state=generated_state&redirect_uri=y
 
 处理回调的接口，即使你有code，需要验证state值防止csrf，比较安全。
 >如果没有csrf的state，则可能攻击者的GitHub的code绑定到受害者的用户上。
+
+
+^
+后端接口封装了请求，也可能造成SSRF攻击。
+```
+// 向GitHub认证服务器申请令牌
+String url = "https://github.com/login/oauth/access_token";
+// 传递参数grant_type、code、redirect_uri、client_id
+String param = "?grant_type=authorization_code&code=" + code + "&redirect_uri=" +
+        GITHUB_REDIRECT_URL + "&client_id=" + GITHUB_CLIENT_ID + "&client_secret=" + GITHUB_CLIENT_SECRET;
+
+// 申请令牌，注意此处为post请求
+String result = HttpUtil.createPost(url + param).execute().body();
+```
