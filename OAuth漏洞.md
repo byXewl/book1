@@ -5,7 +5,7 @@
 
 回调绕过
 ![](.topwrite/assets/image_1743848281610.png)
-或配置子域名的xss
+或配合子域名的xss
 最终携带出token
 
 
