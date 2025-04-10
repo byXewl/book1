@@ -20,3 +20,18 @@ filetype:xls site:xxx.edu  身份证
 filetype:xls  site:xxx.edu  sh  gh  SFZ
 ```
 ![](.topwrite/assets/image_1742535577083.png)
+
+
+^
+### **其他url**
+```
+人教社
+***.pep.com.cn、
+***.peeavp.com.cn、
+***.peplexue.com、
+***.mypep.cn、
+***.mypep.com.cn、
+***.pepchangdu.com、
+***.pecec.com.cn、
+***.gopep.cn
+```
